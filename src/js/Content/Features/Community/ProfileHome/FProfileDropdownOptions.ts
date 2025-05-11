@@ -1,4 +1,4 @@
-import {__addNickname, __postHistory} from "@Strings/_strings";
+import {__addNickname, __postHistory, __reviews} from "@Strings/_strings";
 import {L} from "@Core/Localization/Localization";
 import type CProfileHome from "@Content/Features/Community/ProfileHome/CProfileHome";
 import Feature from "@Content/Modules/Context/Feature";
@@ -34,6 +34,12 @@ export default class FProfileDropdownOptions extends Feature<CProfileHome> {
         HTML.afterEnd(this._node,
             `<a class="popup_menu_item" href="${window.location.pathname}/posthistory">
                 <img src="//community.cloudflare.steamstatic.com/public/images/skin_1/icon_btn_comment.png">&nbsp; ${L(__postHistory)}
+            </a>`);
+            
+        // add review link
+        HTML.afterEnd(this._node,
+            `<a class="popup_menu_item" href="${window.location.pathname}/recommended">
+                <img src="//community.cloudflare.steamstatic.com/public/images/skin_1/icon_btn_comment.png">&nbsp; ${L(__reviews)}
             </a>`);
     }
 }
