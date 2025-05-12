@@ -39,7 +39,7 @@ export default class FProfileDropdownOptions extends Feature<CProfileHome> {
         // add review link
         HTML.afterEnd(this._node,
             `<a class="popup_menu_item" href="${window.location.pathname}/recommended">
-                <img src="//community.cloudflare.steamstatic.com/public/images/skin_1/icon_btn_comment.png">&nbsp; ${L(__reviews)}
+                <img src="//community.cloudflare.steamstatic.com/public/shared/images/userreviews/icon_review_counted.png">&nbsp; ${L(__reviews)}
             </a>`);
     }
 }
