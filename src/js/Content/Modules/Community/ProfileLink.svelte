@@ -6,6 +6,7 @@
     export let id: string;
     export let href: string;
     export let iconUrl: string|undefined = undefined;
+    export let hideIcon: string|undefined = undefined;
 
     const iconType: "gray"|"color"|"none" = Settings.show_profile_link_images;
 </script>
@@ -14,7 +15,9 @@
 <div class="profile_count_link">
     <a class="link" {href} use:external>
         {#if iconType !== "none"}
-            <ProfileLinkIcon {id} {iconUrl} gray={iconType === "gray"} />
+            {#if hideIcon !== "true"}
+                <ProfileLinkIcon {id} {iconUrl} gray={iconType === "gray"} />
+            {/if}
         {/if}
         <span class="count_link_label"><slot></slot></span>
         <span class="profile_count_link_total">&nbsp;</span> <!-- Steam spacing -->

@@ -135,6 +135,8 @@
         {/if}
         <Toggle bind:value={$settings.showsteamrepapi}>{L(__options_steamrepapi)}</Toggle>
         <Toggle bind:value={$settings.profile_steamid}>{L(__options_profileSteamid)}</Toggle>
+        <Toggle bind:value={$settings.profile_steamreviews}>Always show a link to Reviews</Toggle>
+        <!--<Toggle bind:value={$settings.profile_steamreviews}>{L(__options_profileSteamreviews)}</Toggle>-->
     </OptionGroup>
 
     <OptionGroup>

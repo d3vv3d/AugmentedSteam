@@ -145,6 +145,7 @@ export const DefaultSettings: Readonly<SettingsSchema> = {
     profile_steamgifts: true,
     profile_steamtrades: true,
     profile_bartervg: true,
+    profile_steamreviews: true,
     profile_steamrep: true,
     profile_steamdbcalc: true,
     profile_backpacktf: true,

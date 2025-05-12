@@ -9,6 +9,9 @@
     export let language: string|undefined; // Add SteamRepCN link if language is Chinese
 </script>
 
+{#if Settings.profile_steamreviews}
+    <ProfileLink id="steamreviews" hideIcon="true" href="https://steamcommunity.com/profiles/{steamId}/recommended">Reviews</ProfileLink>
+{/if}
 
 {#if (language === "schinese" || language === "tchinese") && Settings.profile_steamrepcn}
     <ProfileLink id="steamrepcn" href="https://steamrepcn.com/profiles/{steamId}">
