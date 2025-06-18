@@ -96,6 +96,8 @@ export default class SteamCommunityApi extends Api implements MessageHandlerInte
     }
 
     private async getReviews(steamId: string, pages: number): Promise<TFetchReviewsResponse> {
+    	console.log(steamId);
+    
         let entry = await IndexedDB.get("reviews", steamId)
 
         if (!entry || TimeUtils.isInPast(entry.expiry)) {
