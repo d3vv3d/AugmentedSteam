@@ -11,29 +11,36 @@ export default class FCommunityProfileLinks extends Feature<CProfileHome> {
 
     override apply(): void {
 
-        const linksNode = document.querySelector(".profile_item_links");
-        if (linksNode) {
-            (new self_({
-                target: linksNode,
-                props: {
-                    steamId: this.context.steamId!,
-                    clear: true,
-                    language: this.context.language?.name
-                }
-            }));
-        } else {
+        let linksNode = document.querySelector(".profile_item_links");
+        if (linksNode == null) {
             const rightColNode = document.querySelector(".profile_rightcol");
             HTML.beforeEnd(rightColNode, `<div class="profile_item_links"></div>`);
             HTML.afterEnd(rightColNode, '<div style="clear: both;"></div>');
+            
+            linksNode = document.querySelector(".profile_item_links");
+        } 
 
-            (new self_({
-                target: document.querySelector(".profile_item_links")!,
-                props: {
-                    steamId: this.context.steamId!,
-                    clear: false,
-                    language: this.context.language?.name
-                }
-            }));
-        }
+	let hasReviews = false;
+	let shouldAddReviews = false;
+	const linkLabelNodes = linksNode.querySelectorAll("span.count_link_label");
+	for (const value in linkLabelNodes) {
+	    if (linkLabelNodes[value].innerHTML === "Reviews") {
+	    	hasReviews = true;
+	    }
+	}
+	
+	if (!hasReviews) {
+	    shouldAddReviews = true;
+	}
+	
+        (new self_({
+            target: document.querySelector(".profile_item_links")!,
+            props: {
+                steamId: this.context.steamId!,
+                clear: false,
+                language: this.context.language?.name,
+                addReviews: shouldAddReviews
+            }
+        }));
     }
 }

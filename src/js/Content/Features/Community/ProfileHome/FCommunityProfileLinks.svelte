@@ -7,9 +7,10 @@
     export let steamId: string;
     export let clear: boolean;
     export let language: string|undefined; // Add SteamRepCN link if language is Chinese
+    export let addReviews: boolean;
 </script>
 
-{#if Settings.profile_steamreviews}
+{#if addReviews && Settings.profile_steamreviews}
     <ProfileLink id="steamreviews" hideIcon="true" href="https://steamcommunity.com/profiles/{steamId}/recommended">Reviews</ProfileLink>
 {/if}
 
