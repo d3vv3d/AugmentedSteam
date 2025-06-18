@@ -6,7 +6,7 @@
         __cancel,
         __clearCache,
         __contribute,
-        __launchRandom,
+        __launchRandom, __launchRandomGameError,
         __ok,
         __playGame,
         __thewordoptions,
@@ -23,6 +23,7 @@
     import {fade} from "svelte/transition";
     import ConfirmDialog from "@Core/Modals/ConfirmDialog";
     import {EModalAction} from "@Core/Modals/Contained/EModalAction";
+    import AlertDialog from "@Core/Modals/AlertDialog";
 
     export let user: UserInterface;
 
@@ -61,32 +62,39 @@
     }
 
     async function launchRandom(): Promise<void> {
-        const appid = await DynamicStore.getRandomApp();
-        if (!appid) { return; }
+        /**
+         * Sometimes we get appid for a game that doesn't have a game page, e.g. dlcs, beta packages etc.
+         * If that happens, try few more times to get a playable game
+         */
+        for (let i=0; i < 10; i++) {
+            const appid = await DynamicStore.getRandomApp();
+            if (!appid) { break; }
 
-        const appdetails = await SteamStoreApiFacade.fetchAppDetails(appid);
-        if (!appdetails) {
-            return;
-        }
+            const appdetails = await SteamStoreApiFacade.fetchAppDetails(appid);
+            if (appdetails) {
+                const gameid = appdetails.fullgame?.appid ?? appid;
+                const gamename = appdetails.fullgame?.name ?? appdetails.name;
 
-        const gameid = appdetails.fullgame?.appid ?? appid;
-        const gamename = appdetails.fullgame?.name ?? appdetails.name;
+                const confirm = await (new ConfirmDialog(
+                    L(__playGame, {gamename}),
+                    `<img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${gameid}/header.jpg">`,
+                    {
+                        primary: L(__ok),
+                        secondary: L(__visitStore),
+                        cancel: L(__cancel)
+                    }
+                )).show();
 
-        const confirm = await (new ConfirmDialog(
-            L(__playGame, {gamename}),
-            `<img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${gameid}/header.jpg">`,
-            {
-                primary: L(__ok),
-                secondary: L(__visitStore),
-                cancel: L(__cancel)
+                if (confirm === EModalAction.OK) {
+                    window.location.assign(`steam://run/${gameid}`)
+                } else if (confirm === EModalAction.Secondary) {
+                    window.location.assign(`//store.steampowered.com/app/${gameid}`)
+                }
+                return;
             }
-        )).show();
-
-        if (confirm === EModalAction.OK) {
-            window.location.assign(`steam://run/${gameid}`)
-        } else if (confirm === EModalAction.Secondary) {
-            window.location.assign(`//store.steampowered.com/app/${gameid}`)
         }
+
+        await (new AlertDialog(L(__launchRandomGameError))).show();
     }
 
     onMount(() => {

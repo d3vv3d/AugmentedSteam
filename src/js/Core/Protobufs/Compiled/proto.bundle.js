@@ -328,6 +328,361 @@ export const CHardwarePackageDetails = $root.CHardwarePackageDetails = (() => {
     return CHardwarePackageDetails;
 })();
 
+export const CStoreBrowse_GetContentHubConfig_Request = $root.CStoreBrowse_GetContentHubConfig_Request = (() => {
+
+    /**
+     * Properties of a CStoreBrowse_GetContentHubConfig_Request.
+     * @exports ICStoreBrowse_GetContentHubConfig_Request
+     * @interface ICStoreBrowse_GetContentHubConfig_Request
+     * @property {IStoreBrowseContext|null} [context] CStoreBrowse_GetContentHubConfig_Request context
+     */
+
+    /**
+     * Constructs a new CStoreBrowse_GetContentHubConfig_Request.
+     * @exports CStoreBrowse_GetContentHubConfig_Request
+     * @classdesc Represents a CStoreBrowse_GetContentHubConfig_Request.
+     * @implements ICStoreBrowse_GetContentHubConfig_Request
+     * @constructor
+     * @param {ICStoreBrowse_GetContentHubConfig_Request=} [properties] Properties to set
+     */
+    function CStoreBrowse_GetContentHubConfig_Request(properties) {
+        if (properties)
+            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * CStoreBrowse_GetContentHubConfig_Request context.
+     * @member {IStoreBrowseContext|null|undefined} context
+     * @memberof CStoreBrowse_GetContentHubConfig_Request
+     * @instance
+     */
+    CStoreBrowse_GetContentHubConfig_Request.prototype.context = null;
+
+    /**
+     * Encodes the specified CStoreBrowse_GetContentHubConfig_Request message. Does not implicitly {@link CStoreBrowse_GetContentHubConfig_Request.verify|verify} messages.
+     * @function encode
+     * @memberof CStoreBrowse_GetContentHubConfig_Request
+     * @static
+     * @param {ICStoreBrowse_GetContentHubConfig_Request} message CStoreBrowse_GetContentHubConfig_Request message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    CStoreBrowse_GetContentHubConfig_Request.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.context != null && Object.hasOwnProperty.call(message, "context"))
+            $root.StoreBrowseContext.encode(message.context, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Decodes a CStoreBrowse_GetContentHubConfig_Request message from the specified reader or buffer.
+     * @function decode
+     * @memberof CStoreBrowse_GetContentHubConfig_Request
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {CStoreBrowse_GetContentHubConfig_Request} CStoreBrowse_GetContentHubConfig_Request
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    CStoreBrowse_GetContentHubConfig_Request.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CStoreBrowse_GetContentHubConfig_Request();
+        while (reader.pos < end) {
+            let tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.context = $root.StoreBrowseContext.decode(reader, reader.uint32());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Gets the default type url for CStoreBrowse_GetContentHubConfig_Request
+     * @function getTypeUrl
+     * @memberof CStoreBrowse_GetContentHubConfig_Request
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    CStoreBrowse_GetContentHubConfig_Request.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/CStoreBrowse_GetContentHubConfig_Request";
+    };
+
+    return CStoreBrowse_GetContentHubConfig_Request;
+})();
+
+export const CStoreBrowse_GetContentHubConfig_Response = $root.CStoreBrowse_GetContentHubConfig_Response = (() => {
+
+    /**
+     * Properties of a CStoreBrowse_GetContentHubConfig_Response.
+     * @exports ICStoreBrowse_GetContentHubConfig_Response
+     * @interface ICStoreBrowse_GetContentHubConfig_Response
+     * @property {Array.<ICStoreBrowse_GetContentHubConfig_Response_ContentHubConfig>|null} [hubconfigs] CStoreBrowse_GetContentHubConfig_Response hubconfigs
+     */
+
+    /**
+     * Constructs a new CStoreBrowse_GetContentHubConfig_Response.
+     * @exports CStoreBrowse_GetContentHubConfig_Response
+     * @classdesc Represents a CStoreBrowse_GetContentHubConfig_Response.
+     * @implements ICStoreBrowse_GetContentHubConfig_Response
+     * @constructor
+     * @param {ICStoreBrowse_GetContentHubConfig_Response=} [properties] Properties to set
+     */
+    function CStoreBrowse_GetContentHubConfig_Response(properties) {
+        this.hubconfigs = [];
+        if (properties)
+            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * CStoreBrowse_GetContentHubConfig_Response hubconfigs.
+     * @member {Array.<ICStoreBrowse_GetContentHubConfig_Response_ContentHubConfig>} hubconfigs
+     * @memberof CStoreBrowse_GetContentHubConfig_Response
+     * @instance
+     */
+    CStoreBrowse_GetContentHubConfig_Response.prototype.hubconfigs = $util.emptyArray;
+
+    /**
+     * Encodes the specified CStoreBrowse_GetContentHubConfig_Response message. Does not implicitly {@link CStoreBrowse_GetContentHubConfig_Response.verify|verify} messages.
+     * @function encode
+     * @memberof CStoreBrowse_GetContentHubConfig_Response
+     * @static
+     * @param {ICStoreBrowse_GetContentHubConfig_Response} message CStoreBrowse_GetContentHubConfig_Response message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    CStoreBrowse_GetContentHubConfig_Response.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.hubconfigs != null && message.hubconfigs.length)
+            for (let i = 0; i < message.hubconfigs.length; ++i)
+                $root.CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig.encode(message.hubconfigs[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Decodes a CStoreBrowse_GetContentHubConfig_Response message from the specified reader or buffer.
+     * @function decode
+     * @memberof CStoreBrowse_GetContentHubConfig_Response
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {CStoreBrowse_GetContentHubConfig_Response} CStoreBrowse_GetContentHubConfig_Response
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    CStoreBrowse_GetContentHubConfig_Response.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CStoreBrowse_GetContentHubConfig_Response();
+        while (reader.pos < end) {
+            let tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message.hubconfigs && message.hubconfigs.length))
+                        message.hubconfigs = [];
+                    message.hubconfigs.push($root.CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig.decode(reader, reader.uint32()));
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Gets the default type url for CStoreBrowse_GetContentHubConfig_Response
+     * @function getTypeUrl
+     * @memberof CStoreBrowse_GetContentHubConfig_Response
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    CStoreBrowse_GetContentHubConfig_Response.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/CStoreBrowse_GetContentHubConfig_Response";
+    };
+
+    return CStoreBrowse_GetContentHubConfig_Response;
+})();
+
+export const CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig = $root.CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig = (() => {
+
+    /**
+     * Properties of a CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig.
+     * @exports ICStoreBrowse_GetContentHubConfig_Response_ContentHubConfig
+     * @interface ICStoreBrowse_GetContentHubConfig_Response_ContentHubConfig
+     * @property {number|null} [hubcategoryid] CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig hubcategoryid
+     * @property {string|null} [type] CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig type
+     * @property {string|null} [handle] CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig handle
+     * @property {string|null} [displayName] CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig displayName
+     * @property {string|null} [urlPath] CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig urlPath
+     */
+
+    /**
+     * Constructs a new CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig.
+     * @exports CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig
+     * @classdesc Represents a CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig.
+     * @implements ICStoreBrowse_GetContentHubConfig_Response_ContentHubConfig
+     * @constructor
+     * @param {ICStoreBrowse_GetContentHubConfig_Response_ContentHubConfig=} [properties] Properties to set
+     */
+    function CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig(properties) {
+        if (properties)
+            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig hubcategoryid.
+     * @member {number} hubcategoryid
+     * @memberof CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig
+     * @instance
+     */
+    CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig.prototype.hubcategoryid = 0;
+
+    /**
+     * CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig type.
+     * @member {string} type
+     * @memberof CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig
+     * @instance
+     */
+    CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig.prototype.type = "";
+
+    /**
+     * CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig handle.
+     * @member {string} handle
+     * @memberof CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig
+     * @instance
+     */
+    CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig.prototype.handle = "";
+
+    /**
+     * CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig displayName.
+     * @member {string} displayName
+     * @memberof CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig
+     * @instance
+     */
+    CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig.prototype.displayName = "";
+
+    /**
+     * CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig urlPath.
+     * @member {string} urlPath
+     * @memberof CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig
+     * @instance
+     */
+    CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig.prototype.urlPath = "";
+
+    /**
+     * Encodes the specified CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig message. Does not implicitly {@link CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig.verify|verify} messages.
+     * @function encode
+     * @memberof CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig
+     * @static
+     * @param {ICStoreBrowse_GetContentHubConfig_Response_ContentHubConfig} message CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.hubcategoryid != null && Object.hasOwnProperty.call(message, "hubcategoryid"))
+            writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.hubcategoryid);
+        if (message.type != null && Object.hasOwnProperty.call(message, "type"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.type);
+        if (message.handle != null && Object.hasOwnProperty.call(message, "handle"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.handle);
+        if (message.displayName != null && Object.hasOwnProperty.call(message, "displayName"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.displayName);
+        if (message.urlPath != null && Object.hasOwnProperty.call(message, "urlPath"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.urlPath);
+        return writer;
+    };
+
+    /**
+     * Decodes a CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig message from the specified reader or buffer.
+     * @function decode
+     * @memberof CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig} CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig();
+        while (reader.pos < end) {
+            let tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.hubcategoryid = reader.uint32();
+                    break;
+                }
+            case 2: {
+                    message.type = reader.string();
+                    break;
+                }
+            case 3: {
+                    message.handle = reader.string();
+                    break;
+                }
+            case 4: {
+                    message.displayName = reader.string();
+                    break;
+                }
+            case 5: {
+                    message.urlPath = reader.string();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Gets the default type url for CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig
+     * @function getTypeUrl
+     * @memberof CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig";
+    };
+
+    return CStoreBrowse_GetContentHubConfig_Response_ContentHubConfig;
+})();
+
 export const CStoreBrowse_GetDLCForApps_Request = $root.CStoreBrowse_GetDLCForApps_Request = (() => {
 
     /**
@@ -2307,6 +2662,39 @@ export const StoreBrowse = $root.StoreBrowse = (() => {
     (StoreBrowse.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = StoreBrowse;
 
     /**
+     * Callback as used by {@link StoreBrowse#getContentHubConfig}.
+     * @memberof StoreBrowse
+     * @typedef GetContentHubConfigCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {CStoreBrowse_GetContentHubConfig_Response} [response] CStoreBrowse_GetContentHubConfig_Response
+     */
+
+    /**
+     * Calls GetContentHubConfig.
+     * @function getContentHubConfig
+     * @memberof StoreBrowse
+     * @instance
+     * @param {ICStoreBrowse_GetContentHubConfig_Request} request CStoreBrowse_GetContentHubConfig_Request message or plain object
+     * @param {StoreBrowse.GetContentHubConfigCallback} callback Node-style callback called with the error, if any, and CStoreBrowse_GetContentHubConfig_Response
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperty(StoreBrowse.prototype.getContentHubConfig = function getContentHubConfig(request, callback) {
+        return this.rpcCall(getContentHubConfig, $root.CStoreBrowse_GetContentHubConfig_Request, $root.CStoreBrowse_GetContentHubConfig_Response, request, callback);
+    }, "name", { value: "GetContentHubConfig" });
+
+    /**
+     * Calls GetContentHubConfig.
+     * @function getContentHubConfig
+     * @memberof StoreBrowse
+     * @instance
+     * @param {ICStoreBrowse_GetContentHubConfig_Request} request CStoreBrowse_GetContentHubConfig_Request message or plain object
+     * @returns {Promise<CStoreBrowse_GetContentHubConfig_Response>} Promise
+     * @variation 2
+     */
+
+    /**
      * Callback as used by {@link StoreBrowse#getDLCForApps}.
      * @memberof StoreBrowse
      * @typedef GetDLCForAppsCallback
@@ -2698,6 +3086,7 @@ export const CAppOverview = $root.CAppOverview = (() => {
      * @property {number|null} [localCacheVersion] CAppOverview localCacheVersion
      * @property {number|null} [numberOfCopies] CAppOverview numberOfCopies
      * @property {number|null} [steamHwCompatCategoryPacked] CAppOverview steamHwCompatCategoryPacked
+     * @property {string|null} [albumCoverHash] CAppOverview albumCoverHash
      */
 
     /**
@@ -3152,6 +3541,14 @@ export const CAppOverview = $root.CAppOverview = (() => {
     CAppOverview.prototype.steamHwCompatCategoryPacked = 0;
 
     /**
+     * CAppOverview albumCoverHash.
+     * @member {string} albumCoverHash
+     * @memberof CAppOverview
+     * @instance
+     */
+    CAppOverview.prototype.albumCoverHash = "";
+
+    /**
      * Encodes the specified CAppOverview message. Does not implicitly {@link CAppOverview.verify|verify} messages.
      * @function encode
      * @memberof CAppOverview
@@ -3275,6 +3672,8 @@ export const CAppOverview = $root.CAppOverview = (() => {
             writer.uint32(/* id 72, wireType 0 =*/576).uint32(message.numberOfCopies);
         if (message.steamHwCompatCategoryPacked != null && Object.hasOwnProperty.call(message, "steamHwCompatCategoryPacked"))
             writer.uint32(/* id 73, wireType 0 =*/584).uint32(message.steamHwCompatCategoryPacked);
+        if (message.albumCoverHash != null && Object.hasOwnProperty.call(message, "albumCoverHash"))
+            writer.uint32(/* id 74, wireType 2 =*/594).string(message.albumCoverHash);
         return writer;
     };
 
@@ -3528,6 +3927,10 @@ export const CAppOverview = $root.CAppOverview = (() => {
                 }
             case 73: {
                     message.steamHwCompatCategoryPacked = reader.uint32();
+                    break;
+                }
+            case 74: {
+                    message.albumCoverHash = reader.string();
                     break;
                 }
             default:
@@ -4668,275 +5071,6 @@ export const CartGiftMessage = $root.CartGiftMessage = (() => {
     return CartGiftMessage;
 })();
 
-export const CAuthentication_NotifyRiskQuizResults_Notification = $root.CAuthentication_NotifyRiskQuizResults_Notification = (() => {
-
-    /**
-     * Properties of a CAuthentication_NotifyRiskQuizResults_Notification.
-     * @exports ICAuthentication_NotifyRiskQuizResults_Notification
-     * @interface ICAuthentication_NotifyRiskQuizResults_Notification
-     * @property {number|Long|null} [clientId] CAuthentication_NotifyRiskQuizResults_Notification clientId
-     * @property {ICAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults|null} [results] CAuthentication_NotifyRiskQuizResults_Notification results
-     * @property {string|null} [selectedAction] CAuthentication_NotifyRiskQuizResults_Notification selectedAction
-     * @property {boolean|null} [didConfirmLogin] CAuthentication_NotifyRiskQuizResults_Notification didConfirmLogin
-     */
-
-    /**
-     * Constructs a new CAuthentication_NotifyRiskQuizResults_Notification.
-     * @exports CAuthentication_NotifyRiskQuizResults_Notification
-     * @classdesc Represents a CAuthentication_NotifyRiskQuizResults_Notification.
-     * @implements ICAuthentication_NotifyRiskQuizResults_Notification
-     * @constructor
-     * @param {ICAuthentication_NotifyRiskQuizResults_Notification=} [properties] Properties to set
-     */
-    function CAuthentication_NotifyRiskQuizResults_Notification(properties) {
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CAuthentication_NotifyRiskQuizResults_Notification clientId.
-     * @member {number|Long} clientId
-     * @memberof CAuthentication_NotifyRiskQuizResults_Notification
-     * @instance
-     */
-    CAuthentication_NotifyRiskQuizResults_Notification.prototype.clientId = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
-
-    /**
-     * CAuthentication_NotifyRiskQuizResults_Notification results.
-     * @member {ICAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults|null|undefined} results
-     * @memberof CAuthentication_NotifyRiskQuizResults_Notification
-     * @instance
-     */
-    CAuthentication_NotifyRiskQuizResults_Notification.prototype.results = null;
-
-    /**
-     * CAuthentication_NotifyRiskQuizResults_Notification selectedAction.
-     * @member {string} selectedAction
-     * @memberof CAuthentication_NotifyRiskQuizResults_Notification
-     * @instance
-     */
-    CAuthentication_NotifyRiskQuizResults_Notification.prototype.selectedAction = "";
-
-    /**
-     * CAuthentication_NotifyRiskQuizResults_Notification didConfirmLogin.
-     * @member {boolean} didConfirmLogin
-     * @memberof CAuthentication_NotifyRiskQuizResults_Notification
-     * @instance
-     */
-    CAuthentication_NotifyRiskQuizResults_Notification.prototype.didConfirmLogin = false;
-
-    /**
-     * Encodes the specified CAuthentication_NotifyRiskQuizResults_Notification message. Does not implicitly {@link CAuthentication_NotifyRiskQuizResults_Notification.verify|verify} messages.
-     * @function encode
-     * @memberof CAuthentication_NotifyRiskQuizResults_Notification
-     * @static
-     * @param {ICAuthentication_NotifyRiskQuizResults_Notification} message CAuthentication_NotifyRiskQuizResults_Notification message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CAuthentication_NotifyRiskQuizResults_Notification.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.clientId != null && Object.hasOwnProperty.call(message, "clientId"))
-            writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.clientId);
-        if (message.results != null && Object.hasOwnProperty.call(message, "results"))
-            $root.CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults.encode(message.results, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-        if (message.selectedAction != null && Object.hasOwnProperty.call(message, "selectedAction"))
-            writer.uint32(/* id 3, wireType 2 =*/26).string(message.selectedAction);
-        if (message.didConfirmLogin != null && Object.hasOwnProperty.call(message, "didConfirmLogin"))
-            writer.uint32(/* id 4, wireType 0 =*/32).bool(message.didConfirmLogin);
-        return writer;
-    };
-
-    /**
-     * Decodes a CAuthentication_NotifyRiskQuizResults_Notification message from the specified reader or buffer.
-     * @function decode
-     * @memberof CAuthentication_NotifyRiskQuizResults_Notification
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CAuthentication_NotifyRiskQuizResults_Notification} CAuthentication_NotifyRiskQuizResults_Notification
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CAuthentication_NotifyRiskQuizResults_Notification.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CAuthentication_NotifyRiskQuizResults_Notification();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.clientId = reader.uint64();
-                    break;
-                }
-            case 2: {
-                    message.results = $root.CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults.decode(reader, reader.uint32());
-                    break;
-                }
-            case 3: {
-                    message.selectedAction = reader.string();
-                    break;
-                }
-            case 4: {
-                    message.didConfirmLogin = reader.bool();
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CAuthentication_NotifyRiskQuizResults_Notification
-     * @function getTypeUrl
-     * @memberof CAuthentication_NotifyRiskQuizResults_Notification
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CAuthentication_NotifyRiskQuizResults_Notification.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CAuthentication_NotifyRiskQuizResults_Notification";
-    };
-
-    return CAuthentication_NotifyRiskQuizResults_Notification;
-})();
-
-export const CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults = $root.CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults = (() => {
-
-    /**
-     * Properties of a CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults.
-     * @exports ICAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults
-     * @interface ICAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults
-     * @property {boolean|null} [platform] CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults platform
-     * @property {boolean|null} [location] CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults location
-     * @property {boolean|null} [action] CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults action
-     */
-
-    /**
-     * Constructs a new CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults.
-     * @exports CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults
-     * @classdesc Represents a CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults.
-     * @implements ICAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults
-     * @constructor
-     * @param {ICAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults=} [properties] Properties to set
-     */
-    function CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults(properties) {
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults platform.
-     * @member {boolean} platform
-     * @memberof CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults
-     * @instance
-     */
-    CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults.prototype.platform = false;
-
-    /**
-     * CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults location.
-     * @member {boolean} location
-     * @memberof CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults
-     * @instance
-     */
-    CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults.prototype.location = false;
-
-    /**
-     * CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults action.
-     * @member {boolean} action
-     * @memberof CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults
-     * @instance
-     */
-    CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults.prototype.action = false;
-
-    /**
-     * Encodes the specified CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults message. Does not implicitly {@link CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults.verify|verify} messages.
-     * @function encode
-     * @memberof CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults
-     * @static
-     * @param {ICAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults} message CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.platform != null && Object.hasOwnProperty.call(message, "platform"))
-            writer.uint32(/* id 1, wireType 0 =*/8).bool(message.platform);
-        if (message.location != null && Object.hasOwnProperty.call(message, "location"))
-            writer.uint32(/* id 2, wireType 0 =*/16).bool(message.location);
-        if (message.action != null && Object.hasOwnProperty.call(message, "action"))
-            writer.uint32(/* id 3, wireType 0 =*/24).bool(message.action);
-        return writer;
-    };
-
-    /**
-     * Decodes a CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults message from the specified reader or buffer.
-     * @function decode
-     * @memberof CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults} CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.platform = reader.bool();
-                    break;
-                }
-            case 2: {
-                    message.location = reader.bool();
-                    break;
-                }
-            case 3: {
-                    message.action = reader.bool();
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults
-     * @function getTypeUrl
-     * @memberof CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults";
-    };
-
-    return CAuthentication_NotifyRiskQuizResults_Notification_RiskQuizResults;
-})();
-
 export const CBilling_Address = $root.CBilling_Address = (() => {
 
     /**
@@ -5167,215 +5301,6 @@ export const CBilling_Address = $root.CBilling_Address = (() => {
     };
 
     return CBilling_Address;
-})();
-
-export const CBroadcast_NotifyBroadcastSessionHeartbeat_Notification = $root.CBroadcast_NotifyBroadcastSessionHeartbeat_Notification = (() => {
-
-    /**
-     * Properties of a CBroadcast_NotifyBroadcastSessionHeartbeat_Notification.
-     * @exports ICBroadcast_NotifyBroadcastSessionHeartbeat_Notification
-     * @interface ICBroadcast_NotifyBroadcastSessionHeartbeat_Notification
-     * @property {number|Long|null} [broadcastId] CBroadcast_NotifyBroadcastSessionHeartbeat_Notification broadcastId
-     */
-
-    /**
-     * Constructs a new CBroadcast_NotifyBroadcastSessionHeartbeat_Notification.
-     * @exports CBroadcast_NotifyBroadcastSessionHeartbeat_Notification
-     * @classdesc Represents a CBroadcast_NotifyBroadcastSessionHeartbeat_Notification.
-     * @implements ICBroadcast_NotifyBroadcastSessionHeartbeat_Notification
-     * @constructor
-     * @param {ICBroadcast_NotifyBroadcastSessionHeartbeat_Notification=} [properties] Properties to set
-     */
-    function CBroadcast_NotifyBroadcastSessionHeartbeat_Notification(properties) {
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CBroadcast_NotifyBroadcastSessionHeartbeat_Notification broadcastId.
-     * @member {number|Long} broadcastId
-     * @memberof CBroadcast_NotifyBroadcastSessionHeartbeat_Notification
-     * @instance
-     */
-    CBroadcast_NotifyBroadcastSessionHeartbeat_Notification.prototype.broadcastId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-    /**
-     * Encodes the specified CBroadcast_NotifyBroadcastSessionHeartbeat_Notification message. Does not implicitly {@link CBroadcast_NotifyBroadcastSessionHeartbeat_Notification.verify|verify} messages.
-     * @function encode
-     * @memberof CBroadcast_NotifyBroadcastSessionHeartbeat_Notification
-     * @static
-     * @param {ICBroadcast_NotifyBroadcastSessionHeartbeat_Notification} message CBroadcast_NotifyBroadcastSessionHeartbeat_Notification message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CBroadcast_NotifyBroadcastSessionHeartbeat_Notification.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.broadcastId != null && Object.hasOwnProperty.call(message, "broadcastId"))
-            writer.uint32(/* id 1, wireType 1 =*/9).fixed64(message.broadcastId);
-        return writer;
-    };
-
-    /**
-     * Decodes a CBroadcast_NotifyBroadcastSessionHeartbeat_Notification message from the specified reader or buffer.
-     * @function decode
-     * @memberof CBroadcast_NotifyBroadcastSessionHeartbeat_Notification
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CBroadcast_NotifyBroadcastSessionHeartbeat_Notification} CBroadcast_NotifyBroadcastSessionHeartbeat_Notification
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CBroadcast_NotifyBroadcastSessionHeartbeat_Notification.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CBroadcast_NotifyBroadcastSessionHeartbeat_Notification();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.broadcastId = reader.fixed64();
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CBroadcast_NotifyBroadcastSessionHeartbeat_Notification
-     * @function getTypeUrl
-     * @memberof CBroadcast_NotifyBroadcastSessionHeartbeat_Notification
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CBroadcast_NotifyBroadcastSessionHeartbeat_Notification.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CBroadcast_NotifyBroadcastSessionHeartbeat_Notification";
-    };
-
-    return CBroadcast_NotifyBroadcastSessionHeartbeat_Notification;
-})();
-
-export const CBroadcast_NotifyBroadcastUploadStop_Notification = $root.CBroadcast_NotifyBroadcastUploadStop_Notification = (() => {
-
-    /**
-     * Properties of a CBroadcast_NotifyBroadcastUploadStop_Notification.
-     * @exports ICBroadcast_NotifyBroadcastUploadStop_Notification
-     * @interface ICBroadcast_NotifyBroadcastUploadStop_Notification
-     * @property {number|Long|null} [broadcastUploadId] CBroadcast_NotifyBroadcastUploadStop_Notification broadcastUploadId
-     * @property {number|null} [uploadResult] CBroadcast_NotifyBroadcastUploadStop_Notification uploadResult
-     */
-
-    /**
-     * Constructs a new CBroadcast_NotifyBroadcastUploadStop_Notification.
-     * @exports CBroadcast_NotifyBroadcastUploadStop_Notification
-     * @classdesc Represents a CBroadcast_NotifyBroadcastUploadStop_Notification.
-     * @implements ICBroadcast_NotifyBroadcastUploadStop_Notification
-     * @constructor
-     * @param {ICBroadcast_NotifyBroadcastUploadStop_Notification=} [properties] Properties to set
-     */
-    function CBroadcast_NotifyBroadcastUploadStop_Notification(properties) {
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CBroadcast_NotifyBroadcastUploadStop_Notification broadcastUploadId.
-     * @member {number|Long} broadcastUploadId
-     * @memberof CBroadcast_NotifyBroadcastUploadStop_Notification
-     * @instance
-     */
-    CBroadcast_NotifyBroadcastUploadStop_Notification.prototype.broadcastUploadId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-    /**
-     * CBroadcast_NotifyBroadcastUploadStop_Notification uploadResult.
-     * @member {number} uploadResult
-     * @memberof CBroadcast_NotifyBroadcastUploadStop_Notification
-     * @instance
-     */
-    CBroadcast_NotifyBroadcastUploadStop_Notification.prototype.uploadResult = 0;
-
-    /**
-     * Encodes the specified CBroadcast_NotifyBroadcastUploadStop_Notification message. Does not implicitly {@link CBroadcast_NotifyBroadcastUploadStop_Notification.verify|verify} messages.
-     * @function encode
-     * @memberof CBroadcast_NotifyBroadcastUploadStop_Notification
-     * @static
-     * @param {ICBroadcast_NotifyBroadcastUploadStop_Notification} message CBroadcast_NotifyBroadcastUploadStop_Notification message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CBroadcast_NotifyBroadcastUploadStop_Notification.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.broadcastUploadId != null && Object.hasOwnProperty.call(message, "broadcastUploadId"))
-            writer.uint32(/* id 1, wireType 1 =*/9).fixed64(message.broadcastUploadId);
-        if (message.uploadResult != null && Object.hasOwnProperty.call(message, "uploadResult"))
-            writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.uploadResult);
-        return writer;
-    };
-
-    /**
-     * Decodes a CBroadcast_NotifyBroadcastUploadStop_Notification message from the specified reader or buffer.
-     * @function decode
-     * @memberof CBroadcast_NotifyBroadcastUploadStop_Notification
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CBroadcast_NotifyBroadcastUploadStop_Notification} CBroadcast_NotifyBroadcastUploadStop_Notification
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CBroadcast_NotifyBroadcastUploadStop_Notification.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CBroadcast_NotifyBroadcastUploadStop_Notification();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.broadcastUploadId = reader.fixed64();
-                    break;
-                }
-            case 2: {
-                    message.uploadResult = reader.uint32();
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CBroadcast_NotifyBroadcastUploadStop_Notification
-     * @function getTypeUrl
-     * @memberof CBroadcast_NotifyBroadcastUploadStop_Notification
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CBroadcast_NotifyBroadcastUploadStop_Notification.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CBroadcast_NotifyBroadcastUploadStop_Notification";
-    };
-
-    return CBroadcast_NotifyBroadcastUploadStop_Notification;
 })();
 
 export const CChatPartyBeacon = $root.CChatPartyBeacon = (() => {
@@ -10036,6 +9961,339 @@ export const CClientMetrics_EndGameRecording_Notification = $root.CClientMetrics
     return CClientMetrics_EndGameRecording_Notification;
 })();
 
+export const CClientMetrics_GamePerformance_Notification = $root.CClientMetrics_GamePerformance_Notification = (() => {
+
+    /**
+     * Properties of a CClientMetrics_GamePerformance_Notification.
+     * @exports ICClientMetrics_GamePerformance_Notification
+     * @interface ICClientMetrics_GamePerformance_Notification
+     * @property {Array.<ICClientMetrics_GamePerformance_Notification_FrameRateReport>|null} [reports] CClientMetrics_GamePerformance_Notification reports
+     */
+
+    /**
+     * Constructs a new CClientMetrics_GamePerformance_Notification.
+     * @exports CClientMetrics_GamePerformance_Notification
+     * @classdesc Represents a CClientMetrics_GamePerformance_Notification.
+     * @implements ICClientMetrics_GamePerformance_Notification
+     * @constructor
+     * @param {ICClientMetrics_GamePerformance_Notification=} [properties] Properties to set
+     */
+    function CClientMetrics_GamePerformance_Notification(properties) {
+        this.reports = [];
+        if (properties)
+            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * CClientMetrics_GamePerformance_Notification reports.
+     * @member {Array.<ICClientMetrics_GamePerformance_Notification_FrameRateReport>} reports
+     * @memberof CClientMetrics_GamePerformance_Notification
+     * @instance
+     */
+    CClientMetrics_GamePerformance_Notification.prototype.reports = $util.emptyArray;
+
+    /**
+     * Encodes the specified CClientMetrics_GamePerformance_Notification message. Does not implicitly {@link CClientMetrics_GamePerformance_Notification.verify|verify} messages.
+     * @function encode
+     * @memberof CClientMetrics_GamePerformance_Notification
+     * @static
+     * @param {ICClientMetrics_GamePerformance_Notification} message CClientMetrics_GamePerformance_Notification message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    CClientMetrics_GamePerformance_Notification.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.reports != null && message.reports.length)
+            for (let i = 0; i < message.reports.length; ++i)
+                $root.CClientMetrics_GamePerformance_Notification_FrameRateReport.encode(message.reports[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Decodes a CClientMetrics_GamePerformance_Notification message from the specified reader or buffer.
+     * @function decode
+     * @memberof CClientMetrics_GamePerformance_Notification
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {CClientMetrics_GamePerformance_Notification} CClientMetrics_GamePerformance_Notification
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    CClientMetrics_GamePerformance_Notification.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CClientMetrics_GamePerformance_Notification();
+        while (reader.pos < end) {
+            let tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message.reports && message.reports.length))
+                        message.reports = [];
+                    message.reports.push($root.CClientMetrics_GamePerformance_Notification_FrameRateReport.decode(reader, reader.uint32()));
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Gets the default type url for CClientMetrics_GamePerformance_Notification
+     * @function getTypeUrl
+     * @memberof CClientMetrics_GamePerformance_Notification
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    CClientMetrics_GamePerformance_Notification.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/CClientMetrics_GamePerformance_Notification";
+    };
+
+    return CClientMetrics_GamePerformance_Notification;
+})();
+
+export const CClientMetrics_GamePerformance_Notification_FrameRateReport = $root.CClientMetrics_GamePerformance_Notification_FrameRateReport = (() => {
+
+    /**
+     * Properties of a CClientMetrics_GamePerformance_Notification_FrameRateReport.
+     * @exports ICClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @interface ICClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @property {number|Long|null} [gameid] CClientMetrics_GamePerformance_Notification_FrameRateReport gameid
+     * @property {number|null} [frameRate] CClientMetrics_GamePerformance_Notification_FrameRateReport frameRate
+     * @property {string|null} [manufacturer] CClientMetrics_GamePerformance_Notification_FrameRateReport manufacturer
+     * @property {string|null} [model] CClientMetrics_GamePerformance_Notification_FrameRateReport model
+     * @property {string|null} [dxVideoCard] CClientMetrics_GamePerformance_Notification_FrameRateReport dxVideoCard
+     * @property {number|null} [dxVendorid] CClientMetrics_GamePerformance_Notification_FrameRateReport dxVendorid
+     * @property {number|null} [dxDeviceid] CClientMetrics_GamePerformance_Notification_FrameRateReport dxDeviceid
+     * @property {number|null} [numGpu] CClientMetrics_GamePerformance_Notification_FrameRateReport numGpu
+     * @property {number|Long|null} [systemRam] CClientMetrics_GamePerformance_Notification_FrameRateReport systemRam
+     * @property {number|null} [sessionSeconds] CClientMetrics_GamePerformance_Notification_FrameRateReport sessionSeconds
+     */
+
+    /**
+     * Constructs a new CClientMetrics_GamePerformance_Notification_FrameRateReport.
+     * @exports CClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @classdesc Represents a CClientMetrics_GamePerformance_Notification_FrameRateReport.
+     * @implements ICClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @constructor
+     * @param {ICClientMetrics_GamePerformance_Notification_FrameRateReport=} [properties] Properties to set
+     */
+    function CClientMetrics_GamePerformance_Notification_FrameRateReport(properties) {
+        if (properties)
+            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * CClientMetrics_GamePerformance_Notification_FrameRateReport gameid.
+     * @member {number|Long} gameid
+     * @memberof CClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @instance
+     */
+    CClientMetrics_GamePerformance_Notification_FrameRateReport.prototype.gameid = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+    /**
+     * CClientMetrics_GamePerformance_Notification_FrameRateReport frameRate.
+     * @member {number} frameRate
+     * @memberof CClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @instance
+     */
+    CClientMetrics_GamePerformance_Notification_FrameRateReport.prototype.frameRate = 0;
+
+    /**
+     * CClientMetrics_GamePerformance_Notification_FrameRateReport manufacturer.
+     * @member {string} manufacturer
+     * @memberof CClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @instance
+     */
+    CClientMetrics_GamePerformance_Notification_FrameRateReport.prototype.manufacturer = "";
+
+    /**
+     * CClientMetrics_GamePerformance_Notification_FrameRateReport model.
+     * @member {string} model
+     * @memberof CClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @instance
+     */
+    CClientMetrics_GamePerformance_Notification_FrameRateReport.prototype.model = "";
+
+    /**
+     * CClientMetrics_GamePerformance_Notification_FrameRateReport dxVideoCard.
+     * @member {string} dxVideoCard
+     * @memberof CClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @instance
+     */
+    CClientMetrics_GamePerformance_Notification_FrameRateReport.prototype.dxVideoCard = "";
+
+    /**
+     * CClientMetrics_GamePerformance_Notification_FrameRateReport dxVendorid.
+     * @member {number} dxVendorid
+     * @memberof CClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @instance
+     */
+    CClientMetrics_GamePerformance_Notification_FrameRateReport.prototype.dxVendorid = 0;
+
+    /**
+     * CClientMetrics_GamePerformance_Notification_FrameRateReport dxDeviceid.
+     * @member {number} dxDeviceid
+     * @memberof CClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @instance
+     */
+    CClientMetrics_GamePerformance_Notification_FrameRateReport.prototype.dxDeviceid = 0;
+
+    /**
+     * CClientMetrics_GamePerformance_Notification_FrameRateReport numGpu.
+     * @member {number} numGpu
+     * @memberof CClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @instance
+     */
+    CClientMetrics_GamePerformance_Notification_FrameRateReport.prototype.numGpu = 0;
+
+    /**
+     * CClientMetrics_GamePerformance_Notification_FrameRateReport systemRam.
+     * @member {number|Long} systemRam
+     * @memberof CClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @instance
+     */
+    CClientMetrics_GamePerformance_Notification_FrameRateReport.prototype.systemRam = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+
+    /**
+     * CClientMetrics_GamePerformance_Notification_FrameRateReport sessionSeconds.
+     * @member {number} sessionSeconds
+     * @memberof CClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @instance
+     */
+    CClientMetrics_GamePerformance_Notification_FrameRateReport.prototype.sessionSeconds = 0;
+
+    /**
+     * Encodes the specified CClientMetrics_GamePerformance_Notification_FrameRateReport message. Does not implicitly {@link CClientMetrics_GamePerformance_Notification_FrameRateReport.verify|verify} messages.
+     * @function encode
+     * @memberof CClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @static
+     * @param {ICClientMetrics_GamePerformance_Notification_FrameRateReport} message CClientMetrics_GamePerformance_Notification_FrameRateReport message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    CClientMetrics_GamePerformance_Notification_FrameRateReport.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.gameid != null && Object.hasOwnProperty.call(message, "gameid"))
+            writer.uint32(/* id 1, wireType 1 =*/9).fixed64(message.gameid);
+        if (message.frameRate != null && Object.hasOwnProperty.call(message, "frameRate"))
+            writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.frameRate);
+        if (message.manufacturer != null && Object.hasOwnProperty.call(message, "manufacturer"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.manufacturer);
+        if (message.model != null && Object.hasOwnProperty.call(message, "model"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.model);
+        if (message.dxVideoCard != null && Object.hasOwnProperty.call(message, "dxVideoCard"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.dxVideoCard);
+        if (message.dxVendorid != null && Object.hasOwnProperty.call(message, "dxVendorid"))
+            writer.uint32(/* id 6, wireType 0 =*/48).int32(message.dxVendorid);
+        if (message.dxDeviceid != null && Object.hasOwnProperty.call(message, "dxDeviceid"))
+            writer.uint32(/* id 7, wireType 0 =*/56).int32(message.dxDeviceid);
+        if (message.numGpu != null && Object.hasOwnProperty.call(message, "numGpu"))
+            writer.uint32(/* id 8, wireType 0 =*/64).uint32(message.numGpu);
+        if (message.systemRam != null && Object.hasOwnProperty.call(message, "systemRam"))
+            writer.uint32(/* id 9, wireType 0 =*/72).uint64(message.systemRam);
+        if (message.sessionSeconds != null && Object.hasOwnProperty.call(message, "sessionSeconds"))
+            writer.uint32(/* id 10, wireType 0 =*/80).int32(message.sessionSeconds);
+        return writer;
+    };
+
+    /**
+     * Decodes a CClientMetrics_GamePerformance_Notification_FrameRateReport message from the specified reader or buffer.
+     * @function decode
+     * @memberof CClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {CClientMetrics_GamePerformance_Notification_FrameRateReport} CClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    CClientMetrics_GamePerformance_Notification_FrameRateReport.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CClientMetrics_GamePerformance_Notification_FrameRateReport();
+        while (reader.pos < end) {
+            let tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.gameid = reader.fixed64();
+                    break;
+                }
+            case 2: {
+                    message.frameRate = reader.uint32();
+                    break;
+                }
+            case 3: {
+                    message.manufacturer = reader.string();
+                    break;
+                }
+            case 4: {
+                    message.model = reader.string();
+                    break;
+                }
+            case 5: {
+                    message.dxVideoCard = reader.string();
+                    break;
+                }
+            case 6: {
+                    message.dxVendorid = reader.int32();
+                    break;
+                }
+            case 7: {
+                    message.dxDeviceid = reader.int32();
+                    break;
+                }
+            case 8: {
+                    message.numGpu = reader.uint32();
+                    break;
+                }
+            case 9: {
+                    message.systemRam = reader.uint64();
+                    break;
+                }
+            case 10: {
+                    message.sessionSeconds = reader.int32();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Gets the default type url for CClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @function getTypeUrl
+     * @memberof CClientMetrics_GamePerformance_Notification_FrameRateReport
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    CClientMetrics_GamePerformance_Notification_FrameRateReport.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/CClientMetrics_GamePerformance_Notification_FrameRateReport";
+    };
+
+    return CClientMetrics_GamePerformance_Notification_FrameRateReport;
+})();
+
 export const CClientMetrics_IPv6Connectivity_Notification = $root.CClientMetrics_IPv6Connectivity_Notification = (() => {
 
     /**
@@ -10277,747 +10535,6 @@ export const CClientMetrics_IPv6Connectivity_Result = $root.CClientMetrics_IPv6C
     };
 
     return CClientMetrics_IPv6Connectivity_Result;
-})();
-
-export const CClientMetrics_ReportClientArgs_Notification = $root.CClientMetrics_ReportClientArgs_Notification = (() => {
-
-    /**
-     * Properties of a CClientMetrics_ReportClientArgs_Notification.
-     * @exports ICClientMetrics_ReportClientArgs_Notification
-     * @interface ICClientMetrics_ReportClientArgs_Notification
-     * @property {Array.<string>|null} [clientArgs] CClientMetrics_ReportClientArgs_Notification clientArgs
-     * @property {boolean|null} [gpuWebviewRegkeyDisabled] CClientMetrics_ReportClientArgs_Notification gpuWebviewRegkeyDisabled
-     * @property {boolean|null} [suppressGpuChrome] CClientMetrics_ReportClientArgs_Notification suppressGpuChrome
-     * @property {boolean|null} [browserNotSupported] CClientMetrics_ReportClientArgs_Notification browserNotSupported
-     * @property {boolean|null} [hwAccelVideoRegkeyDisabled] CClientMetrics_ReportClientArgs_Notification hwAccelVideoRegkeyDisabled
-     * @property {boolean|null} [miniModeEnabled] CClientMetrics_ReportClientArgs_Notification miniModeEnabled
-     * @property {boolean|null} [fpsCounterEnabled] CClientMetrics_ReportClientArgs_Notification fpsCounterEnabled
-     * @property {boolean|null} [libraryLowBandwidthModeEnabled] CClientMetrics_ReportClientArgs_Notification libraryLowBandwidthModeEnabled
-     * @property {boolean|null} [libraryLowPerfModeEnabled] CClientMetrics_ReportClientArgs_Notification libraryLowPerfModeEnabled
-     * @property {number|null} [grMode] CClientMetrics_ReportClientArgs_Notification grMode
-     */
-
-    /**
-     * Constructs a new CClientMetrics_ReportClientArgs_Notification.
-     * @exports CClientMetrics_ReportClientArgs_Notification
-     * @classdesc Represents a CClientMetrics_ReportClientArgs_Notification.
-     * @implements ICClientMetrics_ReportClientArgs_Notification
-     * @constructor
-     * @param {ICClientMetrics_ReportClientArgs_Notification=} [properties] Properties to set
-     */
-    function CClientMetrics_ReportClientArgs_Notification(properties) {
-        this.clientArgs = [];
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CClientMetrics_ReportClientArgs_Notification clientArgs.
-     * @member {Array.<string>} clientArgs
-     * @memberof CClientMetrics_ReportClientArgs_Notification
-     * @instance
-     */
-    CClientMetrics_ReportClientArgs_Notification.prototype.clientArgs = $util.emptyArray;
-
-    /**
-     * CClientMetrics_ReportClientArgs_Notification gpuWebviewRegkeyDisabled.
-     * @member {boolean} gpuWebviewRegkeyDisabled
-     * @memberof CClientMetrics_ReportClientArgs_Notification
-     * @instance
-     */
-    CClientMetrics_ReportClientArgs_Notification.prototype.gpuWebviewRegkeyDisabled = false;
-
-    /**
-     * CClientMetrics_ReportClientArgs_Notification suppressGpuChrome.
-     * @member {boolean} suppressGpuChrome
-     * @memberof CClientMetrics_ReportClientArgs_Notification
-     * @instance
-     */
-    CClientMetrics_ReportClientArgs_Notification.prototype.suppressGpuChrome = false;
-
-    /**
-     * CClientMetrics_ReportClientArgs_Notification browserNotSupported.
-     * @member {boolean} browserNotSupported
-     * @memberof CClientMetrics_ReportClientArgs_Notification
-     * @instance
-     */
-    CClientMetrics_ReportClientArgs_Notification.prototype.browserNotSupported = false;
-
-    /**
-     * CClientMetrics_ReportClientArgs_Notification hwAccelVideoRegkeyDisabled.
-     * @member {boolean} hwAccelVideoRegkeyDisabled
-     * @memberof CClientMetrics_ReportClientArgs_Notification
-     * @instance
-     */
-    CClientMetrics_ReportClientArgs_Notification.prototype.hwAccelVideoRegkeyDisabled = false;
-
-    /**
-     * CClientMetrics_ReportClientArgs_Notification miniModeEnabled.
-     * @member {boolean} miniModeEnabled
-     * @memberof CClientMetrics_ReportClientArgs_Notification
-     * @instance
-     */
-    CClientMetrics_ReportClientArgs_Notification.prototype.miniModeEnabled = false;
-
-    /**
-     * CClientMetrics_ReportClientArgs_Notification fpsCounterEnabled.
-     * @member {boolean} fpsCounterEnabled
-     * @memberof CClientMetrics_ReportClientArgs_Notification
-     * @instance
-     */
-    CClientMetrics_ReportClientArgs_Notification.prototype.fpsCounterEnabled = false;
-
-    /**
-     * CClientMetrics_ReportClientArgs_Notification libraryLowBandwidthModeEnabled.
-     * @member {boolean} libraryLowBandwidthModeEnabled
-     * @memberof CClientMetrics_ReportClientArgs_Notification
-     * @instance
-     */
-    CClientMetrics_ReportClientArgs_Notification.prototype.libraryLowBandwidthModeEnabled = false;
-
-    /**
-     * CClientMetrics_ReportClientArgs_Notification libraryLowPerfModeEnabled.
-     * @member {boolean} libraryLowPerfModeEnabled
-     * @memberof CClientMetrics_ReportClientArgs_Notification
-     * @instance
-     */
-    CClientMetrics_ReportClientArgs_Notification.prototype.libraryLowPerfModeEnabled = false;
-
-    /**
-     * CClientMetrics_ReportClientArgs_Notification grMode.
-     * @member {number} grMode
-     * @memberof CClientMetrics_ReportClientArgs_Notification
-     * @instance
-     */
-    CClientMetrics_ReportClientArgs_Notification.prototype.grMode = 0;
-
-    /**
-     * Encodes the specified CClientMetrics_ReportClientArgs_Notification message. Does not implicitly {@link CClientMetrics_ReportClientArgs_Notification.verify|verify} messages.
-     * @function encode
-     * @memberof CClientMetrics_ReportClientArgs_Notification
-     * @static
-     * @param {ICClientMetrics_ReportClientArgs_Notification} message CClientMetrics_ReportClientArgs_Notification message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CClientMetrics_ReportClientArgs_Notification.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.clientArgs != null && message.clientArgs.length)
-            for (let i = 0; i < message.clientArgs.length; ++i)
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.clientArgs[i]);
-        if (message.gpuWebviewRegkeyDisabled != null && Object.hasOwnProperty.call(message, "gpuWebviewRegkeyDisabled"))
-            writer.uint32(/* id 2, wireType 0 =*/16).bool(message.gpuWebviewRegkeyDisabled);
-        if (message.suppressGpuChrome != null && Object.hasOwnProperty.call(message, "suppressGpuChrome"))
-            writer.uint32(/* id 3, wireType 0 =*/24).bool(message.suppressGpuChrome);
-        if (message.browserNotSupported != null && Object.hasOwnProperty.call(message, "browserNotSupported"))
-            writer.uint32(/* id 4, wireType 0 =*/32).bool(message.browserNotSupported);
-        if (message.hwAccelVideoRegkeyDisabled != null && Object.hasOwnProperty.call(message, "hwAccelVideoRegkeyDisabled"))
-            writer.uint32(/* id 5, wireType 0 =*/40).bool(message.hwAccelVideoRegkeyDisabled);
-        if (message.miniModeEnabled != null && Object.hasOwnProperty.call(message, "miniModeEnabled"))
-            writer.uint32(/* id 6, wireType 0 =*/48).bool(message.miniModeEnabled);
-        if (message.fpsCounterEnabled != null && Object.hasOwnProperty.call(message, "fpsCounterEnabled"))
-            writer.uint32(/* id 7, wireType 0 =*/56).bool(message.fpsCounterEnabled);
-        if (message.libraryLowBandwidthModeEnabled != null && Object.hasOwnProperty.call(message, "libraryLowBandwidthModeEnabled"))
-            writer.uint32(/* id 8, wireType 0 =*/64).bool(message.libraryLowBandwidthModeEnabled);
-        if (message.libraryLowPerfModeEnabled != null && Object.hasOwnProperty.call(message, "libraryLowPerfModeEnabled"))
-            writer.uint32(/* id 9, wireType 0 =*/72).bool(message.libraryLowPerfModeEnabled);
-        if (message.grMode != null && Object.hasOwnProperty.call(message, "grMode"))
-            writer.uint32(/* id 10, wireType 0 =*/80).int32(message.grMode);
-        return writer;
-    };
-
-    /**
-     * Decodes a CClientMetrics_ReportClientArgs_Notification message from the specified reader or buffer.
-     * @function decode
-     * @memberof CClientMetrics_ReportClientArgs_Notification
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CClientMetrics_ReportClientArgs_Notification} CClientMetrics_ReportClientArgs_Notification
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CClientMetrics_ReportClientArgs_Notification.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CClientMetrics_ReportClientArgs_Notification();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    if (!(message.clientArgs && message.clientArgs.length))
-                        message.clientArgs = [];
-                    message.clientArgs.push(reader.string());
-                    break;
-                }
-            case 2: {
-                    message.gpuWebviewRegkeyDisabled = reader.bool();
-                    break;
-                }
-            case 3: {
-                    message.suppressGpuChrome = reader.bool();
-                    break;
-                }
-            case 4: {
-                    message.browserNotSupported = reader.bool();
-                    break;
-                }
-            case 5: {
-                    message.hwAccelVideoRegkeyDisabled = reader.bool();
-                    break;
-                }
-            case 6: {
-                    message.miniModeEnabled = reader.bool();
-                    break;
-                }
-            case 7: {
-                    message.fpsCounterEnabled = reader.bool();
-                    break;
-                }
-            case 8: {
-                    message.libraryLowBandwidthModeEnabled = reader.bool();
-                    break;
-                }
-            case 9: {
-                    message.libraryLowPerfModeEnabled = reader.bool();
-                    break;
-                }
-            case 10: {
-                    message.grMode = reader.int32();
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CClientMetrics_ReportClientArgs_Notification
-     * @function getTypeUrl
-     * @memberof CClientMetrics_ReportClientArgs_Notification
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CClientMetrics_ReportClientArgs_Notification.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CClientMetrics_ReportClientArgs_Notification";
-    };
-
-    return CClientMetrics_ReportClientArgs_Notification;
-})();
-
-export const CClientMetrics_ReportReactUsage_Notification = $root.CClientMetrics_ReportReactUsage_Notification = (() => {
-
-    /**
-     * Properties of a CClientMetrics_ReportReactUsage_Notification.
-     * @exports ICClientMetrics_ReportReactUsage_Notification
-     * @interface ICClientMetrics_ReportReactUsage_Notification
-     * @property {string|null} [product] CClientMetrics_ReportReactUsage_Notification product
-     * @property {string|null} [version] CClientMetrics_ReportReactUsage_Notification version
-     * @property {Array.<ICClientMetrics_ReportReactUsage_Notification_RouteData>|null} [routes] CClientMetrics_ReportReactUsage_Notification routes
-     * @property {Array.<ICClientMetrics_ReportReactUsage_Notification_ComponentData>|null} [components] CClientMetrics_ReportReactUsage_Notification components
-     * @property {Array.<ICClientMetrics_ReportReactUsage_Notification_ActionData>|null} [actions] CClientMetrics_ReportReactUsage_Notification actions
-     */
-
-    /**
-     * Constructs a new CClientMetrics_ReportReactUsage_Notification.
-     * @exports CClientMetrics_ReportReactUsage_Notification
-     * @classdesc Represents a CClientMetrics_ReportReactUsage_Notification.
-     * @implements ICClientMetrics_ReportReactUsage_Notification
-     * @constructor
-     * @param {ICClientMetrics_ReportReactUsage_Notification=} [properties] Properties to set
-     */
-    function CClientMetrics_ReportReactUsage_Notification(properties) {
-        this.routes = [];
-        this.components = [];
-        this.actions = [];
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CClientMetrics_ReportReactUsage_Notification product.
-     * @member {string} product
-     * @memberof CClientMetrics_ReportReactUsage_Notification
-     * @instance
-     */
-    CClientMetrics_ReportReactUsage_Notification.prototype.product = "";
-
-    /**
-     * CClientMetrics_ReportReactUsage_Notification version.
-     * @member {string} version
-     * @memberof CClientMetrics_ReportReactUsage_Notification
-     * @instance
-     */
-    CClientMetrics_ReportReactUsage_Notification.prototype.version = "";
-
-    /**
-     * CClientMetrics_ReportReactUsage_Notification routes.
-     * @member {Array.<ICClientMetrics_ReportReactUsage_Notification_RouteData>} routes
-     * @memberof CClientMetrics_ReportReactUsage_Notification
-     * @instance
-     */
-    CClientMetrics_ReportReactUsage_Notification.prototype.routes = $util.emptyArray;
-
-    /**
-     * CClientMetrics_ReportReactUsage_Notification components.
-     * @member {Array.<ICClientMetrics_ReportReactUsage_Notification_ComponentData>} components
-     * @memberof CClientMetrics_ReportReactUsage_Notification
-     * @instance
-     */
-    CClientMetrics_ReportReactUsage_Notification.prototype.components = $util.emptyArray;
-
-    /**
-     * CClientMetrics_ReportReactUsage_Notification actions.
-     * @member {Array.<ICClientMetrics_ReportReactUsage_Notification_ActionData>} actions
-     * @memberof CClientMetrics_ReportReactUsage_Notification
-     * @instance
-     */
-    CClientMetrics_ReportReactUsage_Notification.prototype.actions = $util.emptyArray;
-
-    /**
-     * Encodes the specified CClientMetrics_ReportReactUsage_Notification message. Does not implicitly {@link CClientMetrics_ReportReactUsage_Notification.verify|verify} messages.
-     * @function encode
-     * @memberof CClientMetrics_ReportReactUsage_Notification
-     * @static
-     * @param {ICClientMetrics_ReportReactUsage_Notification} message CClientMetrics_ReportReactUsage_Notification message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CClientMetrics_ReportReactUsage_Notification.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.product != null && Object.hasOwnProperty.call(message, "product"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.product);
-        if (message.version != null && Object.hasOwnProperty.call(message, "version"))
-            writer.uint32(/* id 2, wireType 2 =*/18).string(message.version);
-        if (message.routes != null && message.routes.length)
-            for (let i = 0; i < message.routes.length; ++i)
-                $root.CClientMetrics_ReportReactUsage_Notification_RouteData.encode(message.routes[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-        if (message.components != null && message.components.length)
-            for (let i = 0; i < message.components.length; ++i)
-                $root.CClientMetrics_ReportReactUsage_Notification_ComponentData.encode(message.components[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-        if (message.actions != null && message.actions.length)
-            for (let i = 0; i < message.actions.length; ++i)
-                $root.CClientMetrics_ReportReactUsage_Notification_ActionData.encode(message.actions[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-        return writer;
-    };
-
-    /**
-     * Decodes a CClientMetrics_ReportReactUsage_Notification message from the specified reader or buffer.
-     * @function decode
-     * @memberof CClientMetrics_ReportReactUsage_Notification
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CClientMetrics_ReportReactUsage_Notification} CClientMetrics_ReportReactUsage_Notification
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CClientMetrics_ReportReactUsage_Notification.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CClientMetrics_ReportReactUsage_Notification();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.product = reader.string();
-                    break;
-                }
-            case 2: {
-                    message.version = reader.string();
-                    break;
-                }
-            case 3: {
-                    if (!(message.routes && message.routes.length))
-                        message.routes = [];
-                    message.routes.push($root.CClientMetrics_ReportReactUsage_Notification_RouteData.decode(reader, reader.uint32()));
-                    break;
-                }
-            case 4: {
-                    if (!(message.components && message.components.length))
-                        message.components = [];
-                    message.components.push($root.CClientMetrics_ReportReactUsage_Notification_ComponentData.decode(reader, reader.uint32()));
-                    break;
-                }
-            case 5: {
-                    if (!(message.actions && message.actions.length))
-                        message.actions = [];
-                    message.actions.push($root.CClientMetrics_ReportReactUsage_Notification_ActionData.decode(reader, reader.uint32()));
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CClientMetrics_ReportReactUsage_Notification
-     * @function getTypeUrl
-     * @memberof CClientMetrics_ReportReactUsage_Notification
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CClientMetrics_ReportReactUsage_Notification.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CClientMetrics_ReportReactUsage_Notification";
-    };
-
-    return CClientMetrics_ReportReactUsage_Notification;
-})();
-
-export const CClientMetrics_ReportReactUsage_Notification_ActionData = $root.CClientMetrics_ReportReactUsage_Notification_ActionData = (() => {
-
-    /**
-     * Properties of a CClientMetrics_ReportReactUsage_Notification_ActionData.
-     * @exports ICClientMetrics_ReportReactUsage_Notification_ActionData
-     * @interface ICClientMetrics_ReportReactUsage_Notification_ActionData
-     * @property {string|null} [action] CClientMetrics_ReportReactUsage_Notification_ActionData action
-     * @property {number|null} [count] CClientMetrics_ReportReactUsage_Notification_ActionData count
-     */
-
-    /**
-     * Constructs a new CClientMetrics_ReportReactUsage_Notification_ActionData.
-     * @exports CClientMetrics_ReportReactUsage_Notification_ActionData
-     * @classdesc Represents a CClientMetrics_ReportReactUsage_Notification_ActionData.
-     * @implements ICClientMetrics_ReportReactUsage_Notification_ActionData
-     * @constructor
-     * @param {ICClientMetrics_ReportReactUsage_Notification_ActionData=} [properties] Properties to set
-     */
-    function CClientMetrics_ReportReactUsage_Notification_ActionData(properties) {
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CClientMetrics_ReportReactUsage_Notification_ActionData action.
-     * @member {string} action
-     * @memberof CClientMetrics_ReportReactUsage_Notification_ActionData
-     * @instance
-     */
-    CClientMetrics_ReportReactUsage_Notification_ActionData.prototype.action = "";
-
-    /**
-     * CClientMetrics_ReportReactUsage_Notification_ActionData count.
-     * @member {number} count
-     * @memberof CClientMetrics_ReportReactUsage_Notification_ActionData
-     * @instance
-     */
-    CClientMetrics_ReportReactUsage_Notification_ActionData.prototype.count = 0;
-
-    /**
-     * Encodes the specified CClientMetrics_ReportReactUsage_Notification_ActionData message. Does not implicitly {@link CClientMetrics_ReportReactUsage_Notification_ActionData.verify|verify} messages.
-     * @function encode
-     * @memberof CClientMetrics_ReportReactUsage_Notification_ActionData
-     * @static
-     * @param {ICClientMetrics_ReportReactUsage_Notification_ActionData} message CClientMetrics_ReportReactUsage_Notification_ActionData message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CClientMetrics_ReportReactUsage_Notification_ActionData.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.action != null && Object.hasOwnProperty.call(message, "action"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.action);
-        if (message.count != null && Object.hasOwnProperty.call(message, "count"))
-            writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.count);
-        return writer;
-    };
-
-    /**
-     * Decodes a CClientMetrics_ReportReactUsage_Notification_ActionData message from the specified reader or buffer.
-     * @function decode
-     * @memberof CClientMetrics_ReportReactUsage_Notification_ActionData
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CClientMetrics_ReportReactUsage_Notification_ActionData} CClientMetrics_ReportReactUsage_Notification_ActionData
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CClientMetrics_ReportReactUsage_Notification_ActionData.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CClientMetrics_ReportReactUsage_Notification_ActionData();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.action = reader.string();
-                    break;
-                }
-            case 2: {
-                    message.count = reader.uint32();
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CClientMetrics_ReportReactUsage_Notification_ActionData
-     * @function getTypeUrl
-     * @memberof CClientMetrics_ReportReactUsage_Notification_ActionData
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CClientMetrics_ReportReactUsage_Notification_ActionData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CClientMetrics_ReportReactUsage_Notification_ActionData";
-    };
-
-    return CClientMetrics_ReportReactUsage_Notification_ActionData;
-})();
-
-export const CClientMetrics_ReportReactUsage_Notification_ComponentData = $root.CClientMetrics_ReportReactUsage_Notification_ComponentData = (() => {
-
-    /**
-     * Properties of a CClientMetrics_ReportReactUsage_Notification_ComponentData.
-     * @exports ICClientMetrics_ReportReactUsage_Notification_ComponentData
-     * @interface ICClientMetrics_ReportReactUsage_Notification_ComponentData
-     * @property {string|null} [component] CClientMetrics_ReportReactUsage_Notification_ComponentData component
-     * @property {number|null} [count] CClientMetrics_ReportReactUsage_Notification_ComponentData count
-     */
-
-    /**
-     * Constructs a new CClientMetrics_ReportReactUsage_Notification_ComponentData.
-     * @exports CClientMetrics_ReportReactUsage_Notification_ComponentData
-     * @classdesc Represents a CClientMetrics_ReportReactUsage_Notification_ComponentData.
-     * @implements ICClientMetrics_ReportReactUsage_Notification_ComponentData
-     * @constructor
-     * @param {ICClientMetrics_ReportReactUsage_Notification_ComponentData=} [properties] Properties to set
-     */
-    function CClientMetrics_ReportReactUsage_Notification_ComponentData(properties) {
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CClientMetrics_ReportReactUsage_Notification_ComponentData component.
-     * @member {string} component
-     * @memberof CClientMetrics_ReportReactUsage_Notification_ComponentData
-     * @instance
-     */
-    CClientMetrics_ReportReactUsage_Notification_ComponentData.prototype.component = "";
-
-    /**
-     * CClientMetrics_ReportReactUsage_Notification_ComponentData count.
-     * @member {number} count
-     * @memberof CClientMetrics_ReportReactUsage_Notification_ComponentData
-     * @instance
-     */
-    CClientMetrics_ReportReactUsage_Notification_ComponentData.prototype.count = 0;
-
-    /**
-     * Encodes the specified CClientMetrics_ReportReactUsage_Notification_ComponentData message. Does not implicitly {@link CClientMetrics_ReportReactUsage_Notification_ComponentData.verify|verify} messages.
-     * @function encode
-     * @memberof CClientMetrics_ReportReactUsage_Notification_ComponentData
-     * @static
-     * @param {ICClientMetrics_ReportReactUsage_Notification_ComponentData} message CClientMetrics_ReportReactUsage_Notification_ComponentData message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CClientMetrics_ReportReactUsage_Notification_ComponentData.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.component != null && Object.hasOwnProperty.call(message, "component"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.component);
-        if (message.count != null && Object.hasOwnProperty.call(message, "count"))
-            writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.count);
-        return writer;
-    };
-
-    /**
-     * Decodes a CClientMetrics_ReportReactUsage_Notification_ComponentData message from the specified reader or buffer.
-     * @function decode
-     * @memberof CClientMetrics_ReportReactUsage_Notification_ComponentData
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CClientMetrics_ReportReactUsage_Notification_ComponentData} CClientMetrics_ReportReactUsage_Notification_ComponentData
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CClientMetrics_ReportReactUsage_Notification_ComponentData.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CClientMetrics_ReportReactUsage_Notification_ComponentData();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.component = reader.string();
-                    break;
-                }
-            case 2: {
-                    message.count = reader.uint32();
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CClientMetrics_ReportReactUsage_Notification_ComponentData
-     * @function getTypeUrl
-     * @memberof CClientMetrics_ReportReactUsage_Notification_ComponentData
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CClientMetrics_ReportReactUsage_Notification_ComponentData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CClientMetrics_ReportReactUsage_Notification_ComponentData";
-    };
-
-    return CClientMetrics_ReportReactUsage_Notification_ComponentData;
-})();
-
-export const CClientMetrics_ReportReactUsage_Notification_RouteData = $root.CClientMetrics_ReportReactUsage_Notification_RouteData = (() => {
-
-    /**
-     * Properties of a CClientMetrics_ReportReactUsage_Notification_RouteData.
-     * @exports ICClientMetrics_ReportReactUsage_Notification_RouteData
-     * @interface ICClientMetrics_ReportReactUsage_Notification_RouteData
-     * @property {string|null} [route] CClientMetrics_ReportReactUsage_Notification_RouteData route
-     * @property {number|null} [count] CClientMetrics_ReportReactUsage_Notification_RouteData count
-     */
-
-    /**
-     * Constructs a new CClientMetrics_ReportReactUsage_Notification_RouteData.
-     * @exports CClientMetrics_ReportReactUsage_Notification_RouteData
-     * @classdesc Represents a CClientMetrics_ReportReactUsage_Notification_RouteData.
-     * @implements ICClientMetrics_ReportReactUsage_Notification_RouteData
-     * @constructor
-     * @param {ICClientMetrics_ReportReactUsage_Notification_RouteData=} [properties] Properties to set
-     */
-    function CClientMetrics_ReportReactUsage_Notification_RouteData(properties) {
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CClientMetrics_ReportReactUsage_Notification_RouteData route.
-     * @member {string} route
-     * @memberof CClientMetrics_ReportReactUsage_Notification_RouteData
-     * @instance
-     */
-    CClientMetrics_ReportReactUsage_Notification_RouteData.prototype.route = "";
-
-    /**
-     * CClientMetrics_ReportReactUsage_Notification_RouteData count.
-     * @member {number} count
-     * @memberof CClientMetrics_ReportReactUsage_Notification_RouteData
-     * @instance
-     */
-    CClientMetrics_ReportReactUsage_Notification_RouteData.prototype.count = 0;
-
-    /**
-     * Encodes the specified CClientMetrics_ReportReactUsage_Notification_RouteData message. Does not implicitly {@link CClientMetrics_ReportReactUsage_Notification_RouteData.verify|verify} messages.
-     * @function encode
-     * @memberof CClientMetrics_ReportReactUsage_Notification_RouteData
-     * @static
-     * @param {ICClientMetrics_ReportReactUsage_Notification_RouteData} message CClientMetrics_ReportReactUsage_Notification_RouteData message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CClientMetrics_ReportReactUsage_Notification_RouteData.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.route != null && Object.hasOwnProperty.call(message, "route"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.route);
-        if (message.count != null && Object.hasOwnProperty.call(message, "count"))
-            writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.count);
-        return writer;
-    };
-
-    /**
-     * Decodes a CClientMetrics_ReportReactUsage_Notification_RouteData message from the specified reader or buffer.
-     * @function decode
-     * @memberof CClientMetrics_ReportReactUsage_Notification_RouteData
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CClientMetrics_ReportReactUsage_Notification_RouteData} CClientMetrics_ReportReactUsage_Notification_RouteData
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CClientMetrics_ReportReactUsage_Notification_RouteData.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CClientMetrics_ReportReactUsage_Notification_RouteData();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.route = reader.string();
-                    break;
-                }
-            case 2: {
-                    message.count = reader.uint32();
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CClientMetrics_ReportReactUsage_Notification_RouteData
-     * @function getTypeUrl
-     * @memberof CClientMetrics_ReportReactUsage_Notification_RouteData
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CClientMetrics_ReportReactUsage_Notification_RouteData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CClientMetrics_ReportReactUsage_Notification_RouteData";
-    };
-
-    return CClientMetrics_ReportReactUsage_Notification_RouteData;
 })();
 
 export const CClientMetrics_SteamPipeWorkStats_Notification = $root.CClientMetrics_SteamPipeWorkStats_Notification = (() => {
@@ -12389,215 +11906,6 @@ export const CClientNotificationDownloadCompleted = $root.CClientNotificationDow
     };
 
     return CClientNotificationDownloadCompleted;
-})();
-
-export const CClientNotificationFamilySharingDeviceAuthorizationChanged = $root.CClientNotificationFamilySharingDeviceAuthorizationChanged = (() => {
-
-    /**
-     * Properties of a CClientNotificationFamilySharingDeviceAuthorizationChanged.
-     * @exports ICClientNotificationFamilySharingDeviceAuthorizationChanged
-     * @interface ICClientNotificationFamilySharingDeviceAuthorizationChanged
-     * @property {number|null} [accountidOwner] CClientNotificationFamilySharingDeviceAuthorizationChanged accountidOwner
-     * @property {boolean|null} [authorized] CClientNotificationFamilySharingDeviceAuthorizationChanged authorized
-     */
-
-    /**
-     * Constructs a new CClientNotificationFamilySharingDeviceAuthorizationChanged.
-     * @exports CClientNotificationFamilySharingDeviceAuthorizationChanged
-     * @classdesc Represents a CClientNotificationFamilySharingDeviceAuthorizationChanged.
-     * @implements ICClientNotificationFamilySharingDeviceAuthorizationChanged
-     * @constructor
-     * @param {ICClientNotificationFamilySharingDeviceAuthorizationChanged=} [properties] Properties to set
-     */
-    function CClientNotificationFamilySharingDeviceAuthorizationChanged(properties) {
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CClientNotificationFamilySharingDeviceAuthorizationChanged accountidOwner.
-     * @member {number} accountidOwner
-     * @memberof CClientNotificationFamilySharingDeviceAuthorizationChanged
-     * @instance
-     */
-    CClientNotificationFamilySharingDeviceAuthorizationChanged.prototype.accountidOwner = 0;
-
-    /**
-     * CClientNotificationFamilySharingDeviceAuthorizationChanged authorized.
-     * @member {boolean} authorized
-     * @memberof CClientNotificationFamilySharingDeviceAuthorizationChanged
-     * @instance
-     */
-    CClientNotificationFamilySharingDeviceAuthorizationChanged.prototype.authorized = false;
-
-    /**
-     * Encodes the specified CClientNotificationFamilySharingDeviceAuthorizationChanged message. Does not implicitly {@link CClientNotificationFamilySharingDeviceAuthorizationChanged.verify|verify} messages.
-     * @function encode
-     * @memberof CClientNotificationFamilySharingDeviceAuthorizationChanged
-     * @static
-     * @param {ICClientNotificationFamilySharingDeviceAuthorizationChanged} message CClientNotificationFamilySharingDeviceAuthorizationChanged message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CClientNotificationFamilySharingDeviceAuthorizationChanged.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.accountidOwner != null && Object.hasOwnProperty.call(message, "accountidOwner"))
-            writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.accountidOwner);
-        if (message.authorized != null && Object.hasOwnProperty.call(message, "authorized"))
-            writer.uint32(/* id 2, wireType 0 =*/16).bool(message.authorized);
-        return writer;
-    };
-
-    /**
-     * Decodes a CClientNotificationFamilySharingDeviceAuthorizationChanged message from the specified reader or buffer.
-     * @function decode
-     * @memberof CClientNotificationFamilySharingDeviceAuthorizationChanged
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CClientNotificationFamilySharingDeviceAuthorizationChanged} CClientNotificationFamilySharingDeviceAuthorizationChanged
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CClientNotificationFamilySharingDeviceAuthorizationChanged.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CClientNotificationFamilySharingDeviceAuthorizationChanged();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.accountidOwner = reader.uint32();
-                    break;
-                }
-            case 2: {
-                    message.authorized = reader.bool();
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CClientNotificationFamilySharingDeviceAuthorizationChanged
-     * @function getTypeUrl
-     * @memberof CClientNotificationFamilySharingDeviceAuthorizationChanged
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CClientNotificationFamilySharingDeviceAuthorizationChanged.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CClientNotificationFamilySharingDeviceAuthorizationChanged";
-    };
-
-    return CClientNotificationFamilySharingDeviceAuthorizationChanged;
-})();
-
-export const CClientNotificationFamilySharingLibraryAvailable = $root.CClientNotificationFamilySharingLibraryAvailable = (() => {
-
-    /**
-     * Properties of a CClientNotificationFamilySharingLibraryAvailable.
-     * @exports ICClientNotificationFamilySharingLibraryAvailable
-     * @interface ICClientNotificationFamilySharingLibraryAvailable
-     * @property {number|null} [accountidOwner] CClientNotificationFamilySharingLibraryAvailable accountidOwner
-     */
-
-    /**
-     * Constructs a new CClientNotificationFamilySharingLibraryAvailable.
-     * @exports CClientNotificationFamilySharingLibraryAvailable
-     * @classdesc Represents a CClientNotificationFamilySharingLibraryAvailable.
-     * @implements ICClientNotificationFamilySharingLibraryAvailable
-     * @constructor
-     * @param {ICClientNotificationFamilySharingLibraryAvailable=} [properties] Properties to set
-     */
-    function CClientNotificationFamilySharingLibraryAvailable(properties) {
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CClientNotificationFamilySharingLibraryAvailable accountidOwner.
-     * @member {number} accountidOwner
-     * @memberof CClientNotificationFamilySharingLibraryAvailable
-     * @instance
-     */
-    CClientNotificationFamilySharingLibraryAvailable.prototype.accountidOwner = 0;
-
-    /**
-     * Encodes the specified CClientNotificationFamilySharingLibraryAvailable message. Does not implicitly {@link CClientNotificationFamilySharingLibraryAvailable.verify|verify} messages.
-     * @function encode
-     * @memberof CClientNotificationFamilySharingLibraryAvailable
-     * @static
-     * @param {ICClientNotificationFamilySharingLibraryAvailable} message CClientNotificationFamilySharingLibraryAvailable message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CClientNotificationFamilySharingLibraryAvailable.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.accountidOwner != null && Object.hasOwnProperty.call(message, "accountidOwner"))
-            writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.accountidOwner);
-        return writer;
-    };
-
-    /**
-     * Decodes a CClientNotificationFamilySharingLibraryAvailable message from the specified reader or buffer.
-     * @function decode
-     * @memberof CClientNotificationFamilySharingLibraryAvailable
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CClientNotificationFamilySharingLibraryAvailable} CClientNotificationFamilySharingLibraryAvailable
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CClientNotificationFamilySharingLibraryAvailable.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CClientNotificationFamilySharingLibraryAvailable();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.accountidOwner = reader.uint32();
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CClientNotificationFamilySharingLibraryAvailable
-     * @function getTypeUrl
-     * @memberof CClientNotificationFamilySharingLibraryAvailable
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CClientNotificationFamilySharingLibraryAvailable.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CClientNotificationFamilySharingLibraryAvailable";
-    };
-
-    return CClientNotificationFamilySharingLibraryAvailable;
 })();
 
 export const CClientNotificationFamilySharingStopPlaying = $root.CClientNotificationFamilySharingStopPlaying = (() => {
@@ -15684,6 +14992,148 @@ export const CClientNotificationTimerExpired = $root.CClientNotificationTimerExp
     return CClientNotificationTimerExpired;
 })();
 
+export const CCloud_AppExitSyncDone_Notification = $root.CCloud_AppExitSyncDone_Notification = (() => {
+
+    /**
+     * Properties of a CCloud_AppExitSyncDone_Notification.
+     * @exports ICCloud_AppExitSyncDone_Notification
+     * @interface ICCloud_AppExitSyncDone_Notification
+     * @property {number|null} [appid] CCloud_AppExitSyncDone_Notification appid
+     * @property {number|Long|null} [clientId] CCloud_AppExitSyncDone_Notification clientId
+     * @property {boolean|null} [uploadsCompleted] CCloud_AppExitSyncDone_Notification uploadsCompleted
+     * @property {boolean|null} [uploadsRequired] CCloud_AppExitSyncDone_Notification uploadsRequired
+     */
+
+    /**
+     * Constructs a new CCloud_AppExitSyncDone_Notification.
+     * @exports CCloud_AppExitSyncDone_Notification
+     * @classdesc Represents a CCloud_AppExitSyncDone_Notification.
+     * @implements ICCloud_AppExitSyncDone_Notification
+     * @constructor
+     * @param {ICCloud_AppExitSyncDone_Notification=} [properties] Properties to set
+     */
+    function CCloud_AppExitSyncDone_Notification(properties) {
+        if (properties)
+            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * CCloud_AppExitSyncDone_Notification appid.
+     * @member {number} appid
+     * @memberof CCloud_AppExitSyncDone_Notification
+     * @instance
+     */
+    CCloud_AppExitSyncDone_Notification.prototype.appid = 0;
+
+    /**
+     * CCloud_AppExitSyncDone_Notification clientId.
+     * @member {number|Long} clientId
+     * @memberof CCloud_AppExitSyncDone_Notification
+     * @instance
+     */
+    CCloud_AppExitSyncDone_Notification.prototype.clientId = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+
+    /**
+     * CCloud_AppExitSyncDone_Notification uploadsCompleted.
+     * @member {boolean} uploadsCompleted
+     * @memberof CCloud_AppExitSyncDone_Notification
+     * @instance
+     */
+    CCloud_AppExitSyncDone_Notification.prototype.uploadsCompleted = false;
+
+    /**
+     * CCloud_AppExitSyncDone_Notification uploadsRequired.
+     * @member {boolean} uploadsRequired
+     * @memberof CCloud_AppExitSyncDone_Notification
+     * @instance
+     */
+    CCloud_AppExitSyncDone_Notification.prototype.uploadsRequired = false;
+
+    /**
+     * Encodes the specified CCloud_AppExitSyncDone_Notification message. Does not implicitly {@link CCloud_AppExitSyncDone_Notification.verify|verify} messages.
+     * @function encode
+     * @memberof CCloud_AppExitSyncDone_Notification
+     * @static
+     * @param {ICCloud_AppExitSyncDone_Notification} message CCloud_AppExitSyncDone_Notification message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    CCloud_AppExitSyncDone_Notification.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.appid != null && Object.hasOwnProperty.call(message, "appid"))
+            writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.appid);
+        if (message.clientId != null && Object.hasOwnProperty.call(message, "clientId"))
+            writer.uint32(/* id 2, wireType 0 =*/16).uint64(message.clientId);
+        if (message.uploadsCompleted != null && Object.hasOwnProperty.call(message, "uploadsCompleted"))
+            writer.uint32(/* id 3, wireType 0 =*/24).bool(message.uploadsCompleted);
+        if (message.uploadsRequired != null && Object.hasOwnProperty.call(message, "uploadsRequired"))
+            writer.uint32(/* id 4, wireType 0 =*/32).bool(message.uploadsRequired);
+        return writer;
+    };
+
+    /**
+     * Decodes a CCloud_AppExitSyncDone_Notification message from the specified reader or buffer.
+     * @function decode
+     * @memberof CCloud_AppExitSyncDone_Notification
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {CCloud_AppExitSyncDone_Notification} CCloud_AppExitSyncDone_Notification
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    CCloud_AppExitSyncDone_Notification.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCloud_AppExitSyncDone_Notification();
+        while (reader.pos < end) {
+            let tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.appid = reader.uint32();
+                    break;
+                }
+            case 2: {
+                    message.clientId = reader.uint64();
+                    break;
+                }
+            case 3: {
+                    message.uploadsCompleted = reader.bool();
+                    break;
+                }
+            case 4: {
+                    message.uploadsRequired = reader.bool();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Gets the default type url for CCloud_AppExitSyncDone_Notification
+     * @function getTypeUrl
+     * @memberof CCloud_AppExitSyncDone_Notification
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    CCloud_AppExitSyncDone_Notification.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/CCloud_AppExitSyncDone_Notification";
+    };
+
+    return CCloud_AppExitSyncDone_Notification;
+})();
+
 export const CCloud_PendingRemoteOperation = $root.CCloud_PendingRemoteOperation = (() => {
 
     /**
@@ -17867,133 +17317,6 @@ export const CLocalizationToken = $root.CLocalizationToken = (() => {
     };
 
     return CLocalizationToken;
-})();
-
-export const CMarketingMessages_MarkMessageSeen_Notification = $root.CMarketingMessages_MarkMessageSeen_Notification = (() => {
-
-    /**
-     * Properties of a CMarketingMessages_MarkMessageSeen_Notification.
-     * @exports ICMarketingMessages_MarkMessageSeen_Notification
-     * @interface ICMarketingMessages_MarkMessageSeen_Notification
-     * @property {number|Long|null} [gid] CMarketingMessages_MarkMessageSeen_Notification gid
-     * @property {number|null} [displayIndex] CMarketingMessages_MarkMessageSeen_Notification displayIndex
-     * @property {number|null} [templateType] CMarketingMessages_MarkMessageSeen_Notification templateType
-     */
-
-    /**
-     * Constructs a new CMarketingMessages_MarkMessageSeen_Notification.
-     * @exports CMarketingMessages_MarkMessageSeen_Notification
-     * @classdesc Represents a CMarketingMessages_MarkMessageSeen_Notification.
-     * @implements ICMarketingMessages_MarkMessageSeen_Notification
-     * @constructor
-     * @param {ICMarketingMessages_MarkMessageSeen_Notification=} [properties] Properties to set
-     */
-    function CMarketingMessages_MarkMessageSeen_Notification(properties) {
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CMarketingMessages_MarkMessageSeen_Notification gid.
-     * @member {number|Long} gid
-     * @memberof CMarketingMessages_MarkMessageSeen_Notification
-     * @instance
-     */
-    CMarketingMessages_MarkMessageSeen_Notification.prototype.gid = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-    /**
-     * CMarketingMessages_MarkMessageSeen_Notification displayIndex.
-     * @member {number} displayIndex
-     * @memberof CMarketingMessages_MarkMessageSeen_Notification
-     * @instance
-     */
-    CMarketingMessages_MarkMessageSeen_Notification.prototype.displayIndex = 0;
-
-    /**
-     * CMarketingMessages_MarkMessageSeen_Notification templateType.
-     * @member {number} templateType
-     * @memberof CMarketingMessages_MarkMessageSeen_Notification
-     * @instance
-     */
-    CMarketingMessages_MarkMessageSeen_Notification.prototype.templateType = 0;
-
-    /**
-     * Encodes the specified CMarketingMessages_MarkMessageSeen_Notification message. Does not implicitly {@link CMarketingMessages_MarkMessageSeen_Notification.verify|verify} messages.
-     * @function encode
-     * @memberof CMarketingMessages_MarkMessageSeen_Notification
-     * @static
-     * @param {ICMarketingMessages_MarkMessageSeen_Notification} message CMarketingMessages_MarkMessageSeen_Notification message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CMarketingMessages_MarkMessageSeen_Notification.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.gid != null && Object.hasOwnProperty.call(message, "gid"))
-            writer.uint32(/* id 1, wireType 1 =*/9).fixed64(message.gid);
-        if (message.displayIndex != null && Object.hasOwnProperty.call(message, "displayIndex"))
-            writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.displayIndex);
-        if (message.templateType != null && Object.hasOwnProperty.call(message, "templateType"))
-            writer.uint32(/* id 3, wireType 0 =*/24).int32(message.templateType);
-        return writer;
-    };
-
-    /**
-     * Decodes a CMarketingMessages_MarkMessageSeen_Notification message from the specified reader or buffer.
-     * @function decode
-     * @memberof CMarketingMessages_MarkMessageSeen_Notification
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CMarketingMessages_MarkMessageSeen_Notification} CMarketingMessages_MarkMessageSeen_Notification
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CMarketingMessages_MarkMessageSeen_Notification.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CMarketingMessages_MarkMessageSeen_Notification();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.gid = reader.fixed64();
-                    break;
-                }
-            case 2: {
-                    message.displayIndex = reader.uint32();
-                    break;
-                }
-            case 3: {
-                    message.templateType = reader.int32();
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CMarketingMessages_MarkMessageSeen_Notification
-     * @function getTypeUrl
-     * @memberof CMarketingMessages_MarkMessageSeen_Notification
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CMarketingMessages_MarkMessageSeen_Notification.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CMarketingMessages_MarkMessageSeen_Notification";
-    };
-
-    return CMarketingMessages_MarkMessageSeen_Notification;
 })();
 
 export const CMsgAchievementChange = $root.CMsgAchievementChange = (() => {
@@ -44518,6 +43841,7 @@ export const CMsgClientPersonaState_Friend = $root.CMsgClientPersonaState_Friend
      * @property {boolean|null} [playerNamePendingReview] CMsgClientPersonaState_Friend playerNamePendingReview
      * @property {boolean|null} [avatarPendingReview] CMsgClientPersonaState_Friend avatarPendingReview
      * @property {boolean|null} [onSteamDeck] CMsgClientPersonaState_Friend onSteamDeck
+     * @property {Array.<ICMsgClientPersonaState_Friend_OtherGameData>|null} [otherGameData] CMsgClientPersonaState_Friend otherGameData
      */
 
     /**
@@ -44530,6 +43854,7 @@ export const CMsgClientPersonaState_Friend = $root.CMsgClientPersonaState_Friend
      */
     function CMsgClientPersonaState_Friend(properties) {
         this.richPresence = [];
+        this.otherGameData = [];
         if (properties)
             for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -44793,6 +44118,14 @@ export const CMsgClientPersonaState_Friend = $root.CMsgClientPersonaState_Friend
     CMsgClientPersonaState_Friend.prototype.onSteamDeck = false;
 
     /**
+     * CMsgClientPersonaState_Friend otherGameData.
+     * @member {Array.<ICMsgClientPersonaState_Friend_OtherGameData>} otherGameData
+     * @memberof CMsgClientPersonaState_Friend
+     * @instance
+     */
+    CMsgClientPersonaState_Friend.prototype.otherGameData = $util.emptyArray;
+
+    /**
      * Encodes the specified CMsgClientPersonaState_Friend message. Does not implicitly {@link CMsgClientPersonaState_Friend.verify|verify} messages.
      * @function encode
      * @memberof CMsgClientPersonaState_Friend
@@ -44869,6 +44202,9 @@ export const CMsgClientPersonaState_Friend = $root.CMsgClientPersonaState_Friend
             writer.uint32(/* id 80, wireType 0 =*/640).bool(message.avatarPendingReview);
         if (message.onSteamDeck != null && Object.hasOwnProperty.call(message, "onSteamDeck"))
             writer.uint32(/* id 81, wireType 0 =*/648).bool(message.onSteamDeck);
+        if (message.otherGameData != null && message.otherGameData.length)
+            for (let i = 0; i < message.otherGameData.length; ++i)
+                $root.CMsgClientPersonaState_Friend_OtherGameData.encode(message.otherGameData[i], writer.uint32(/* id 82, wireType 2 =*/658).fork()).ldelim();
         return writer;
     };
 
@@ -45018,6 +44354,12 @@ export const CMsgClientPersonaState_Friend = $root.CMsgClientPersonaState_Friend
                 }
             case 81: {
                     message.onSteamDeck = reader.bool();
+                    break;
+                }
+            case 82: {
+                    if (!(message.otherGameData && message.otherGameData.length))
+                        message.otherGameData = [];
+                    message.otherGameData.push($root.CMsgClientPersonaState_Friend_OtherGameData.decode(reader, reader.uint32()));
                     break;
                 }
             default:
@@ -45268,6 +44610,122 @@ export const CMsgClientPersonaState_Friend_KV = $root.CMsgClientPersonaState_Fri
     };
 
     return CMsgClientPersonaState_Friend_KV;
+})();
+
+export const CMsgClientPersonaState_Friend_OtherGameData = $root.CMsgClientPersonaState_Friend_OtherGameData = (() => {
+
+    /**
+     * Properties of a CMsgClientPersonaState_Friend_OtherGameData.
+     * @exports ICMsgClientPersonaState_Friend_OtherGameData
+     * @interface ICMsgClientPersonaState_Friend_OtherGameData
+     * @property {number|Long|null} [gameid] CMsgClientPersonaState_Friend_OtherGameData gameid
+     * @property {Array.<ICMsgClientPersonaState_Friend_KV>|null} [richPresence] CMsgClientPersonaState_Friend_OtherGameData richPresence
+     */
+
+    /**
+     * Constructs a new CMsgClientPersonaState_Friend_OtherGameData.
+     * @exports CMsgClientPersonaState_Friend_OtherGameData
+     * @classdesc Represents a CMsgClientPersonaState_Friend_OtherGameData.
+     * @implements ICMsgClientPersonaState_Friend_OtherGameData
+     * @constructor
+     * @param {ICMsgClientPersonaState_Friend_OtherGameData=} [properties] Properties to set
+     */
+    function CMsgClientPersonaState_Friend_OtherGameData(properties) {
+        this.richPresence = [];
+        if (properties)
+            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * CMsgClientPersonaState_Friend_OtherGameData gameid.
+     * @member {number|Long} gameid
+     * @memberof CMsgClientPersonaState_Friend_OtherGameData
+     * @instance
+     */
+    CMsgClientPersonaState_Friend_OtherGameData.prototype.gameid = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+
+    /**
+     * CMsgClientPersonaState_Friend_OtherGameData richPresence.
+     * @member {Array.<ICMsgClientPersonaState_Friend_KV>} richPresence
+     * @memberof CMsgClientPersonaState_Friend_OtherGameData
+     * @instance
+     */
+    CMsgClientPersonaState_Friend_OtherGameData.prototype.richPresence = $util.emptyArray;
+
+    /**
+     * Encodes the specified CMsgClientPersonaState_Friend_OtherGameData message. Does not implicitly {@link CMsgClientPersonaState_Friend_OtherGameData.verify|verify} messages.
+     * @function encode
+     * @memberof CMsgClientPersonaState_Friend_OtherGameData
+     * @static
+     * @param {ICMsgClientPersonaState_Friend_OtherGameData} message CMsgClientPersonaState_Friend_OtherGameData message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    CMsgClientPersonaState_Friend_OtherGameData.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.gameid != null && Object.hasOwnProperty.call(message, "gameid"))
+            writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.gameid);
+        if (message.richPresence != null && message.richPresence.length)
+            for (let i = 0; i < message.richPresence.length; ++i)
+                $root.CMsgClientPersonaState_Friend_KV.encode(message.richPresence[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Decodes a CMsgClientPersonaState_Friend_OtherGameData message from the specified reader or buffer.
+     * @function decode
+     * @memberof CMsgClientPersonaState_Friend_OtherGameData
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {CMsgClientPersonaState_Friend_OtherGameData} CMsgClientPersonaState_Friend_OtherGameData
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    CMsgClientPersonaState_Friend_OtherGameData.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CMsgClientPersonaState_Friend_OtherGameData();
+        while (reader.pos < end) {
+            let tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.gameid = reader.uint64();
+                    break;
+                }
+            case 2: {
+                    if (!(message.richPresence && message.richPresence.length))
+                        message.richPresence = [];
+                    message.richPresence.push($root.CMsgClientPersonaState_Friend_KV.decode(reader, reader.uint32()));
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Gets the default type url for CMsgClientPersonaState_Friend_OtherGameData
+     * @function getTypeUrl
+     * @memberof CMsgClientPersonaState_Friend_OtherGameData
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    CMsgClientPersonaState_Friend_OtherGameData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/CMsgClientPersonaState_Friend_OtherGameData";
+    };
+
+    return CMsgClientPersonaState_Friend_OtherGameData;
 })();
 
 export const CMsgClientPICSAccessTokenRequest = $root.CMsgClientPICSAccessTokenRequest = (() => {
@@ -54330,6 +53788,7 @@ export const CMsgClientSettings = $root.CMsgClientSettings = (() => {
      * @property {boolean|null} [downloadWhileAppRunning] CMsgClientSettings downloadWhileAppRunning
      * @property {boolean|null} [downloadThrottleWhileStreaming] CMsgClientSettings downloadThrottleWhileStreaming
      * @property {number|null} [downloadThrottleRate] CMsgClientSettings downloadThrottleRate
+     * @property {number|null} [defaultAppUpdateBehavior] CMsgClientSettings defaultAppUpdateBehavior
      * @property {boolean|null} [cloudEnabled] CMsgClientSettings cloudEnabled
      * @property {boolean|null} [showScreenshotManager] CMsgClientSettings showScreenshotManager
      * @property {number|null} [musicVolume] CMsgClientSettings musicVolume
@@ -54411,6 +53870,10 @@ export const CMsgClientSettings = $root.CMsgClientSettings = (() => {
      * @property {boolean|null} [gamescopeCompositeDebug] CMsgClientSettings gamescopeCompositeDebug
      * @property {boolean|null} [gamescopeForceComposite] CMsgClientSettings gamescopeForceComposite
      * @property {string|null} [gamescopeGameResolutionGlobal] CMsgClientSettings gamescopeGameResolutionGlobal
+     * @property {ICMsgHotkey|null} [gamescopeGuideHotkey] CMsgClientSettings gamescopeGuideHotkey
+     * @property {ICMsgHotkey|null} [gamescopeQamHotkey] CMsgClientSettings gamescopeQamHotkey
+     * @property {boolean|null} [gamescopeHdrEnabled] CMsgClientSettings gamescopeHdrEnabled
+     * @property {boolean|null} [gamescopeNativeExternalResInSteam] CMsgClientSettings gamescopeNativeExternalResInSteam
      * @property {number|null} [steamosStatusLedBrightness] CMsgClientSettings steamosStatusLedBrightness
      * @property {boolean|null} [steamosTdpLimitEnabled] CMsgClientSettings steamosTdpLimitEnabled
      * @property {number|null} [steamosTdpLimit] CMsgClientSettings steamosTdpLimit
@@ -54419,6 +53882,12 @@ export const CMsgClientSettings = $root.CMsgClientSettings = (() => {
      * @property {boolean|null} [steamosWifiDebug] CMsgClientSettings steamosWifiDebug
      * @property {boolean|null} [steamosWifiForceWpaSupplicant] CMsgClientSettings steamosWifiForceWpaSupplicant
      * @property {number|null} [steamosMagnifierScale] CMsgClientSettings steamosMagnifierScale
+     * @property {boolean|null} [steamosManualGpuClockEnabled] CMsgClientSettings steamosManualGpuClockEnabled
+     * @property {number|null} [steamosManualGpuClockHz] CMsgClientSettings steamosManualGpuClockHz
+     * @property {string|null} [steamosPlatformPerformanceProfile] CMsgClientSettings steamosPlatformPerformanceProfile
+     * @property {boolean|null} [steamosChargeLimitEnabled] CMsgClientSettings steamosChargeLimitEnabled
+     * @property {number|null} [steamosChargeLimit] CMsgClientSettings steamosChargeLimit
+     * @property {boolean|null} [steamosChargeLimitDevmode] CMsgClientSettings steamosChargeLimitDevmode
      * @property {boolean|null} [settingValidationBool] CMsgClientSettings settingValidationBool
      * @property {number|null} [settingValidationEnum] CMsgClientSettings settingValidationEnum
      * @property {number|null} [settingValidationInt32] CMsgClientSettings settingValidationInt32
@@ -54426,7 +53895,11 @@ export const CMsgClientSettings = $root.CMsgClientSettings = (() => {
      * @property {number|Long|null} [settingValidationUint64] CMsgClientSettings settingValidationUint64
      * @property {number|null} [settingValidationFloat] CMsgClientSettings settingValidationFloat
      * @property {string|null} [settingValidationString] CMsgClientSettings settingValidationString
+     * @property {ICMsgHotkey|null} [settingValidationHotkey] CMsgClientSettings settingValidationHotkey
      * @property {boolean|null} [systemBluetoothEnabled] CMsgClientSettings systemBluetoothEnabled
+     * @property {boolean|null} [hardwareUpdaterEnabled] CMsgClientSettings hardwareUpdaterEnabled
+     * @property {boolean|null} [vrShowPerfGraphInHmd] CMsgClientSettings vrShowPerfGraphInHmd
+     * @property {boolean|null} [accessibilityDebugVisualizer] CMsgClientSettings accessibilityDebugVisualizer
      * @property {boolean|null} [controllerEnableChord] CMsgClientSettings controllerEnableChord
      * @property {boolean|null} [controllerPollRate] CMsgClientSettings controllerPollRate
      */
@@ -55079,6 +54552,14 @@ export const CMsgClientSettings = $root.CMsgClientSettings = (() => {
     CMsgClientSettings.prototype.downloadThrottleRate = 0;
 
     /**
+     * CMsgClientSettings defaultAppUpdateBehavior.
+     * @member {number} defaultAppUpdateBehavior
+     * @memberof CMsgClientSettings
+     * @instance
+     */
+    CMsgClientSettings.prototype.defaultAppUpdateBehavior = 0;
+
+    /**
      * CMsgClientSettings cloudEnabled.
      * @member {boolean} cloudEnabled
      * @memberof CMsgClientSettings
@@ -55727,6 +55208,38 @@ export const CMsgClientSettings = $root.CMsgClientSettings = (() => {
     CMsgClientSettings.prototype.gamescopeGameResolutionGlobal = "";
 
     /**
+     * CMsgClientSettings gamescopeGuideHotkey.
+     * @member {ICMsgHotkey|null|undefined} gamescopeGuideHotkey
+     * @memberof CMsgClientSettings
+     * @instance
+     */
+    CMsgClientSettings.prototype.gamescopeGuideHotkey = null;
+
+    /**
+     * CMsgClientSettings gamescopeQamHotkey.
+     * @member {ICMsgHotkey|null|undefined} gamescopeQamHotkey
+     * @memberof CMsgClientSettings
+     * @instance
+     */
+    CMsgClientSettings.prototype.gamescopeQamHotkey = null;
+
+    /**
+     * CMsgClientSettings gamescopeHdrEnabled.
+     * @member {boolean} gamescopeHdrEnabled
+     * @memberof CMsgClientSettings
+     * @instance
+     */
+    CMsgClientSettings.prototype.gamescopeHdrEnabled = false;
+
+    /**
+     * CMsgClientSettings gamescopeNativeExternalResInSteam.
+     * @member {boolean} gamescopeNativeExternalResInSteam
+     * @memberof CMsgClientSettings
+     * @instance
+     */
+    CMsgClientSettings.prototype.gamescopeNativeExternalResInSteam = false;
+
+    /**
      * CMsgClientSettings steamosStatusLedBrightness.
      * @member {number} steamosStatusLedBrightness
      * @memberof CMsgClientSettings
@@ -55791,6 +55304,54 @@ export const CMsgClientSettings = $root.CMsgClientSettings = (() => {
     CMsgClientSettings.prototype.steamosMagnifierScale = 0;
 
     /**
+     * CMsgClientSettings steamosManualGpuClockEnabled.
+     * @member {boolean} steamosManualGpuClockEnabled
+     * @memberof CMsgClientSettings
+     * @instance
+     */
+    CMsgClientSettings.prototype.steamosManualGpuClockEnabled = false;
+
+    /**
+     * CMsgClientSettings steamosManualGpuClockHz.
+     * @member {number} steamosManualGpuClockHz
+     * @memberof CMsgClientSettings
+     * @instance
+     */
+    CMsgClientSettings.prototype.steamosManualGpuClockHz = 0;
+
+    /**
+     * CMsgClientSettings steamosPlatformPerformanceProfile.
+     * @member {string} steamosPlatformPerformanceProfile
+     * @memberof CMsgClientSettings
+     * @instance
+     */
+    CMsgClientSettings.prototype.steamosPlatformPerformanceProfile = "";
+
+    /**
+     * CMsgClientSettings steamosChargeLimitEnabled.
+     * @member {boolean} steamosChargeLimitEnabled
+     * @memberof CMsgClientSettings
+     * @instance
+     */
+    CMsgClientSettings.prototype.steamosChargeLimitEnabled = false;
+
+    /**
+     * CMsgClientSettings steamosChargeLimit.
+     * @member {number} steamosChargeLimit
+     * @memberof CMsgClientSettings
+     * @instance
+     */
+    CMsgClientSettings.prototype.steamosChargeLimit = 0;
+
+    /**
+     * CMsgClientSettings steamosChargeLimitDevmode.
+     * @member {boolean} steamosChargeLimitDevmode
+     * @memberof CMsgClientSettings
+     * @instance
+     */
+    CMsgClientSettings.prototype.steamosChargeLimitDevmode = false;
+
+    /**
      * CMsgClientSettings settingValidationBool.
      * @member {boolean} settingValidationBool
      * @memberof CMsgClientSettings
@@ -55847,12 +55408,44 @@ export const CMsgClientSettings = $root.CMsgClientSettings = (() => {
     CMsgClientSettings.prototype.settingValidationString = "";
 
     /**
+     * CMsgClientSettings settingValidationHotkey.
+     * @member {ICMsgHotkey|null|undefined} settingValidationHotkey
+     * @memberof CMsgClientSettings
+     * @instance
+     */
+    CMsgClientSettings.prototype.settingValidationHotkey = null;
+
+    /**
      * CMsgClientSettings systemBluetoothEnabled.
      * @member {boolean} systemBluetoothEnabled
      * @memberof CMsgClientSettings
      * @instance
      */
     CMsgClientSettings.prototype.systemBluetoothEnabled = false;
+
+    /**
+     * CMsgClientSettings hardwareUpdaterEnabled.
+     * @member {boolean} hardwareUpdaterEnabled
+     * @memberof CMsgClientSettings
+     * @instance
+     */
+    CMsgClientSettings.prototype.hardwareUpdaterEnabled = false;
+
+    /**
+     * CMsgClientSettings vrShowPerfGraphInHmd.
+     * @member {boolean} vrShowPerfGraphInHmd
+     * @memberof CMsgClientSettings
+     * @instance
+     */
+    CMsgClientSettings.prototype.vrShowPerfGraphInHmd = false;
+
+    /**
+     * CMsgClientSettings accessibilityDebugVisualizer.
+     * @member {boolean} accessibilityDebugVisualizer
+     * @memberof CMsgClientSettings
+     * @instance
+     */
+    CMsgClientSettings.prototype.accessibilityDebugVisualizer = false;
 
     /**
      * CMsgClientSettings controllerEnableChord.
@@ -56040,6 +55633,8 @@ export const CMsgClientSettings = $root.CMsgClientSettings = (() => {
             writer.uint32(/* id 8011, wireType 0 =*/64088).bool(message.downloadThrottleWhileStreaming);
         if (message.downloadThrottleRate != null && Object.hasOwnProperty.call(message, "downloadThrottleRate"))
             writer.uint32(/* id 8012, wireType 0 =*/64096).int32(message.downloadThrottleRate);
+        if (message.defaultAppUpdateBehavior != null && Object.hasOwnProperty.call(message, "defaultAppUpdateBehavior"))
+            writer.uint32(/* id 8013, wireType 0 =*/64104).int32(message.defaultAppUpdateBehavior);
         if (message.cloudEnabled != null && Object.hasOwnProperty.call(message, "cloudEnabled"))
             writer.uint32(/* id 10000, wireType 0 =*/80000).bool(message.cloudEnabled);
         if (message.showScreenshotManager != null && Object.hasOwnProperty.call(message, "showScreenshotManager"))
@@ -56202,6 +55797,14 @@ export const CMsgClientSettings = $root.CMsgClientSettings = (() => {
             writer.uint32(/* id 21011, wireType 0 =*/168088).bool(message.gamescopeForceComposite);
         if (message.gamescopeGameResolutionGlobal != null && Object.hasOwnProperty.call(message, "gamescopeGameResolutionGlobal"))
             writer.uint32(/* id 21012, wireType 2 =*/168098).string(message.gamescopeGameResolutionGlobal);
+        if (message.gamescopeGuideHotkey != null && Object.hasOwnProperty.call(message, "gamescopeGuideHotkey"))
+            $root.CMsgHotkey.encode(message.gamescopeGuideHotkey, writer.uint32(/* id 21013, wireType 2 =*/168106).fork()).ldelim();
+        if (message.gamescopeQamHotkey != null && Object.hasOwnProperty.call(message, "gamescopeQamHotkey"))
+            $root.CMsgHotkey.encode(message.gamescopeQamHotkey, writer.uint32(/* id 21014, wireType 2 =*/168114).fork()).ldelim();
+        if (message.gamescopeHdrEnabled != null && Object.hasOwnProperty.call(message, "gamescopeHdrEnabled"))
+            writer.uint32(/* id 21015, wireType 0 =*/168120).bool(message.gamescopeHdrEnabled);
+        if (message.gamescopeNativeExternalResInSteam != null && Object.hasOwnProperty.call(message, "gamescopeNativeExternalResInSteam"))
+            writer.uint32(/* id 21016, wireType 0 =*/168128).bool(message.gamescopeNativeExternalResInSteam);
         if (message.steamosStatusLedBrightness != null && Object.hasOwnProperty.call(message, "steamosStatusLedBrightness"))
             writer.uint32(/* id 22000, wireType 0 =*/176000).int32(message.steamosStatusLedBrightness);
         if (message.steamosTdpLimitEnabled != null && Object.hasOwnProperty.call(message, "steamosTdpLimitEnabled"))
@@ -56218,6 +55821,18 @@ export const CMsgClientSettings = $root.CMsgClientSettings = (() => {
             writer.uint32(/* id 22006, wireType 0 =*/176048).bool(message.steamosWifiForceWpaSupplicant);
         if (message.steamosMagnifierScale != null && Object.hasOwnProperty.call(message, "steamosMagnifierScale"))
             writer.uint32(/* id 22007, wireType 0 =*/176056).int32(message.steamosMagnifierScale);
+        if (message.steamosManualGpuClockEnabled != null && Object.hasOwnProperty.call(message, "steamosManualGpuClockEnabled"))
+            writer.uint32(/* id 22008, wireType 0 =*/176064).bool(message.steamosManualGpuClockEnabled);
+        if (message.steamosManualGpuClockHz != null && Object.hasOwnProperty.call(message, "steamosManualGpuClockHz"))
+            writer.uint32(/* id 22009, wireType 0 =*/176072).int32(message.steamosManualGpuClockHz);
+        if (message.steamosPlatformPerformanceProfile != null && Object.hasOwnProperty.call(message, "steamosPlatformPerformanceProfile"))
+            writer.uint32(/* id 22010, wireType 2 =*/176082).string(message.steamosPlatformPerformanceProfile);
+        if (message.steamosChargeLimitEnabled != null && Object.hasOwnProperty.call(message, "steamosChargeLimitEnabled"))
+            writer.uint32(/* id 22011, wireType 0 =*/176088).bool(message.steamosChargeLimitEnabled);
+        if (message.steamosChargeLimit != null && Object.hasOwnProperty.call(message, "steamosChargeLimit"))
+            writer.uint32(/* id 22012, wireType 0 =*/176096).int32(message.steamosChargeLimit);
+        if (message.steamosChargeLimitDevmode != null && Object.hasOwnProperty.call(message, "steamosChargeLimitDevmode"))
+            writer.uint32(/* id 22013, wireType 0 =*/176104).bool(message.steamosChargeLimitDevmode);
         if (message.settingValidationBool != null && Object.hasOwnProperty.call(message, "settingValidationBool"))
             writer.uint32(/* id 23001, wireType 0 =*/184008).bool(message.settingValidationBool);
         if (message.settingValidationEnum != null && Object.hasOwnProperty.call(message, "settingValidationEnum"))
@@ -56232,8 +55847,16 @@ export const CMsgClientSettings = $root.CMsgClientSettings = (() => {
             writer.uint32(/* id 23006, wireType 5 =*/184053).float(message.settingValidationFloat);
         if (message.settingValidationString != null && Object.hasOwnProperty.call(message, "settingValidationString"))
             writer.uint32(/* id 23007, wireType 2 =*/184058).string(message.settingValidationString);
+        if (message.settingValidationHotkey != null && Object.hasOwnProperty.call(message, "settingValidationHotkey"))
+            $root.CMsgHotkey.encode(message.settingValidationHotkey, writer.uint32(/* id 23008, wireType 2 =*/184066).fork()).ldelim();
         if (message.systemBluetoothEnabled != null && Object.hasOwnProperty.call(message, "systemBluetoothEnabled"))
             writer.uint32(/* id 24000, wireType 0 =*/192000).bool(message.systemBluetoothEnabled);
+        if (message.hardwareUpdaterEnabled != null && Object.hasOwnProperty.call(message, "hardwareUpdaterEnabled"))
+            writer.uint32(/* id 24001, wireType 0 =*/192008).bool(message.hardwareUpdaterEnabled);
+        if (message.vrShowPerfGraphInHmd != null && Object.hasOwnProperty.call(message, "vrShowPerfGraphInHmd"))
+            writer.uint32(/* id 25000, wireType 0 =*/200000).bool(message.vrShowPerfGraphInHmd);
+        if (message.accessibilityDebugVisualizer != null && Object.hasOwnProperty.call(message, "accessibilityDebugVisualizer"))
+            writer.uint32(/* id 26000, wireType 0 =*/208000).bool(message.accessibilityDebugVisualizer);
         if (message.controllerEnableChord != null && Object.hasOwnProperty.call(message, "controllerEnableChord"))
             writer.uint32(/* id 140011, wireType 0 =*/1120088).bool(message.controllerEnableChord);
         if (message.controllerPollRate != null && Object.hasOwnProperty.call(message, "controllerPollRate"))
@@ -56575,6 +56198,10 @@ export const CMsgClientSettings = $root.CMsgClientSettings = (() => {
                     message.downloadThrottleRate = reader.int32();
                     break;
                 }
+            case 8013: {
+                    message.defaultAppUpdateBehavior = reader.int32();
+                    break;
+                }
             case 10000: {
                     message.cloudEnabled = reader.bool();
                     break;
@@ -56899,6 +56526,22 @@ export const CMsgClientSettings = $root.CMsgClientSettings = (() => {
                     message.gamescopeGameResolutionGlobal = reader.string();
                     break;
                 }
+            case 21013: {
+                    message.gamescopeGuideHotkey = $root.CMsgHotkey.decode(reader, reader.uint32());
+                    break;
+                }
+            case 21014: {
+                    message.gamescopeQamHotkey = $root.CMsgHotkey.decode(reader, reader.uint32());
+                    break;
+                }
+            case 21015: {
+                    message.gamescopeHdrEnabled = reader.bool();
+                    break;
+                }
+            case 21016: {
+                    message.gamescopeNativeExternalResInSteam = reader.bool();
+                    break;
+                }
             case 22000: {
                     message.steamosStatusLedBrightness = reader.int32();
                     break;
@@ -56931,6 +56574,30 @@ export const CMsgClientSettings = $root.CMsgClientSettings = (() => {
                     message.steamosMagnifierScale = reader.int32();
                     break;
                 }
+            case 22008: {
+                    message.steamosManualGpuClockEnabled = reader.bool();
+                    break;
+                }
+            case 22009: {
+                    message.steamosManualGpuClockHz = reader.int32();
+                    break;
+                }
+            case 22010: {
+                    message.steamosPlatformPerformanceProfile = reader.string();
+                    break;
+                }
+            case 22011: {
+                    message.steamosChargeLimitEnabled = reader.bool();
+                    break;
+                }
+            case 22012: {
+                    message.steamosChargeLimit = reader.int32();
+                    break;
+                }
+            case 22013: {
+                    message.steamosChargeLimitDevmode = reader.bool();
+                    break;
+                }
             case 23001: {
                     message.settingValidationBool = reader.bool();
                     break;
@@ -56959,8 +56626,24 @@ export const CMsgClientSettings = $root.CMsgClientSettings = (() => {
                     message.settingValidationString = reader.string();
                     break;
                 }
+            case 23008: {
+                    message.settingValidationHotkey = $root.CMsgHotkey.decode(reader, reader.uint32());
+                    break;
+                }
             case 24000: {
                     message.systemBluetoothEnabled = reader.bool();
+                    break;
+                }
+            case 24001: {
+                    message.hardwareUpdaterEnabled = reader.bool();
+                    break;
+                }
+            case 25000: {
+                    message.vrShowPerfGraphInHmd = reader.bool();
+                    break;
+                }
+            case 26000: {
+                    message.accessibilityDebugVisualizer = reader.bool();
                     break;
                 }
             case 140011: {
@@ -71595,6 +71278,8 @@ export const CMsgControllerConfiguration = $root.CMsgControllerConfiguration = (
      * @property {string|null} [description] CMsgControllerConfiguration description
      * @property {string|null} [creator] CMsgControllerConfiguration creator
      * @property {number|null} [controllerType] CMsgControllerConfiguration controllerType
+     * @property {number|null} [capabilityBits] CMsgControllerConfiguration capabilityBits
+     * @property {number|null} [controllerStyle] CMsgControllerConfiguration controllerStyle
      * @property {Array.<ICMsgGameActionSet>|null} [sets] CMsgControllerConfiguration sets
      * @property {Array.<ICMsgControllerMode>|null} [modes] CMsgControllerConfiguration modes
      * @property {string|null} [errorMsg] CMsgControllerConfiguration errorMsg
@@ -71659,6 +71344,22 @@ export const CMsgControllerConfiguration = $root.CMsgControllerConfiguration = (
      * @instance
      */
     CMsgControllerConfiguration.prototype.controllerType = 0;
+
+    /**
+     * CMsgControllerConfiguration capabilityBits.
+     * @member {number} capabilityBits
+     * @memberof CMsgControllerConfiguration
+     * @instance
+     */
+    CMsgControllerConfiguration.prototype.capabilityBits = 0;
+
+    /**
+     * CMsgControllerConfiguration controllerStyle.
+     * @member {number} controllerStyle
+     * @memberof CMsgControllerConfiguration
+     * @instance
+     */
+    CMsgControllerConfiguration.prototype.controllerStyle = 0;
 
     /**
      * CMsgControllerConfiguration sets.
@@ -71730,20 +71431,24 @@ export const CMsgControllerConfiguration = $root.CMsgControllerConfiguration = (
             writer.uint32(/* id 4, wireType 2 =*/34).string(message.creator);
         if (message.controllerType != null && Object.hasOwnProperty.call(message, "controllerType"))
             writer.uint32(/* id 5, wireType 0 =*/40).int32(message.controllerType);
+        if (message.capabilityBits != null && Object.hasOwnProperty.call(message, "capabilityBits"))
+            writer.uint32(/* id 6, wireType 0 =*/48).uint32(message.capabilityBits);
+        if (message.controllerStyle != null && Object.hasOwnProperty.call(message, "controllerStyle"))
+            writer.uint32(/* id 7, wireType 0 =*/56).int32(message.controllerStyle);
         if (message.sets != null && message.sets.length)
             for (let i = 0; i < message.sets.length; ++i)
-                $root.CMsgGameActionSet.encode(message.sets[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                $root.CMsgGameActionSet.encode(message.sets[i], writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
         if (message.modes != null && message.modes.length)
             for (let i = 0; i < message.modes.length; ++i)
-                $root.CMsgControllerMode.encode(message.modes[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                $root.CMsgControllerMode.encode(message.modes[i], writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
         if (message.errorMsg != null && Object.hasOwnProperty.call(message, "errorMsg"))
-            writer.uint32(/* id 8, wireType 2 =*/66).string(message.errorMsg);
+            writer.uint32(/* id 10, wireType 2 =*/82).string(message.errorMsg);
         if (message.actionBlockPath != null && Object.hasOwnProperty.call(message, "actionBlockPath"))
-            writer.uint32(/* id 9, wireType 2 =*/74).string(message.actionBlockPath);
+            writer.uint32(/* id 11, wireType 2 =*/90).string(message.actionBlockPath);
         if (message.miscActionSetSettings != null && Object.hasOwnProperty.call(message, "miscActionSetSettings"))
-            $root.CMsgControllerActionSetMiscSettings.encode(message.miscActionSetSettings, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+            $root.CMsgControllerActionSetMiscSettings.encode(message.miscActionSetSettings, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
         if (message.url != null && Object.hasOwnProperty.call(message, "url"))
-            writer.uint32(/* id 11, wireType 2 =*/90).string(message.url);
+            writer.uint32(/* id 13, wireType 2 =*/106).string(message.url);
         return writer;
     };
 
@@ -71786,30 +71491,38 @@ export const CMsgControllerConfiguration = $root.CMsgControllerConfiguration = (
                     break;
                 }
             case 6: {
+                    message.capabilityBits = reader.uint32();
+                    break;
+                }
+            case 7: {
+                    message.controllerStyle = reader.int32();
+                    break;
+                }
+            case 8: {
                     if (!(message.sets && message.sets.length))
                         message.sets = [];
                     message.sets.push($root.CMsgGameActionSet.decode(reader, reader.uint32()));
                     break;
                 }
-            case 7: {
+            case 9: {
                     if (!(message.modes && message.modes.length))
                         message.modes = [];
                     message.modes.push($root.CMsgControllerMode.decode(reader, reader.uint32()));
                     break;
                 }
-            case 8: {
+            case 10: {
                     message.errorMsg = reader.string();
                     break;
                 }
-            case 9: {
+            case 11: {
                     message.actionBlockPath = reader.string();
                     break;
                 }
-            case 10: {
+            case 12: {
                     message.miscActionSetSettings = $root.CMsgControllerActionSetMiscSettings.decode(reader, reader.uint32());
                     break;
                 }
-            case 11: {
+            case 13: {
                     message.url = reader.string();
                     break;
                 }
@@ -74328,6 +74041,8 @@ export const CMsgControllerMode = $root.CMsgControllerMode = (() => {
      * @property {number|null} [source] CMsgControllerMode source
      * @property {ICMsgControllerVirtualMenuPreviewInfo|null} [virtualMenuInfo] CMsgControllerMode virtualMenuInfo
      * @property {boolean|null} [modeShift] CMsgControllerMode modeShift
+     * @property {number|null} [referenceModeid] CMsgControllerMode referenceModeid
+     * @property {Array.<number>|null} [modeShiftButtons] CMsgControllerMode modeShiftButtons
      */
 
     /**
@@ -74341,6 +74056,7 @@ export const CMsgControllerMode = $root.CMsgControllerMode = (() => {
     function CMsgControllerMode(properties) {
         this.inputs = [];
         this.settings = [];
+        this.modeShiftButtons = [];
         if (properties)
             for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -74420,6 +74136,22 @@ export const CMsgControllerMode = $root.CMsgControllerMode = (() => {
     CMsgControllerMode.prototype.modeShift = false;
 
     /**
+     * CMsgControllerMode referenceModeid.
+     * @member {number} referenceModeid
+     * @memberof CMsgControllerMode
+     * @instance
+     */
+    CMsgControllerMode.prototype.referenceModeid = 0;
+
+    /**
+     * CMsgControllerMode modeShiftButtons.
+     * @member {Array.<number>} modeShiftButtons
+     * @memberof CMsgControllerMode
+     * @instance
+     */
+    CMsgControllerMode.prototype.modeShiftButtons = $util.emptyArray;
+
+    /**
      * Encodes the specified CMsgControllerMode message. Does not implicitly {@link CMsgControllerMode.verify|verify} messages.
      * @function encode
      * @memberof CMsgControllerMode
@@ -74451,6 +74183,11 @@ export const CMsgControllerMode = $root.CMsgControllerMode = (() => {
             $root.CMsgControllerVirtualMenuPreviewInfo.encode(message.virtualMenuInfo, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
         if (message.modeShift != null && Object.hasOwnProperty.call(message, "modeShift"))
             writer.uint32(/* id 9, wireType 0 =*/72).bool(message.modeShift);
+        if (message.referenceModeid != null && Object.hasOwnProperty.call(message, "referenceModeid"))
+            writer.uint32(/* id 10, wireType 0 =*/80).uint32(message.referenceModeid);
+        if (message.modeShiftButtons != null && message.modeShiftButtons.length)
+            for (let i = 0; i < message.modeShiftButtons.length; ++i)
+                writer.uint32(/* id 11, wireType 0 =*/88).int32(message.modeShiftButtons[i]);
         return writer;
     };
 
@@ -74510,6 +74247,21 @@ export const CMsgControllerMode = $root.CMsgControllerMode = (() => {
                 }
             case 9: {
                     message.modeShift = reader.bool();
+                    break;
+                }
+            case 10: {
+                    message.referenceModeid = reader.uint32();
+                    break;
+                }
+            case 11: {
+                    if (!(message.modeShiftButtons && message.modeShiftButtons.length))
+                        message.modeShiftButtons = [];
+                    if ((tag & 7) === 2) {
+                        let end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
+                            message.modeShiftButtons.push(reader.int32());
+                    } else
+                        message.modeShiftButtons.push(reader.int32());
                     break;
                 }
             default:
@@ -84894,6 +84646,9 @@ export const CMsgProtoBufHeader = $root.CMsgProtoBufHeader = (() => {
      * @property {string|null} [wgToken_Field_39] CMsgProtoBufHeader wgToken_Field_39
      * @property {string|null} [webuiAuthKey] CMsgProtoBufHeader webuiAuthKey
      * @property {Array.<number>|null} [excludeClientSessionids] CMsgProtoBufHeader excludeClientSessionids
+     * @property {number|Long|null} [adminRequestSpoofingSteamid] CMsgProtoBufHeader adminRequestSpoofingSteamid
+     * @property {boolean|null} [isValveds] CMsgProtoBufHeader isValveds
+     * @property {number|Long|null} [traceTag_Field_45] CMsgProtoBufHeader traceTag_Field_45
      */
 
     /**
@@ -85194,6 +84949,30 @@ export const CMsgProtoBufHeader = $root.CMsgProtoBufHeader = (() => {
     CMsgProtoBufHeader.prototype.excludeClientSessionids = $util.emptyArray;
 
     /**
+     * CMsgProtoBufHeader adminRequestSpoofingSteamid.
+     * @member {number|Long} adminRequestSpoofingSteamid
+     * @memberof CMsgProtoBufHeader
+     * @instance
+     */
+    CMsgProtoBufHeader.prototype.adminRequestSpoofingSteamid = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+    /**
+     * CMsgProtoBufHeader isValveds.
+     * @member {boolean} isValveds
+     * @memberof CMsgProtoBufHeader
+     * @instance
+     */
+    CMsgProtoBufHeader.prototype.isValveds = false;
+
+    /**
+     * CMsgProtoBufHeader traceTag_Field_45.
+     * @member {number|Long} traceTag_Field_45
+     * @memberof CMsgProtoBufHeader
+     * @instance
+     */
+    CMsgProtoBufHeader.prototype.traceTag_Field_45 = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+    /**
      * Encodes the specified CMsgProtoBufHeader message. Does not implicitly {@link CMsgProtoBufHeader.verify|verify} messages.
      * @function encode
      * @memberof CMsgProtoBufHeader
@@ -85277,6 +85056,12 @@ export const CMsgProtoBufHeader = $root.CMsgProtoBufHeader = (() => {
         if (message.excludeClientSessionids != null && message.excludeClientSessionids.length)
             for (let i = 0; i < message.excludeClientSessionids.length; ++i)
                 writer.uint32(/* id 41, wireType 0 =*/328).int32(message.excludeClientSessionids[i]);
+        if (message.adminRequestSpoofingSteamid != null && Object.hasOwnProperty.call(message, "adminRequestSpoofingSteamid"))
+            writer.uint32(/* id 43, wireType 1 =*/345).fixed64(message.adminRequestSpoofingSteamid);
+        if (message.isValveds != null && Object.hasOwnProperty.call(message, "isValveds"))
+            writer.uint32(/* id 44, wireType 0 =*/352).bool(message.isValveds);
+        if (message.traceTag_Field_45 != null && Object.hasOwnProperty.call(message, "traceTag_Field_45"))
+            writer.uint32(/* id 45, wireType 1 =*/361).fixed64(message.traceTag_Field_45);
         return writer;
     };
 
@@ -85450,6 +85235,18 @@ export const CMsgProtoBufHeader = $root.CMsgProtoBufHeader = (() => {
                             message.excludeClientSessionids.push(reader.int32());
                     } else
                         message.excludeClientSessionids.push(reader.int32());
+                    break;
+                }
+            case 43: {
+                    message.adminRequestSpoofingSteamid = reader.fixed64();
+                    break;
+                }
+            case 44: {
+                    message.isValveds = reader.bool();
+                    break;
+                }
+            case 45: {
+                    message.traceTag_Field_45 = reader.fixed64();
                     break;
                 }
             default:
@@ -86752,7 +86549,7 @@ export const CMsgSetModeShiftButton = $root.CMsgSetModeShiftButton = (() => {
      * @property {string|null} [actionSetLayerKey] CMsgSetModeShiftButton actionSetLayerKey
      * @property {number|null} [modeid] CMsgSetModeShiftButton modeid
      * @property {number|null} [source] CMsgSetModeShiftButton source
-     * @property {number|null} [digitalIo] CMsgSetModeShiftButton digitalIo
+     * @property {Array.<number>|null} [modeShiftButtonsDigitalIo] CMsgSetModeShiftButton modeShiftButtonsDigitalIo
      */
 
     /**
@@ -86764,6 +86561,7 @@ export const CMsgSetModeShiftButton = $root.CMsgSetModeShiftButton = (() => {
      * @param {ICMsgSetModeShiftButton=} [properties] Properties to set
      */
     function CMsgSetModeShiftButton(properties) {
+        this.modeShiftButtonsDigitalIo = [];
         if (properties)
             for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -86803,12 +86601,12 @@ export const CMsgSetModeShiftButton = $root.CMsgSetModeShiftButton = (() => {
     CMsgSetModeShiftButton.prototype.source = 0;
 
     /**
-     * CMsgSetModeShiftButton digitalIo.
-     * @member {number} digitalIo
+     * CMsgSetModeShiftButton modeShiftButtonsDigitalIo.
+     * @member {Array.<number>} modeShiftButtonsDigitalIo
      * @memberof CMsgSetModeShiftButton
      * @instance
      */
-    CMsgSetModeShiftButton.prototype.digitalIo = 0;
+    CMsgSetModeShiftButton.prototype.modeShiftButtonsDigitalIo = $util.emptyArray;
 
     /**
      * Encodes the specified CMsgSetModeShiftButton message. Does not implicitly {@link CMsgSetModeShiftButton.verify|verify} messages.
@@ -86830,8 +86628,9 @@ export const CMsgSetModeShiftButton = $root.CMsgSetModeShiftButton = (() => {
             writer.uint32(/* id 3, wireType 0 =*/24).int32(message.modeid);
         if (message.source != null && Object.hasOwnProperty.call(message, "source"))
             writer.uint32(/* id 4, wireType 0 =*/32).int32(message.source);
-        if (message.digitalIo != null && Object.hasOwnProperty.call(message, "digitalIo"))
-            writer.uint32(/* id 5, wireType 0 =*/40).int32(message.digitalIo);
+        if (message.modeShiftButtonsDigitalIo != null && message.modeShiftButtonsDigitalIo.length)
+            for (let i = 0; i < message.modeShiftButtonsDigitalIo.length; ++i)
+                writer.uint32(/* id 5, wireType 0 =*/40).int32(message.modeShiftButtonsDigitalIo[i]);
         return writer;
     };
 
@@ -86870,7 +86669,14 @@ export const CMsgSetModeShiftButton = $root.CMsgSetModeShiftButton = (() => {
                     break;
                 }
             case 5: {
-                    message.digitalIo = reader.int32();
+                    if (!(message.modeShiftButtonsDigitalIo && message.modeShiftButtonsDigitalIo.length))
+                        message.modeShiftButtonsDigitalIo = [];
+                    if ((tag & 7) === 2) {
+                        let end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
+                            message.modeShiftButtonsDigitalIo.push(reader.int32());
+                    } else
+                        message.modeShiftButtonsDigitalIo.push(reader.int32());
                     break;
                 }
             default:
@@ -90679,9 +90485,9 @@ export const CMsgSystemDisplay = $root.CMsgSystemDisplay = (() => {
      * @property {number|null} [refreshRateMin] CMsgSystemDisplay refreshRateMin
      * @property {number|null} [refreshRateMax] CMsgSystemDisplay refreshRateMax
      * @property {boolean|null} [isVrrCapable] CMsgSystemDisplay isVrrCapable
-     * @property {boolean|null} [isVrrEnabled] CMsgSystemDisplay isVrrEnabled
+     * @property {boolean|null} [isVrrOutputActive] CMsgSystemDisplay isVrrOutputActive
      * @property {boolean|null} [isHdrCapable] CMsgSystemDisplay isHdrCapable
-     * @property {boolean|null} [isHdrEnabled] CMsgSystemDisplay isHdrEnabled
+     * @property {boolean|null} [isHdrOutputActive] CMsgSystemDisplay isHdrOutputActive
      * @property {Array.<number>|null} [supportedRefreshRates] CMsgSystemDisplay supportedRefreshRates
      */
 
@@ -90815,12 +90621,12 @@ export const CMsgSystemDisplay = $root.CMsgSystemDisplay = (() => {
     CMsgSystemDisplay.prototype.isVrrCapable = false;
 
     /**
-     * CMsgSystemDisplay isVrrEnabled.
-     * @member {boolean} isVrrEnabled
+     * CMsgSystemDisplay isVrrOutputActive.
+     * @member {boolean} isVrrOutputActive
      * @memberof CMsgSystemDisplay
      * @instance
      */
-    CMsgSystemDisplay.prototype.isVrrEnabled = false;
+    CMsgSystemDisplay.prototype.isVrrOutputActive = false;
 
     /**
      * CMsgSystemDisplay isHdrCapable.
@@ -90831,12 +90637,12 @@ export const CMsgSystemDisplay = $root.CMsgSystemDisplay = (() => {
     CMsgSystemDisplay.prototype.isHdrCapable = false;
 
     /**
-     * CMsgSystemDisplay isHdrEnabled.
-     * @member {boolean} isHdrEnabled
+     * CMsgSystemDisplay isHdrOutputActive.
+     * @member {boolean} isHdrOutputActive
      * @memberof CMsgSystemDisplay
      * @instance
      */
-    CMsgSystemDisplay.prototype.isHdrEnabled = false;
+    CMsgSystemDisplay.prototype.isHdrOutputActive = false;
 
     /**
      * CMsgSystemDisplay supportedRefreshRates.
@@ -90887,12 +90693,12 @@ export const CMsgSystemDisplay = $root.CMsgSystemDisplay = (() => {
             writer.uint32(/* id 13, wireType 0 =*/104).int32(message.refreshRateMax);
         if (message.isVrrCapable != null && Object.hasOwnProperty.call(message, "isVrrCapable"))
             writer.uint32(/* id 14, wireType 0 =*/112).bool(message.isVrrCapable);
-        if (message.isVrrEnabled != null && Object.hasOwnProperty.call(message, "isVrrEnabled"))
-            writer.uint32(/* id 15, wireType 0 =*/120).bool(message.isVrrEnabled);
+        if (message.isVrrOutputActive != null && Object.hasOwnProperty.call(message, "isVrrOutputActive"))
+            writer.uint32(/* id 15, wireType 0 =*/120).bool(message.isVrrOutputActive);
         if (message.isHdrCapable != null && Object.hasOwnProperty.call(message, "isHdrCapable"))
             writer.uint32(/* id 16, wireType 0 =*/128).bool(message.isHdrCapable);
-        if (message.isHdrEnabled != null && Object.hasOwnProperty.call(message, "isHdrEnabled"))
-            writer.uint32(/* id 17, wireType 0 =*/136).bool(message.isHdrEnabled);
+        if (message.isHdrOutputActive != null && Object.hasOwnProperty.call(message, "isHdrOutputActive"))
+            writer.uint32(/* id 17, wireType 0 =*/136).bool(message.isHdrOutputActive);
         if (message.supportedRefreshRates != null && message.supportedRefreshRates.length)
             for (let i = 0; i < message.supportedRefreshRates.length; ++i)
                 writer.uint32(/* id 18, wireType 0 =*/144).int32(message.supportedRefreshRates[i]);
@@ -90976,7 +90782,7 @@ export const CMsgSystemDisplay = $root.CMsgSystemDisplay = (() => {
                     break;
                 }
             case 15: {
-                    message.isVrrEnabled = reader.bool();
+                    message.isVrrOutputActive = reader.bool();
                     break;
                 }
             case 16: {
@@ -90984,7 +90790,7 @@ export const CMsgSystemDisplay = $root.CMsgSystemDisplay = (() => {
                     break;
                 }
             case 17: {
-                    message.isHdrEnabled = reader.bool();
+                    message.isHdrOutputActive = reader.bool();
                     break;
                 }
             case 18: {
@@ -92680,19 +92486,13 @@ export const CMsgSystemPerfLimits = $root.CMsgSystemPerfLimits = (() => {
      * @property {Array.<number>|null} [fpsLimitOptions] CMsgSystemPerfLimits fpsLimitOptions
      * @property {number|null} [tdpLimitMin] CMsgSystemPerfLimits tdpLimitMin
      * @property {number|null} [tdpLimitMax] CMsgSystemPerfLimits tdpLimitMax
-     * @property {boolean|null} [isNisSupported] CMsgSystemPerfLimits isNisSupported
-     * @property {number|null} [nisSharpnessMin] CMsgSystemPerfLimits nisSharpnessMin
-     * @property {number|null} [nisSharpnessMax] CMsgSystemPerfLimits nisSharpnessMax
      * @property {number|null} [displayExternalRefreshManualHzMin] CMsgSystemPerfLimits displayExternalRefreshManualHzMin
      * @property {number|null} [displayExternalRefreshManualHzMax] CMsgSystemPerfLimits displayExternalRefreshManualHzMax
      * @property {Array.<number>|null} [fpsLimitOptionsExternal] CMsgSystemPerfLimits fpsLimitOptionsExternal
      * @property {boolean|null} [isVrrSupported] CMsgSystemPerfLimits isVrrSupported
      * @property {boolean|null} [isDynamicRefreshRateInSteamSupported] CMsgSystemPerfLimits isDynamicRefreshRateInSteamSupported
-     * @property {boolean|null} [isSplitScalingAndFilteringSupported] CMsgSystemPerfLimits isSplitScalingAndFilteringSupported
      * @property {Array.<number>|null} [splitScalingFiltersAvailable] CMsgSystemPerfLimits splitScalingFiltersAvailable
      * @property {Array.<number>|null} [splitScalingScalersAvailable] CMsgSystemPerfLimits splitScalingScalersAvailable
-     * @property {boolean|null} [isHdrSupported] CMsgSystemPerfLimits isHdrSupported
-     * @property {number|null} [displayRefreshManualHzOcMax] CMsgSystemPerfLimits displayRefreshManualHzOcMax
      * @property {boolean|null} [disableRefreshRateManagement] CMsgSystemPerfLimits disableRefreshRateManagement
      */
 
@@ -92837,30 +92637,6 @@ export const CMsgSystemPerfLimits = $root.CMsgSystemPerfLimits = (() => {
     CMsgSystemPerfLimits.prototype.tdpLimitMax = 0;
 
     /**
-     * CMsgSystemPerfLimits isNisSupported.
-     * @member {boolean} isNisSupported
-     * @memberof CMsgSystemPerfLimits
-     * @instance
-     */
-    CMsgSystemPerfLimits.prototype.isNisSupported = false;
-
-    /**
-     * CMsgSystemPerfLimits nisSharpnessMin.
-     * @member {number} nisSharpnessMin
-     * @memberof CMsgSystemPerfLimits
-     * @instance
-     */
-    CMsgSystemPerfLimits.prototype.nisSharpnessMin = 0;
-
-    /**
-     * CMsgSystemPerfLimits nisSharpnessMax.
-     * @member {number} nisSharpnessMax
-     * @memberof CMsgSystemPerfLimits
-     * @instance
-     */
-    CMsgSystemPerfLimits.prototype.nisSharpnessMax = 0;
-
-    /**
      * CMsgSystemPerfLimits displayExternalRefreshManualHzMin.
      * @member {number} displayExternalRefreshManualHzMin
      * @memberof CMsgSystemPerfLimits
@@ -92901,14 +92677,6 @@ export const CMsgSystemPerfLimits = $root.CMsgSystemPerfLimits = (() => {
     CMsgSystemPerfLimits.prototype.isDynamicRefreshRateInSteamSupported = false;
 
     /**
-     * CMsgSystemPerfLimits isSplitScalingAndFilteringSupported.
-     * @member {boolean} isSplitScalingAndFilteringSupported
-     * @memberof CMsgSystemPerfLimits
-     * @instance
-     */
-    CMsgSystemPerfLimits.prototype.isSplitScalingAndFilteringSupported = false;
-
-    /**
      * CMsgSystemPerfLimits splitScalingFiltersAvailable.
      * @member {Array.<number>} splitScalingFiltersAvailable
      * @memberof CMsgSystemPerfLimits
@@ -92923,22 +92691,6 @@ export const CMsgSystemPerfLimits = $root.CMsgSystemPerfLimits = (() => {
      * @instance
      */
     CMsgSystemPerfLimits.prototype.splitScalingScalersAvailable = $util.emptyArray;
-
-    /**
-     * CMsgSystemPerfLimits isHdrSupported.
-     * @member {boolean} isHdrSupported
-     * @memberof CMsgSystemPerfLimits
-     * @instance
-     */
-    CMsgSystemPerfLimits.prototype.isHdrSupported = false;
-
-    /**
-     * CMsgSystemPerfLimits displayRefreshManualHzOcMax.
-     * @member {number} displayRefreshManualHzOcMax
-     * @memberof CMsgSystemPerfLimits
-     * @instance
-     */
-    CMsgSystemPerfLimits.prototype.displayRefreshManualHzOcMax = 0;
 
     /**
      * CMsgSystemPerfLimits disableRefreshRateManagement.
@@ -92992,12 +92744,6 @@ export const CMsgSystemPerfLimits = $root.CMsgSystemPerfLimits = (() => {
             writer.uint32(/* id 14, wireType 0 =*/112).int32(message.tdpLimitMin);
         if (message.tdpLimitMax != null && Object.hasOwnProperty.call(message, "tdpLimitMax"))
             writer.uint32(/* id 15, wireType 0 =*/120).int32(message.tdpLimitMax);
-        if (message.isNisSupported != null && Object.hasOwnProperty.call(message, "isNisSupported"))
-            writer.uint32(/* id 16, wireType 0 =*/128).bool(message.isNisSupported);
-        if (message.nisSharpnessMin != null && Object.hasOwnProperty.call(message, "nisSharpnessMin"))
-            writer.uint32(/* id 17, wireType 0 =*/136).int32(message.nisSharpnessMin);
-        if (message.nisSharpnessMax != null && Object.hasOwnProperty.call(message, "nisSharpnessMax"))
-            writer.uint32(/* id 18, wireType 0 =*/144).int32(message.nisSharpnessMax);
         if (message.displayExternalRefreshManualHzMin != null && Object.hasOwnProperty.call(message, "displayExternalRefreshManualHzMin"))
             writer.uint32(/* id 19, wireType 0 =*/152).int32(message.displayExternalRefreshManualHzMin);
         if (message.displayExternalRefreshManualHzMax != null && Object.hasOwnProperty.call(message, "displayExternalRefreshManualHzMax"))
@@ -93009,18 +92755,12 @@ export const CMsgSystemPerfLimits = $root.CMsgSystemPerfLimits = (() => {
             writer.uint32(/* id 23, wireType 0 =*/184).bool(message.isVrrSupported);
         if (message.isDynamicRefreshRateInSteamSupported != null && Object.hasOwnProperty.call(message, "isDynamicRefreshRateInSteamSupported"))
             writer.uint32(/* id 24, wireType 0 =*/192).bool(message.isDynamicRefreshRateInSteamSupported);
-        if (message.isSplitScalingAndFilteringSupported != null && Object.hasOwnProperty.call(message, "isSplitScalingAndFilteringSupported"))
-            writer.uint32(/* id 25, wireType 0 =*/200).bool(message.isSplitScalingAndFilteringSupported);
         if (message.splitScalingFiltersAvailable != null && message.splitScalingFiltersAvailable.length)
             for (let i = 0; i < message.splitScalingFiltersAvailable.length; ++i)
                 writer.uint32(/* id 26, wireType 0 =*/208).int32(message.splitScalingFiltersAvailable[i]);
         if (message.splitScalingScalersAvailable != null && message.splitScalingScalersAvailable.length)
             for (let i = 0; i < message.splitScalingScalersAvailable.length; ++i)
                 writer.uint32(/* id 27, wireType 0 =*/216).int32(message.splitScalingScalersAvailable[i]);
-        if (message.isHdrSupported != null && Object.hasOwnProperty.call(message, "isHdrSupported"))
-            writer.uint32(/* id 28, wireType 0 =*/224).bool(message.isHdrSupported);
-        if (message.displayRefreshManualHzOcMax != null && Object.hasOwnProperty.call(message, "displayRefreshManualHzOcMax"))
-            writer.uint32(/* id 29, wireType 0 =*/232).int32(message.displayRefreshManualHzOcMax);
         if (message.disableRefreshRateManagement != null && Object.hasOwnProperty.call(message, "disableRefreshRateManagement"))
             writer.uint32(/* id 30, wireType 0 =*/240).bool(message.disableRefreshRateManagement);
         return writer;
@@ -93118,18 +92858,6 @@ export const CMsgSystemPerfLimits = $root.CMsgSystemPerfLimits = (() => {
                     message.tdpLimitMax = reader.int32();
                     break;
                 }
-            case 16: {
-                    message.isNisSupported = reader.bool();
-                    break;
-                }
-            case 17: {
-                    message.nisSharpnessMin = reader.int32();
-                    break;
-                }
-            case 18: {
-                    message.nisSharpnessMax = reader.int32();
-                    break;
-                }
             case 19: {
                     message.displayExternalRefreshManualHzMin = reader.int32();
                     break;
@@ -93157,10 +92885,6 @@ export const CMsgSystemPerfLimits = $root.CMsgSystemPerfLimits = (() => {
                     message.isDynamicRefreshRateInSteamSupported = reader.bool();
                     break;
                 }
-            case 25: {
-                    message.isSplitScalingAndFilteringSupported = reader.bool();
-                    break;
-                }
             case 26: {
                     if (!(message.splitScalingFiltersAvailable && message.splitScalingFiltersAvailable.length))
                         message.splitScalingFiltersAvailable = [];
@@ -93181,14 +92905,6 @@ export const CMsgSystemPerfLimits = $root.CMsgSystemPerfLimits = (() => {
                             message.splitScalingScalersAvailable.push(reader.int32());
                     } else
                         message.splitScalingScalersAvailable.push(reader.int32());
-                    break;
-                }
-            case 28: {
-                    message.isHdrSupported = reader.bool();
-                    break;
-                }
-            case 29: {
-                    message.displayRefreshManualHzOcMax = reader.int32();
                     break;
                 }
             case 30: {
@@ -93519,14 +93235,9 @@ export const CMsgSystemPerfSettingsGlobal = $root.CMsgSystemPerfSettingsGlobal =
      * @property {boolean|null} [isShowPerfOverlayOverSteamEnabled] CMsgSystemPerfSettingsGlobal isShowPerfOverlayOverSteamEnabled
      * @property {boolean|null} [isAdvancedSettingsEnabled] CMsgSystemPerfSettingsGlobal isAdvancedSettingsEnabled
      * @property {boolean|null} [allowExternalDisplayRefreshControl] CMsgSystemPerfSettingsGlobal allowExternalDisplayRefreshControl
-     * @property {boolean|null} [isHdrEnabled] CMsgSystemPerfSettingsGlobal isHdrEnabled
      * @property {number|null} [hdrOnSdrTonemapOperator] CMsgSystemPerfSettingsGlobal hdrOnSdrTonemapOperator
      * @property {boolean|null} [isHdrDebugHeatmapEnabled] CMsgSystemPerfSettingsGlobal isHdrDebugHeatmapEnabled
      * @property {boolean|null} [forceHdrWideGammutForSdr] CMsgSystemPerfSettingsGlobal forceHdrWideGammutForSdr
-     * @property {boolean|null} [allowExperimentalHdr] CMsgSystemPerfSettingsGlobal allowExperimentalHdr
-     * @property {boolean|null} [debugForceHdrSupport] CMsgSystemPerfSettingsGlobal debugForceHdrSupport
-     * @property {boolean|null} [forceHdr_10pqOutputDebug] CMsgSystemPerfSettingsGlobal forceHdr_10pqOutputDebug
-     * @property {boolean|null} [isDisplayOcEnabled] CMsgSystemPerfSettingsGlobal isDisplayOcEnabled
      * @property {boolean|null} [isColorManagementEnabled] CMsgSystemPerfSettingsGlobal isColorManagementEnabled
      * @property {number|null} [sdrToHdrBrightness] CMsgSystemPerfSettingsGlobal sdrToHdrBrightness
      */
@@ -93611,14 +93322,6 @@ export const CMsgSystemPerfSettingsGlobal = $root.CMsgSystemPerfSettingsGlobal =
     CMsgSystemPerfSettingsGlobal.prototype.allowExternalDisplayRefreshControl = false;
 
     /**
-     * CMsgSystemPerfSettingsGlobal isHdrEnabled.
-     * @member {boolean} isHdrEnabled
-     * @memberof CMsgSystemPerfSettingsGlobal
-     * @instance
-     */
-    CMsgSystemPerfSettingsGlobal.prototype.isHdrEnabled = false;
-
-    /**
      * CMsgSystemPerfSettingsGlobal hdrOnSdrTonemapOperator.
      * @member {number} hdrOnSdrTonemapOperator
      * @memberof CMsgSystemPerfSettingsGlobal
@@ -93641,38 +93344,6 @@ export const CMsgSystemPerfSettingsGlobal = $root.CMsgSystemPerfSettingsGlobal =
      * @instance
      */
     CMsgSystemPerfSettingsGlobal.prototype.forceHdrWideGammutForSdr = true;
-
-    /**
-     * CMsgSystemPerfSettingsGlobal allowExperimentalHdr.
-     * @member {boolean} allowExperimentalHdr
-     * @memberof CMsgSystemPerfSettingsGlobal
-     * @instance
-     */
-    CMsgSystemPerfSettingsGlobal.prototype.allowExperimentalHdr = false;
-
-    /**
-     * CMsgSystemPerfSettingsGlobal debugForceHdrSupport.
-     * @member {boolean} debugForceHdrSupport
-     * @memberof CMsgSystemPerfSettingsGlobal
-     * @instance
-     */
-    CMsgSystemPerfSettingsGlobal.prototype.debugForceHdrSupport = false;
-
-    /**
-     * CMsgSystemPerfSettingsGlobal forceHdr_10pqOutputDebug.
-     * @member {boolean} forceHdr_10pqOutputDebug
-     * @memberof CMsgSystemPerfSettingsGlobal
-     * @instance
-     */
-    CMsgSystemPerfSettingsGlobal.prototype.forceHdr_10pqOutputDebug = false;
-
-    /**
-     * CMsgSystemPerfSettingsGlobal isDisplayOcEnabled.
-     * @member {boolean} isDisplayOcEnabled
-     * @memberof CMsgSystemPerfSettingsGlobal
-     * @instance
-     */
-    CMsgSystemPerfSettingsGlobal.prototype.isDisplayOcEnabled = false;
 
     /**
      * CMsgSystemPerfSettingsGlobal isColorManagementEnabled.
@@ -93718,22 +93389,12 @@ export const CMsgSystemPerfSettingsGlobal = $root.CMsgSystemPerfSettingsGlobal =
             writer.uint32(/* id 7, wireType 0 =*/56).bool(message.isAdvancedSettingsEnabled);
         if (message.allowExternalDisplayRefreshControl != null && Object.hasOwnProperty.call(message, "allowExternalDisplayRefreshControl"))
             writer.uint32(/* id 8, wireType 0 =*/64).bool(message.allowExternalDisplayRefreshControl);
-        if (message.isHdrEnabled != null && Object.hasOwnProperty.call(message, "isHdrEnabled"))
-            writer.uint32(/* id 9, wireType 0 =*/72).bool(message.isHdrEnabled);
         if (message.hdrOnSdrTonemapOperator != null && Object.hasOwnProperty.call(message, "hdrOnSdrTonemapOperator"))
             writer.uint32(/* id 12, wireType 0 =*/96).int32(message.hdrOnSdrTonemapOperator);
         if (message.isHdrDebugHeatmapEnabled != null && Object.hasOwnProperty.call(message, "isHdrDebugHeatmapEnabled"))
             writer.uint32(/* id 13, wireType 0 =*/104).bool(message.isHdrDebugHeatmapEnabled);
         if (message.forceHdrWideGammutForSdr != null && Object.hasOwnProperty.call(message, "forceHdrWideGammutForSdr"))
             writer.uint32(/* id 15, wireType 0 =*/120).bool(message.forceHdrWideGammutForSdr);
-        if (message.allowExperimentalHdr != null && Object.hasOwnProperty.call(message, "allowExperimentalHdr"))
-            writer.uint32(/* id 16, wireType 0 =*/128).bool(message.allowExperimentalHdr);
-        if (message.debugForceHdrSupport != null && Object.hasOwnProperty.call(message, "debugForceHdrSupport"))
-            writer.uint32(/* id 18, wireType 0 =*/144).bool(message.debugForceHdrSupport);
-        if (message.forceHdr_10pqOutputDebug != null && Object.hasOwnProperty.call(message, "forceHdr_10pqOutputDebug"))
-            writer.uint32(/* id 19, wireType 0 =*/152).bool(message.forceHdr_10pqOutputDebug);
-        if (message.isDisplayOcEnabled != null && Object.hasOwnProperty.call(message, "isDisplayOcEnabled"))
-            writer.uint32(/* id 20, wireType 0 =*/160).bool(message.isDisplayOcEnabled);
         if (message.isColorManagementEnabled != null && Object.hasOwnProperty.call(message, "isColorManagementEnabled"))
             writer.uint32(/* id 21, wireType 0 =*/168).bool(message.isColorManagementEnabled);
         if (message.sdrToHdrBrightness != null && Object.hasOwnProperty.call(message, "sdrToHdrBrightness"))
@@ -93791,10 +93452,6 @@ export const CMsgSystemPerfSettingsGlobal = $root.CMsgSystemPerfSettingsGlobal =
                     message.allowExternalDisplayRefreshControl = reader.bool();
                     break;
                 }
-            case 9: {
-                    message.isHdrEnabled = reader.bool();
-                    break;
-                }
             case 12: {
                     message.hdrOnSdrTonemapOperator = reader.int32();
                     break;
@@ -93805,22 +93462,6 @@ export const CMsgSystemPerfSettingsGlobal = $root.CMsgSystemPerfSettingsGlobal =
                 }
             case 15: {
                     message.forceHdrWideGammutForSdr = reader.bool();
-                    break;
-                }
-            case 16: {
-                    message.allowExperimentalHdr = reader.bool();
-                    break;
-                }
-            case 18: {
-                    message.debugForceHdrSupport = reader.bool();
-                    break;
-                }
-            case 19: {
-                    message.forceHdr_10pqOutputDebug = reader.bool();
-                    break;
-                }
-            case 20: {
-                    message.isDisplayOcEnabled = reader.bool();
                     break;
                 }
             case 21: {
@@ -93878,7 +93519,6 @@ export const CMsgSystemPerfSettingsPerApp = $root.CMsgSystemPerfSettingsPerApp =
      * @property {number|null} [displayRefreshManualHz] CMsgSystemPerfSettingsPerApp displayRefreshManualHz
      * @property {boolean|null} [isGamePerfProfileEnabled] CMsgSystemPerfSettingsPerApp isGamePerfProfileEnabled
      * @property {number|null} [gpuPerformanceLevel] CMsgSystemPerfSettingsPerApp gpuPerformanceLevel
-     * @property {number|null} [nisSharpness] CMsgSystemPerfSettingsPerApp nisSharpness
      * @property {number|null} [displayExternalRefreshManualHz] CMsgSystemPerfSettingsPerApp displayExternalRefreshManualHz
      * @property {number|null} [fpsLimitExternal] CMsgSystemPerfSettingsPerApp fpsLimitExternal
      * @property {boolean|null} [isTearingEnabled] CMsgSystemPerfSettingsPerApp isTearingEnabled
@@ -94024,14 +93664,6 @@ export const CMsgSystemPerfSettingsPerApp = $root.CMsgSystemPerfSettingsPerApp =
     CMsgSystemPerfSettingsPerApp.prototype.gpuPerformanceLevel = 0;
 
     /**
-     * CMsgSystemPerfSettingsPerApp nisSharpness.
-     * @member {number} nisSharpness
-     * @memberof CMsgSystemPerfSettingsPerApp
-     * @instance
-     */
-    CMsgSystemPerfSettingsPerApp.prototype.nisSharpness = 0;
-
-    /**
      * CMsgSystemPerfSettingsPerApp displayExternalRefreshManualHz.
      * @member {number} displayExternalRefreshManualHz
      * @memberof CMsgSystemPerfSettingsPerApp
@@ -94129,8 +93761,6 @@ export const CMsgSystemPerfSettingsPerApp = $root.CMsgSystemPerfSettingsPerApp =
             writer.uint32(/* id 14, wireType 0 =*/112).bool(message.isGamePerfProfileEnabled);
         if (message.gpuPerformanceLevel != null && Object.hasOwnProperty.call(message, "gpuPerformanceLevel"))
             writer.uint32(/* id 15, wireType 0 =*/120).int32(message.gpuPerformanceLevel);
-        if (message.nisSharpness != null && Object.hasOwnProperty.call(message, "nisSharpness"))
-            writer.uint32(/* id 16, wireType 0 =*/128).int32(message.nisSharpness);
         if (message.displayExternalRefreshManualHz != null && Object.hasOwnProperty.call(message, "displayExternalRefreshManualHz"))
             writer.uint32(/* id 17, wireType 0 =*/136).int32(message.displayExternalRefreshManualHz);
         if (message.fpsLimitExternal != null && Object.hasOwnProperty.call(message, "fpsLimitExternal"))
@@ -94224,10 +93854,6 @@ export const CMsgSystemPerfSettingsPerApp = $root.CMsgSystemPerfSettingsPerApp =
                 }
             case 15: {
                     message.gpuPerformanceLevel = reader.int32();
-                    break;
-                }
-            case 16: {
-                    message.nisSharpness = reader.int32();
                     break;
                 }
             case 17: {
@@ -95930,118 +95556,6 @@ export const CMsgWebUITransportFailure = $root.CMsgWebUITransportFailure = (() =
     return CMsgWebUITransportFailure;
 })();
 
-export const CPartnerStoreBrowse_GetItems_Request = $root.CPartnerStoreBrowse_GetItems_Request = (() => {
-
-    /**
-     * Properties of a CPartnerStoreBrowse_GetItems_Request.
-     * @exports ICPartnerStoreBrowse_GetItems_Request
-     * @interface ICPartnerStoreBrowse_GetItems_Request
-     * @property {ICStoreBrowse_GetItems_Request|null} [request] CPartnerStoreBrowse_GetItems_Request request
-     * @property {boolean|null} [includeUnpublished] CPartnerStoreBrowse_GetItems_Request includeUnpublished
-     */
-
-    /**
-     * Constructs a new CPartnerStoreBrowse_GetItems_Request.
-     * @exports CPartnerStoreBrowse_GetItems_Request
-     * @classdesc Represents a CPartnerStoreBrowse_GetItems_Request.
-     * @implements ICPartnerStoreBrowse_GetItems_Request
-     * @constructor
-     * @param {ICPartnerStoreBrowse_GetItems_Request=} [properties] Properties to set
-     */
-    function CPartnerStoreBrowse_GetItems_Request(properties) {
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CPartnerStoreBrowse_GetItems_Request request.
-     * @member {ICStoreBrowse_GetItems_Request|null|undefined} request
-     * @memberof CPartnerStoreBrowse_GetItems_Request
-     * @instance
-     */
-    CPartnerStoreBrowse_GetItems_Request.prototype.request = null;
-
-    /**
-     * CPartnerStoreBrowse_GetItems_Request includeUnpublished.
-     * @member {boolean} includeUnpublished
-     * @memberof CPartnerStoreBrowse_GetItems_Request
-     * @instance
-     */
-    CPartnerStoreBrowse_GetItems_Request.prototype.includeUnpublished = false;
-
-    /**
-     * Encodes the specified CPartnerStoreBrowse_GetItems_Request message. Does not implicitly {@link CPartnerStoreBrowse_GetItems_Request.verify|verify} messages.
-     * @function encode
-     * @memberof CPartnerStoreBrowse_GetItems_Request
-     * @static
-     * @param {ICPartnerStoreBrowse_GetItems_Request} message CPartnerStoreBrowse_GetItems_Request message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CPartnerStoreBrowse_GetItems_Request.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.request != null && Object.hasOwnProperty.call(message, "request"))
-            $root.CStoreBrowse_GetItems_Request.encode(message.request, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-        if (message.includeUnpublished != null && Object.hasOwnProperty.call(message, "includeUnpublished"))
-            writer.uint32(/* id 2, wireType 0 =*/16).bool(message.includeUnpublished);
-        return writer;
-    };
-
-    /**
-     * Decodes a CPartnerStoreBrowse_GetItems_Request message from the specified reader or buffer.
-     * @function decode
-     * @memberof CPartnerStoreBrowse_GetItems_Request
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CPartnerStoreBrowse_GetItems_Request} CPartnerStoreBrowse_GetItems_Request
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CPartnerStoreBrowse_GetItems_Request.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CPartnerStoreBrowse_GetItems_Request();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.request = $root.CStoreBrowse_GetItems_Request.decode(reader, reader.uint32());
-                    break;
-                }
-            case 2: {
-                    message.includeUnpublished = reader.bool();
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CPartnerStoreBrowse_GetItems_Request
-     * @function getTypeUrl
-     * @memberof CPartnerStoreBrowse_GetItems_Request
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CPartnerStoreBrowse_GetItems_Request.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CPartnerStoreBrowse_GetItems_Request";
-    };
-
-    return CPartnerStoreBrowse_GetItems_Request;
-})();
-
 export const CProductImpressionsFromClient_Notification = $root.CProductImpressionsFromClient_Notification = (() => {
 
     /**
@@ -96270,372 +95784,6 @@ export const CProductImpressionsFromClient_Notification_Impression = $root.CProd
     return CProductImpressionsFromClient_Notification_Impression;
 })();
 
-export const CRemoteClient_DeviceDetails = $root.CRemoteClient_DeviceDetails = (() => {
-
-    /**
-     * Properties of a CRemoteClient_DeviceDetails.
-     * @exports ICRemoteClient_DeviceDetails
-     * @interface ICRemoteClient_DeviceDetails
-     * @property {string|null} [deviceFriendlyName] CRemoteClient_DeviceDetails deviceFriendlyName
-     * @property {number|null} [osType] CRemoteClient_DeviceDetails osType
-     * @property {number|null} [gamingDeviceType] CRemoteClient_DeviceDetails gamingDeviceType
-     */
-
-    /**
-     * Constructs a new CRemoteClient_DeviceDetails.
-     * @exports CRemoteClient_DeviceDetails
-     * @classdesc Represents a CRemoteClient_DeviceDetails.
-     * @implements ICRemoteClient_DeviceDetails
-     * @constructor
-     * @param {ICRemoteClient_DeviceDetails=} [properties] Properties to set
-     */
-    function CRemoteClient_DeviceDetails(properties) {
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CRemoteClient_DeviceDetails deviceFriendlyName.
-     * @member {string} deviceFriendlyName
-     * @memberof CRemoteClient_DeviceDetails
-     * @instance
-     */
-    CRemoteClient_DeviceDetails.prototype.deviceFriendlyName = "";
-
-    /**
-     * CRemoteClient_DeviceDetails osType.
-     * @member {number} osType
-     * @memberof CRemoteClient_DeviceDetails
-     * @instance
-     */
-    CRemoteClient_DeviceDetails.prototype.osType = 0;
-
-    /**
-     * CRemoteClient_DeviceDetails gamingDeviceType.
-     * @member {number} gamingDeviceType
-     * @memberof CRemoteClient_DeviceDetails
-     * @instance
-     */
-    CRemoteClient_DeviceDetails.prototype.gamingDeviceType = 0;
-
-    /**
-     * Encodes the specified CRemoteClient_DeviceDetails message. Does not implicitly {@link CRemoteClient_DeviceDetails.verify|verify} messages.
-     * @function encode
-     * @memberof CRemoteClient_DeviceDetails
-     * @static
-     * @param {ICRemoteClient_DeviceDetails} message CRemoteClient_DeviceDetails message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CRemoteClient_DeviceDetails.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.deviceFriendlyName != null && Object.hasOwnProperty.call(message, "deviceFriendlyName"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.deviceFriendlyName);
-        if (message.osType != null && Object.hasOwnProperty.call(message, "osType"))
-            writer.uint32(/* id 2, wireType 0 =*/16).int32(message.osType);
-        if (message.gamingDeviceType != null && Object.hasOwnProperty.call(message, "gamingDeviceType"))
-            writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.gamingDeviceType);
-        return writer;
-    };
-
-    /**
-     * Decodes a CRemoteClient_DeviceDetails message from the specified reader or buffer.
-     * @function decode
-     * @memberof CRemoteClient_DeviceDetails
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CRemoteClient_DeviceDetails} CRemoteClient_DeviceDetails
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CRemoteClient_DeviceDetails.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CRemoteClient_DeviceDetails();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.deviceFriendlyName = reader.string();
-                    break;
-                }
-            case 2: {
-                    message.osType = reader.int32();
-                    break;
-                }
-            case 3: {
-                    message.gamingDeviceType = reader.uint32();
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CRemoteClient_DeviceDetails
-     * @function getTypeUrl
-     * @memberof CRemoteClient_DeviceDetails
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CRemoteClient_DeviceDetails.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CRemoteClient_DeviceDetails";
-    };
-
-    return CRemoteClient_DeviceDetails;
-})();
-
-export const CRemoteClient_Online_Notification = $root.CRemoteClient_Online_Notification = (() => {
-
-    /**
-     * Properties of a CRemoteClient_Online_Notification.
-     * @exports ICRemoteClient_Online_Notification
-     * @interface ICRemoteClient_Online_Notification
-     * @property {number|Long|null} [steamid] CRemoteClient_Online_Notification steamid
-     * @property {number|Long|null} [remoteClientId] CRemoteClient_Online_Notification remoteClientId
-     * @property {ICRemoteClient_DeviceDetails|null} [deviceDetails] CRemoteClient_Online_Notification deviceDetails
-     */
-
-    /**
-     * Constructs a new CRemoteClient_Online_Notification.
-     * @exports CRemoteClient_Online_Notification
-     * @classdesc Represents a CRemoteClient_Online_Notification.
-     * @implements ICRemoteClient_Online_Notification
-     * @constructor
-     * @param {ICRemoteClient_Online_Notification=} [properties] Properties to set
-     */
-    function CRemoteClient_Online_Notification(properties) {
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CRemoteClient_Online_Notification steamid.
-     * @member {number|Long} steamid
-     * @memberof CRemoteClient_Online_Notification
-     * @instance
-     */
-    CRemoteClient_Online_Notification.prototype.steamid = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-    /**
-     * CRemoteClient_Online_Notification remoteClientId.
-     * @member {number|Long} remoteClientId
-     * @memberof CRemoteClient_Online_Notification
-     * @instance
-     */
-    CRemoteClient_Online_Notification.prototype.remoteClientId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-    /**
-     * CRemoteClient_Online_Notification deviceDetails.
-     * @member {ICRemoteClient_DeviceDetails|null|undefined} deviceDetails
-     * @memberof CRemoteClient_Online_Notification
-     * @instance
-     */
-    CRemoteClient_Online_Notification.prototype.deviceDetails = null;
-
-    /**
-     * Encodes the specified CRemoteClient_Online_Notification message. Does not implicitly {@link CRemoteClient_Online_Notification.verify|verify} messages.
-     * @function encode
-     * @memberof CRemoteClient_Online_Notification
-     * @static
-     * @param {ICRemoteClient_Online_Notification} message CRemoteClient_Online_Notification message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CRemoteClient_Online_Notification.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.steamid != null && Object.hasOwnProperty.call(message, "steamid"))
-            writer.uint32(/* id 1, wireType 1 =*/9).fixed64(message.steamid);
-        if (message.remoteClientId != null && Object.hasOwnProperty.call(message, "remoteClientId"))
-            writer.uint32(/* id 2, wireType 1 =*/17).fixed64(message.remoteClientId);
-        if (message.deviceDetails != null && Object.hasOwnProperty.call(message, "deviceDetails"))
-            $root.CRemoteClient_DeviceDetails.encode(message.deviceDetails, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-        return writer;
-    };
-
-    /**
-     * Decodes a CRemoteClient_Online_Notification message from the specified reader or buffer.
-     * @function decode
-     * @memberof CRemoteClient_Online_Notification
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CRemoteClient_Online_Notification} CRemoteClient_Online_Notification
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CRemoteClient_Online_Notification.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CRemoteClient_Online_Notification();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.steamid = reader.fixed64();
-                    break;
-                }
-            case 2: {
-                    message.remoteClientId = reader.fixed64();
-                    break;
-                }
-            case 3: {
-                    message.deviceDetails = $root.CRemoteClient_DeviceDetails.decode(reader, reader.uint32());
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CRemoteClient_Online_Notification
-     * @function getTypeUrl
-     * @memberof CRemoteClient_Online_Notification
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CRemoteClient_Online_Notification.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CRemoteClient_Online_Notification";
-    };
-
-    return CRemoteClient_Online_Notification;
-})();
-
-export const CRemoteClient_ReplyPacket_Notification = $root.CRemoteClient_ReplyPacket_Notification = (() => {
-
-    /**
-     * Properties of a CRemoteClient_ReplyPacket_Notification.
-     * @exports ICRemoteClient_ReplyPacket_Notification
-     * @interface ICRemoteClient_ReplyPacket_Notification
-     * @property {number|Long|null} [sessionId] CRemoteClient_ReplyPacket_Notification sessionId
-     * @property {Uint8Array|null} [payload] CRemoteClient_ReplyPacket_Notification payload
-     */
-
-    /**
-     * Constructs a new CRemoteClient_ReplyPacket_Notification.
-     * @exports CRemoteClient_ReplyPacket_Notification
-     * @classdesc Represents a CRemoteClient_ReplyPacket_Notification.
-     * @implements ICRemoteClient_ReplyPacket_Notification
-     * @constructor
-     * @param {ICRemoteClient_ReplyPacket_Notification=} [properties] Properties to set
-     */
-    function CRemoteClient_ReplyPacket_Notification(properties) {
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CRemoteClient_ReplyPacket_Notification sessionId.
-     * @member {number|Long} sessionId
-     * @memberof CRemoteClient_ReplyPacket_Notification
-     * @instance
-     */
-    CRemoteClient_ReplyPacket_Notification.prototype.sessionId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-    /**
-     * CRemoteClient_ReplyPacket_Notification payload.
-     * @member {Uint8Array} payload
-     * @memberof CRemoteClient_ReplyPacket_Notification
-     * @instance
-     */
-    CRemoteClient_ReplyPacket_Notification.prototype.payload = $util.newBuffer([]);
-
-    /**
-     * Encodes the specified CRemoteClient_ReplyPacket_Notification message. Does not implicitly {@link CRemoteClient_ReplyPacket_Notification.verify|verify} messages.
-     * @function encode
-     * @memberof CRemoteClient_ReplyPacket_Notification
-     * @static
-     * @param {ICRemoteClient_ReplyPacket_Notification} message CRemoteClient_ReplyPacket_Notification message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CRemoteClient_ReplyPacket_Notification.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.sessionId != null && Object.hasOwnProperty.call(message, "sessionId"))
-            writer.uint32(/* id 1, wireType 1 =*/9).fixed64(message.sessionId);
-        if (message.payload != null && Object.hasOwnProperty.call(message, "payload"))
-            writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.payload);
-        return writer;
-    };
-
-    /**
-     * Decodes a CRemoteClient_ReplyPacket_Notification message from the specified reader or buffer.
-     * @function decode
-     * @memberof CRemoteClient_ReplyPacket_Notification
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CRemoteClient_ReplyPacket_Notification} CRemoteClient_ReplyPacket_Notification
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CRemoteClient_ReplyPacket_Notification.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CRemoteClient_ReplyPacket_Notification();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.sessionId = reader.fixed64();
-                    break;
-                }
-            case 2: {
-                    message.payload = reader.bytes();
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CRemoteClient_ReplyPacket_Notification
-     * @function getTypeUrl
-     * @memberof CRemoteClient_ReplyPacket_Notification
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CRemoteClient_ReplyPacket_Notification.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CRemoteClient_ReplyPacket_Notification";
-    };
-
-    return CRemoteClient_ReplyPacket_Notification;
-})();
-
 export const CRemotePlay_SessionStopped_Notification = $root.CRemotePlay_SessionStopped_Notification = (() => {
 
     /**
@@ -96776,375 +95924,6 @@ export const CRemotePlay_SessionStopped_Notification = $root.CRemotePlay_Session
     };
 
     return CRemotePlay_SessionStopped_Notification;
-})();
-
-export const CSteamNotification_HideNotification_Notification = $root.CSteamNotification_HideNotification_Notification = (() => {
-
-    /**
-     * Properties of a CSteamNotification_HideNotification_Notification.
-     * @exports ICSteamNotification_HideNotification_Notification
-     * @interface ICSteamNotification_HideNotification_Notification
-     * @property {Array.<number|Long>|null} [notificationIds] CSteamNotification_HideNotification_Notification notificationIds
-     */
-
-    /**
-     * Constructs a new CSteamNotification_HideNotification_Notification.
-     * @exports CSteamNotification_HideNotification_Notification
-     * @classdesc Represents a CSteamNotification_HideNotification_Notification.
-     * @implements ICSteamNotification_HideNotification_Notification
-     * @constructor
-     * @param {ICSteamNotification_HideNotification_Notification=} [properties] Properties to set
-     */
-    function CSteamNotification_HideNotification_Notification(properties) {
-        this.notificationIds = [];
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CSteamNotification_HideNotification_Notification notificationIds.
-     * @member {Array.<number|Long>} notificationIds
-     * @memberof CSteamNotification_HideNotification_Notification
-     * @instance
-     */
-    CSteamNotification_HideNotification_Notification.prototype.notificationIds = $util.emptyArray;
-
-    /**
-     * Encodes the specified CSteamNotification_HideNotification_Notification message. Does not implicitly {@link CSteamNotification_HideNotification_Notification.verify|verify} messages.
-     * @function encode
-     * @memberof CSteamNotification_HideNotification_Notification
-     * @static
-     * @param {ICSteamNotification_HideNotification_Notification} message CSteamNotification_HideNotification_Notification message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CSteamNotification_HideNotification_Notification.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.notificationIds != null && message.notificationIds.length)
-            for (let i = 0; i < message.notificationIds.length; ++i)
-                writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.notificationIds[i]);
-        return writer;
-    };
-
-    /**
-     * Decodes a CSteamNotification_HideNotification_Notification message from the specified reader or buffer.
-     * @function decode
-     * @memberof CSteamNotification_HideNotification_Notification
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CSteamNotification_HideNotification_Notification} CSteamNotification_HideNotification_Notification
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CSteamNotification_HideNotification_Notification.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSteamNotification_HideNotification_Notification();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    if (!(message.notificationIds && message.notificationIds.length))
-                        message.notificationIds = [];
-                    if ((tag & 7) === 2) {
-                        let end2 = reader.uint32() + reader.pos;
-                        while (reader.pos < end2)
-                            message.notificationIds.push(reader.uint64());
-                    } else
-                        message.notificationIds.push(reader.uint64());
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CSteamNotification_HideNotification_Notification
-     * @function getTypeUrl
-     * @memberof CSteamNotification_HideNotification_Notification
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CSteamNotification_HideNotification_Notification.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CSteamNotification_HideNotification_Notification";
-    };
-
-    return CSteamNotification_HideNotification_Notification;
-})();
-
-export const CSteamNotification_MarkNotificationsRead_Notification = $root.CSteamNotification_MarkNotificationsRead_Notification = (() => {
-
-    /**
-     * Properties of a CSteamNotification_MarkNotificationsRead_Notification.
-     * @exports ICSteamNotification_MarkNotificationsRead_Notification
-     * @interface ICSteamNotification_MarkNotificationsRead_Notification
-     * @property {number|null} [timestamp] CSteamNotification_MarkNotificationsRead_Notification timestamp
-     * @property {number|null} [notificationType] CSteamNotification_MarkNotificationsRead_Notification notificationType
-     * @property {Array.<number|Long>|null} [notificationIds] CSteamNotification_MarkNotificationsRead_Notification notificationIds
-     * @property {boolean|null} [markAllRead] CSteamNotification_MarkNotificationsRead_Notification markAllRead
-     */
-
-    /**
-     * Constructs a new CSteamNotification_MarkNotificationsRead_Notification.
-     * @exports CSteamNotification_MarkNotificationsRead_Notification
-     * @classdesc Represents a CSteamNotification_MarkNotificationsRead_Notification.
-     * @implements ICSteamNotification_MarkNotificationsRead_Notification
-     * @constructor
-     * @param {ICSteamNotification_MarkNotificationsRead_Notification=} [properties] Properties to set
-     */
-    function CSteamNotification_MarkNotificationsRead_Notification(properties) {
-        this.notificationIds = [];
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CSteamNotification_MarkNotificationsRead_Notification timestamp.
-     * @member {number} timestamp
-     * @memberof CSteamNotification_MarkNotificationsRead_Notification
-     * @instance
-     */
-    CSteamNotification_MarkNotificationsRead_Notification.prototype.timestamp = 0;
-
-    /**
-     * CSteamNotification_MarkNotificationsRead_Notification notificationType.
-     * @member {number} notificationType
-     * @memberof CSteamNotification_MarkNotificationsRead_Notification
-     * @instance
-     */
-    CSteamNotification_MarkNotificationsRead_Notification.prototype.notificationType = 0;
-
-    /**
-     * CSteamNotification_MarkNotificationsRead_Notification notificationIds.
-     * @member {Array.<number|Long>} notificationIds
-     * @memberof CSteamNotification_MarkNotificationsRead_Notification
-     * @instance
-     */
-    CSteamNotification_MarkNotificationsRead_Notification.prototype.notificationIds = $util.emptyArray;
-
-    /**
-     * CSteamNotification_MarkNotificationsRead_Notification markAllRead.
-     * @member {boolean} markAllRead
-     * @memberof CSteamNotification_MarkNotificationsRead_Notification
-     * @instance
-     */
-    CSteamNotification_MarkNotificationsRead_Notification.prototype.markAllRead = false;
-
-    /**
-     * Encodes the specified CSteamNotification_MarkNotificationsRead_Notification message. Does not implicitly {@link CSteamNotification_MarkNotificationsRead_Notification.verify|verify} messages.
-     * @function encode
-     * @memberof CSteamNotification_MarkNotificationsRead_Notification
-     * @static
-     * @param {ICSteamNotification_MarkNotificationsRead_Notification} message CSteamNotification_MarkNotificationsRead_Notification message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CSteamNotification_MarkNotificationsRead_Notification.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.timestamp != null && Object.hasOwnProperty.call(message, "timestamp"))
-            writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.timestamp);
-        if (message.notificationType != null && Object.hasOwnProperty.call(message, "notificationType"))
-            writer.uint32(/* id 2, wireType 0 =*/16).int32(message.notificationType);
-        if (message.notificationIds != null && message.notificationIds.length)
-            for (let i = 0; i < message.notificationIds.length; ++i)
-                writer.uint32(/* id 3, wireType 0 =*/24).uint64(message.notificationIds[i]);
-        if (message.markAllRead != null && Object.hasOwnProperty.call(message, "markAllRead"))
-            writer.uint32(/* id 4, wireType 0 =*/32).bool(message.markAllRead);
-        return writer;
-    };
-
-    /**
-     * Decodes a CSteamNotification_MarkNotificationsRead_Notification message from the specified reader or buffer.
-     * @function decode
-     * @memberof CSteamNotification_MarkNotificationsRead_Notification
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CSteamNotification_MarkNotificationsRead_Notification} CSteamNotification_MarkNotificationsRead_Notification
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CSteamNotification_MarkNotificationsRead_Notification.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSteamNotification_MarkNotificationsRead_Notification();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.timestamp = reader.uint32();
-                    break;
-                }
-            case 2: {
-                    message.notificationType = reader.int32();
-                    break;
-                }
-            case 3: {
-                    if (!(message.notificationIds && message.notificationIds.length))
-                        message.notificationIds = [];
-                    if ((tag & 7) === 2) {
-                        let end2 = reader.uint32() + reader.pos;
-                        while (reader.pos < end2)
-                            message.notificationIds.push(reader.uint64());
-                    } else
-                        message.notificationIds.push(reader.uint64());
-                    break;
-                }
-            case 4: {
-                    message.markAllRead = reader.bool();
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CSteamNotification_MarkNotificationsRead_Notification
-     * @function getTypeUrl
-     * @memberof CSteamNotification_MarkNotificationsRead_Notification
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CSteamNotification_MarkNotificationsRead_Notification.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CSteamNotification_MarkNotificationsRead_Notification";
-    };
-
-    return CSteamNotification_MarkNotificationsRead_Notification;
-})();
-
-export const CSteamNotification_MarkNotificationsViewed_Notification = $root.CSteamNotification_MarkNotificationsViewed_Notification = (() => {
-
-    /**
-     * Properties of a CSteamNotification_MarkNotificationsViewed_Notification.
-     * @exports ICSteamNotification_MarkNotificationsViewed_Notification
-     * @interface ICSteamNotification_MarkNotificationsViewed_Notification
-     * @property {number|Long|null} [remoteClientId] CSteamNotification_MarkNotificationsViewed_Notification remoteClientId
-     * @property {number|null} [targetClientType] CSteamNotification_MarkNotificationsViewed_Notification targetClientType
-     */
-
-    /**
-     * Constructs a new CSteamNotification_MarkNotificationsViewed_Notification.
-     * @exports CSteamNotification_MarkNotificationsViewed_Notification
-     * @classdesc Represents a CSteamNotification_MarkNotificationsViewed_Notification.
-     * @implements ICSteamNotification_MarkNotificationsViewed_Notification
-     * @constructor
-     * @param {ICSteamNotification_MarkNotificationsViewed_Notification=} [properties] Properties to set
-     */
-    function CSteamNotification_MarkNotificationsViewed_Notification(properties) {
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CSteamNotification_MarkNotificationsViewed_Notification remoteClientId.
-     * @member {number|Long} remoteClientId
-     * @memberof CSteamNotification_MarkNotificationsViewed_Notification
-     * @instance
-     */
-    CSteamNotification_MarkNotificationsViewed_Notification.prototype.remoteClientId = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
-
-    /**
-     * CSteamNotification_MarkNotificationsViewed_Notification targetClientType.
-     * @member {number} targetClientType
-     * @memberof CSteamNotification_MarkNotificationsViewed_Notification
-     * @instance
-     */
-    CSteamNotification_MarkNotificationsViewed_Notification.prototype.targetClientType = 0;
-
-    /**
-     * Encodes the specified CSteamNotification_MarkNotificationsViewed_Notification message. Does not implicitly {@link CSteamNotification_MarkNotificationsViewed_Notification.verify|verify} messages.
-     * @function encode
-     * @memberof CSteamNotification_MarkNotificationsViewed_Notification
-     * @static
-     * @param {ICSteamNotification_MarkNotificationsViewed_Notification} message CSteamNotification_MarkNotificationsViewed_Notification message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CSteamNotification_MarkNotificationsViewed_Notification.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.remoteClientId != null && Object.hasOwnProperty.call(message, "remoteClientId"))
-            writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.remoteClientId);
-        if (message.targetClientType != null && Object.hasOwnProperty.call(message, "targetClientType"))
-            writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.targetClientType);
-        return writer;
-    };
-
-    /**
-     * Decodes a CSteamNotification_MarkNotificationsViewed_Notification message from the specified reader or buffer.
-     * @function decode
-     * @memberof CSteamNotification_MarkNotificationsViewed_Notification
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CSteamNotification_MarkNotificationsViewed_Notification} CSteamNotification_MarkNotificationsViewed_Notification
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CSteamNotification_MarkNotificationsViewed_Notification.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSteamNotification_MarkNotificationsViewed_Notification();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.remoteClientId = reader.uint64();
-                    break;
-                }
-            case 2: {
-                    message.targetClientType = reader.uint32();
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CSteamNotification_MarkNotificationsViewed_Notification
-     * @function getTypeUrl
-     * @memberof CSteamNotification_MarkNotificationsViewed_Notification
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CSteamNotification_MarkNotificationsViewed_Notification.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CSteamNotification_MarkNotificationsViewed_Notification";
-    };
-
-    return CSteamNotification_MarkNotificationsViewed_Notification;
 })();
 
 export const CSteamVR_AudioSettings_ChangeSettings_Request = $root.CSteamVR_AudioSettings_ChangeSettings_Request = (() => {
@@ -97787,6 +96566,178 @@ export const CSteamVR_Header = $root.CSteamVR_Header = (() => {
     };
 
     return CSteamVR_Header;
+})();
+
+export const CSteamVR_Settings_SetValue_Request = $root.CSteamVR_Settings_SetValue_Request = (() => {
+
+    /**
+     * Properties of a CSteamVR_Settings_SetValue_Request.
+     * @exports ICSteamVR_Settings_SetValue_Request
+     * @interface ICSteamVR_Settings_SetValue_Request
+     * @property {string|null} [section] CSteamVR_Settings_SetValue_Request section
+     * @property {string|null} [settingsKey] CSteamVR_Settings_SetValue_Request settingsKey
+     * @property {boolean|null} [bool] CSteamVR_Settings_SetValue_Request bool
+     * @property {number|null} [int] CSteamVR_Settings_SetValue_Request int
+     * @property {number|null} [float] CSteamVR_Settings_SetValue_Request float
+     * @property {string|null} [string] CSteamVR_Settings_SetValue_Request string
+     */
+
+    /**
+     * Constructs a new CSteamVR_Settings_SetValue_Request.
+     * @exports CSteamVR_Settings_SetValue_Request
+     * @classdesc Represents a CSteamVR_Settings_SetValue_Request.
+     * @implements ICSteamVR_Settings_SetValue_Request
+     * @constructor
+     * @param {ICSteamVR_Settings_SetValue_Request=} [properties] Properties to set
+     */
+    function CSteamVR_Settings_SetValue_Request(properties) {
+        if (properties)
+            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * CSteamVR_Settings_SetValue_Request section.
+     * @member {string} section
+     * @memberof CSteamVR_Settings_SetValue_Request
+     * @instance
+     */
+    CSteamVR_Settings_SetValue_Request.prototype.section = "";
+
+    /**
+     * CSteamVR_Settings_SetValue_Request settingsKey.
+     * @member {string} settingsKey
+     * @memberof CSteamVR_Settings_SetValue_Request
+     * @instance
+     */
+    CSteamVR_Settings_SetValue_Request.prototype.settingsKey = "";
+
+    /**
+     * CSteamVR_Settings_SetValue_Request bool.
+     * @member {boolean} bool
+     * @memberof CSteamVR_Settings_SetValue_Request
+     * @instance
+     */
+    CSteamVR_Settings_SetValue_Request.prototype.bool = false;
+
+    /**
+     * CSteamVR_Settings_SetValue_Request int.
+     * @member {number} int
+     * @memberof CSteamVR_Settings_SetValue_Request
+     * @instance
+     */
+    CSteamVR_Settings_SetValue_Request.prototype.int = 0;
+
+    /**
+     * CSteamVR_Settings_SetValue_Request float.
+     * @member {number} float
+     * @memberof CSteamVR_Settings_SetValue_Request
+     * @instance
+     */
+    CSteamVR_Settings_SetValue_Request.prototype.float = 0;
+
+    /**
+     * CSteamVR_Settings_SetValue_Request string.
+     * @member {string} string
+     * @memberof CSteamVR_Settings_SetValue_Request
+     * @instance
+     */
+    CSteamVR_Settings_SetValue_Request.prototype.string = "";
+
+    /**
+     * Encodes the specified CSteamVR_Settings_SetValue_Request message. Does not implicitly {@link CSteamVR_Settings_SetValue_Request.verify|verify} messages.
+     * @function encode
+     * @memberof CSteamVR_Settings_SetValue_Request
+     * @static
+     * @param {ICSteamVR_Settings_SetValue_Request} message CSteamVR_Settings_SetValue_Request message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    CSteamVR_Settings_SetValue_Request.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.section != null && Object.hasOwnProperty.call(message, "section"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.section);
+        if (message.settingsKey != null && Object.hasOwnProperty.call(message, "settingsKey"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.settingsKey);
+        if (message.bool != null && Object.hasOwnProperty.call(message, "bool"))
+            writer.uint32(/* id 3, wireType 0 =*/24).bool(message.bool);
+        if (message.int != null && Object.hasOwnProperty.call(message, "int"))
+            writer.uint32(/* id 4, wireType 0 =*/32).int32(message.int);
+        if (message.float != null && Object.hasOwnProperty.call(message, "float"))
+            writer.uint32(/* id 5, wireType 5 =*/45).float(message.float);
+        if (message.string != null && Object.hasOwnProperty.call(message, "string"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.string);
+        return writer;
+    };
+
+    /**
+     * Decodes a CSteamVR_Settings_SetValue_Request message from the specified reader or buffer.
+     * @function decode
+     * @memberof CSteamVR_Settings_SetValue_Request
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {CSteamVR_Settings_SetValue_Request} CSteamVR_Settings_SetValue_Request
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    CSteamVR_Settings_SetValue_Request.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSteamVR_Settings_SetValue_Request();
+        while (reader.pos < end) {
+            let tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.section = reader.string();
+                    break;
+                }
+            case 2: {
+                    message.settingsKey = reader.string();
+                    break;
+                }
+            case 3: {
+                    message.bool = reader.bool();
+                    break;
+                }
+            case 4: {
+                    message.int = reader.int32();
+                    break;
+                }
+            case 5: {
+                    message.float = reader.float();
+                    break;
+                }
+            case 6: {
+                    message.string = reader.string();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Gets the default type url for CSteamVR_Settings_SetValue_Request
+     * @function getTypeUrl
+     * @memberof CSteamVR_Settings_SetValue_Request
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    CSteamVR_Settings_SetValue_Request.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/CSteamVR_Settings_SetValue_Request";
+    };
+
+    return CSteamVR_Settings_SetValue_Request;
 })();
 
 export const CSteamVR_VoiceChat_Active_Notification = $root.CSteamVR_VoiceChat_Active_Notification = (() => {
@@ -101267,215 +100218,6 @@ export const CSteamVR_WebRTC_OnDataChannel_Notification = $root.CSteamVR_WebRTC_
     return CSteamVR_WebRTC_OnDataChannel_Notification;
 })();
 
-export const CStore_MigratePartnerLinkTracking_Notification = $root.CStore_MigratePartnerLinkTracking_Notification = (() => {
-
-    /**
-     * Properties of a CStore_MigratePartnerLinkTracking_Notification.
-     * @exports ICStore_MigratePartnerLinkTracking_Notification
-     * @interface ICStore_MigratePartnerLinkTracking_Notification
-     * @property {number|null} [accountid] CStore_MigratePartnerLinkTracking_Notification accountid
-     * @property {number|Long|null} [browserid] CStore_MigratePartnerLinkTracking_Notification browserid
-     * @property {number|null} [backfillSource] CStore_MigratePartnerLinkTracking_Notification backfillSource
-     */
-
-    /**
-     * Constructs a new CStore_MigratePartnerLinkTracking_Notification.
-     * @exports CStore_MigratePartnerLinkTracking_Notification
-     * @classdesc Represents a CStore_MigratePartnerLinkTracking_Notification.
-     * @implements ICStore_MigratePartnerLinkTracking_Notification
-     * @constructor
-     * @param {ICStore_MigratePartnerLinkTracking_Notification=} [properties] Properties to set
-     */
-    function CStore_MigratePartnerLinkTracking_Notification(properties) {
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CStore_MigratePartnerLinkTracking_Notification accountid.
-     * @member {number} accountid
-     * @memberof CStore_MigratePartnerLinkTracking_Notification
-     * @instance
-     */
-    CStore_MigratePartnerLinkTracking_Notification.prototype.accountid = 0;
-
-    /**
-     * CStore_MigratePartnerLinkTracking_Notification browserid.
-     * @member {number|Long} browserid
-     * @memberof CStore_MigratePartnerLinkTracking_Notification
-     * @instance
-     */
-    CStore_MigratePartnerLinkTracking_Notification.prototype.browserid = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
-
-    /**
-     * CStore_MigratePartnerLinkTracking_Notification backfillSource.
-     * @member {number} backfillSource
-     * @memberof CStore_MigratePartnerLinkTracking_Notification
-     * @instance
-     */
-    CStore_MigratePartnerLinkTracking_Notification.prototype.backfillSource = 0;
-
-    /**
-     * Encodes the specified CStore_MigratePartnerLinkTracking_Notification message. Does not implicitly {@link CStore_MigratePartnerLinkTracking_Notification.verify|verify} messages.
-     * @function encode
-     * @memberof CStore_MigratePartnerLinkTracking_Notification
-     * @static
-     * @param {ICStore_MigratePartnerLinkTracking_Notification} message CStore_MigratePartnerLinkTracking_Notification message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CStore_MigratePartnerLinkTracking_Notification.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.accountid != null && Object.hasOwnProperty.call(message, "accountid"))
-            writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.accountid);
-        if (message.browserid != null && Object.hasOwnProperty.call(message, "browserid"))
-            writer.uint32(/* id 2, wireType 0 =*/16).uint64(message.browserid);
-        if (message.backfillSource != null && Object.hasOwnProperty.call(message, "backfillSource"))
-            writer.uint32(/* id 3, wireType 0 =*/24).int32(message.backfillSource);
-        return writer;
-    };
-
-    /**
-     * Decodes a CStore_MigratePartnerLinkTracking_Notification message from the specified reader or buffer.
-     * @function decode
-     * @memberof CStore_MigratePartnerLinkTracking_Notification
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CStore_MigratePartnerLinkTracking_Notification} CStore_MigratePartnerLinkTracking_Notification
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CStore_MigratePartnerLinkTracking_Notification.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CStore_MigratePartnerLinkTracking_Notification();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.accountid = reader.uint32();
-                    break;
-                }
-            case 2: {
-                    message.browserid = reader.uint64();
-                    break;
-                }
-            case 3: {
-                    message.backfillSource = reader.int32();
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CStore_MigratePartnerLinkTracking_Notification
-     * @function getTypeUrl
-     * @memberof CStore_MigratePartnerLinkTracking_Notification
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CStore_MigratePartnerLinkTracking_Notification.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CStore_MigratePartnerLinkTracking_Notification";
-    };
-
-    return CStore_MigratePartnerLinkTracking_Notification;
-})();
-
-export const CStore_ReloadAllReservationPositionMessages_Notification = $root.CStore_ReloadAllReservationPositionMessages_Notification = (() => {
-
-    /**
-     * Properties of a CStore_ReloadAllReservationPositionMessages_Notification.
-     * @exports ICStore_ReloadAllReservationPositionMessages_Notification
-     * @interface ICStore_ReloadAllReservationPositionMessages_Notification
-     */
-
-    /**
-     * Constructs a new CStore_ReloadAllReservationPositionMessages_Notification.
-     * @exports CStore_ReloadAllReservationPositionMessages_Notification
-     * @classdesc Represents a CStore_ReloadAllReservationPositionMessages_Notification.
-     * @implements ICStore_ReloadAllReservationPositionMessages_Notification
-     * @constructor
-     * @param {ICStore_ReloadAllReservationPositionMessages_Notification=} [properties] Properties to set
-     */
-    function CStore_ReloadAllReservationPositionMessages_Notification(properties) {
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * Encodes the specified CStore_ReloadAllReservationPositionMessages_Notification message. Does not implicitly {@link CStore_ReloadAllReservationPositionMessages_Notification.verify|verify} messages.
-     * @function encode
-     * @memberof CStore_ReloadAllReservationPositionMessages_Notification
-     * @static
-     * @param {ICStore_ReloadAllReservationPositionMessages_Notification} message CStore_ReloadAllReservationPositionMessages_Notification message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CStore_ReloadAllReservationPositionMessages_Notification.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        return writer;
-    };
-
-    /**
-     * Decodes a CStore_ReloadAllReservationPositionMessages_Notification message from the specified reader or buffer.
-     * @function decode
-     * @memberof CStore_ReloadAllReservationPositionMessages_Notification
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CStore_ReloadAllReservationPositionMessages_Notification} CStore_ReloadAllReservationPositionMessages_Notification
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CStore_ReloadAllReservationPositionMessages_Notification.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CStore_ReloadAllReservationPositionMessages_Notification();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Gets the default type url for CStore_ReloadAllReservationPositionMessages_Notification
-     * @function getTypeUrl
-     * @memberof CStore_ReloadAllReservationPositionMessages_Notification
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    CStore_ReloadAllReservationPositionMessages_Notification.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/CStore_ReloadAllReservationPositionMessages_Notification";
-    };
-
-    return CStore_ReloadAllReservationPositionMessages_Notification;
-})();
-
 export const CStoreBrowse_GetItems_Request = $root.CStoreBrowse_GetItems_Request = (() => {
 
     /**
@@ -104051,6 +102793,594 @@ export const CVideo_GameRecordingSegmentInfo = $root.CVideo_GameRecordingSegment
     };
 
     return CVideo_GameRecordingSegmentInfo;
+})();
+
+export const CVirtualMenuCreateDestroy = $root.CVirtualMenuCreateDestroy = (() => {
+
+    /**
+     * Properties of a CVirtualMenuCreateDestroy.
+     * @exports ICVirtualMenuCreateDestroy
+     * @interface ICVirtualMenuCreateDestroy
+     * @property {boolean|null} [created] CVirtualMenuCreateDestroy created
+     * @property {number|null} [controllerIdx] CVirtualMenuCreateDestroy controllerIdx
+     * @property {number|null} [menuIdx] CVirtualMenuCreateDestroy menuIdx
+     * @property {number|null} [source] CVirtualMenuCreateDestroy source
+     * @property {number|null} [xPosition] CVirtualMenuCreateDestroy xPosition
+     * @property {number|null} [yPosition] CVirtualMenuCreateDestroy yPosition
+     * @property {number|null} [opacity] CVirtualMenuCreateDestroy opacity
+     * @property {number|null} [scale] CVirtualMenuCreateDestroy scale
+     * @property {boolean|null} [showLabels] CVirtualMenuCreateDestroy showLabels
+     * @property {boolean|null} [forceOn] CVirtualMenuCreateDestroy forceOn
+     * @property {number|null} [appID] CVirtualMenuCreateDestroy appID
+     * @property {number|null} [menuStyle] CVirtualMenuCreateDestroy menuStyle
+     * @property {Array.<ICVirtualMenuCreateDestroy_TouchMenuKey>|null} [popupKeys] CVirtualMenuCreateDestroy popupKeys
+     */
+
+    /**
+     * Constructs a new CVirtualMenuCreateDestroy.
+     * @exports CVirtualMenuCreateDestroy
+     * @classdesc Represents a CVirtualMenuCreateDestroy.
+     * @implements ICVirtualMenuCreateDestroy
+     * @constructor
+     * @param {ICVirtualMenuCreateDestroy=} [properties] Properties to set
+     */
+    function CVirtualMenuCreateDestroy(properties) {
+        this.popupKeys = [];
+        if (properties)
+            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * CVirtualMenuCreateDestroy created.
+     * @member {boolean} created
+     * @memberof CVirtualMenuCreateDestroy
+     * @instance
+     */
+    CVirtualMenuCreateDestroy.prototype.created = false;
+
+    /**
+     * CVirtualMenuCreateDestroy controllerIdx.
+     * @member {number} controllerIdx
+     * @memberof CVirtualMenuCreateDestroy
+     * @instance
+     */
+    CVirtualMenuCreateDestroy.prototype.controllerIdx = 0;
+
+    /**
+     * CVirtualMenuCreateDestroy menuIdx.
+     * @member {number} menuIdx
+     * @memberof CVirtualMenuCreateDestroy
+     * @instance
+     */
+    CVirtualMenuCreateDestroy.prototype.menuIdx = 0;
+
+    /**
+     * CVirtualMenuCreateDestroy source.
+     * @member {number} source
+     * @memberof CVirtualMenuCreateDestroy
+     * @instance
+     */
+    CVirtualMenuCreateDestroy.prototype.source = 0;
+
+    /**
+     * CVirtualMenuCreateDestroy xPosition.
+     * @member {number} xPosition
+     * @memberof CVirtualMenuCreateDestroy
+     * @instance
+     */
+    CVirtualMenuCreateDestroy.prototype.xPosition = 0;
+
+    /**
+     * CVirtualMenuCreateDestroy yPosition.
+     * @member {number} yPosition
+     * @memberof CVirtualMenuCreateDestroy
+     * @instance
+     */
+    CVirtualMenuCreateDestroy.prototype.yPosition = 0;
+
+    /**
+     * CVirtualMenuCreateDestroy opacity.
+     * @member {number} opacity
+     * @memberof CVirtualMenuCreateDestroy
+     * @instance
+     */
+    CVirtualMenuCreateDestroy.prototype.opacity = 0;
+
+    /**
+     * CVirtualMenuCreateDestroy scale.
+     * @member {number} scale
+     * @memberof CVirtualMenuCreateDestroy
+     * @instance
+     */
+    CVirtualMenuCreateDestroy.prototype.scale = 0;
+
+    /**
+     * CVirtualMenuCreateDestroy showLabels.
+     * @member {boolean} showLabels
+     * @memberof CVirtualMenuCreateDestroy
+     * @instance
+     */
+    CVirtualMenuCreateDestroy.prototype.showLabels = false;
+
+    /**
+     * CVirtualMenuCreateDestroy forceOn.
+     * @member {boolean} forceOn
+     * @memberof CVirtualMenuCreateDestroy
+     * @instance
+     */
+    CVirtualMenuCreateDestroy.prototype.forceOn = false;
+
+    /**
+     * CVirtualMenuCreateDestroy appID.
+     * @member {number} appID
+     * @memberof CVirtualMenuCreateDestroy
+     * @instance
+     */
+    CVirtualMenuCreateDestroy.prototype.appID = 0;
+
+    /**
+     * CVirtualMenuCreateDestroy menuStyle.
+     * @member {number} menuStyle
+     * @memberof CVirtualMenuCreateDestroy
+     * @instance
+     */
+    CVirtualMenuCreateDestroy.prototype.menuStyle = 0;
+
+    /**
+     * CVirtualMenuCreateDestroy popupKeys.
+     * @member {Array.<ICVirtualMenuCreateDestroy_TouchMenuKey>} popupKeys
+     * @memberof CVirtualMenuCreateDestroy
+     * @instance
+     */
+    CVirtualMenuCreateDestroy.prototype.popupKeys = $util.emptyArray;
+
+    /**
+     * Encodes the specified CVirtualMenuCreateDestroy message. Does not implicitly {@link CVirtualMenuCreateDestroy.verify|verify} messages.
+     * @function encode
+     * @memberof CVirtualMenuCreateDestroy
+     * @static
+     * @param {ICVirtualMenuCreateDestroy} message CVirtualMenuCreateDestroy message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    CVirtualMenuCreateDestroy.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.created != null && Object.hasOwnProperty.call(message, "created"))
+            writer.uint32(/* id 1, wireType 0 =*/8).bool(message.created);
+        if (message.controllerIdx != null && Object.hasOwnProperty.call(message, "controllerIdx"))
+            writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.controllerIdx);
+        if (message.menuIdx != null && Object.hasOwnProperty.call(message, "menuIdx"))
+            writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.menuIdx);
+        if (message.source != null && Object.hasOwnProperty.call(message, "source"))
+            writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.source);
+        if (message.xPosition != null && Object.hasOwnProperty.call(message, "xPosition"))
+            writer.uint32(/* id 5, wireType 5 =*/45).float(message.xPosition);
+        if (message.yPosition != null && Object.hasOwnProperty.call(message, "yPosition"))
+            writer.uint32(/* id 6, wireType 5 =*/53).float(message.yPosition);
+        if (message.opacity != null && Object.hasOwnProperty.call(message, "opacity"))
+            writer.uint32(/* id 7, wireType 5 =*/61).float(message.opacity);
+        if (message.scale != null && Object.hasOwnProperty.call(message, "scale"))
+            writer.uint32(/* id 8, wireType 5 =*/69).float(message.scale);
+        if (message.showLabels != null && Object.hasOwnProperty.call(message, "showLabels"))
+            writer.uint32(/* id 9, wireType 0 =*/72).bool(message.showLabels);
+        if (message.forceOn != null && Object.hasOwnProperty.call(message, "forceOn"))
+            writer.uint32(/* id 10, wireType 0 =*/80).bool(message.forceOn);
+        if (message.appID != null && Object.hasOwnProperty.call(message, "appID"))
+            writer.uint32(/* id 11, wireType 0 =*/88).uint32(message.appID);
+        if (message.menuStyle != null && Object.hasOwnProperty.call(message, "menuStyle"))
+            writer.uint32(/* id 12, wireType 0 =*/96).uint32(message.menuStyle);
+        if (message.popupKeys != null && message.popupKeys.length)
+            for (let i = 0; i < message.popupKeys.length; ++i)
+                $root.CVirtualMenuCreateDestroy_TouchMenuKey.encode(message.popupKeys[i], writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Decodes a CVirtualMenuCreateDestroy message from the specified reader or buffer.
+     * @function decode
+     * @memberof CVirtualMenuCreateDestroy
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {CVirtualMenuCreateDestroy} CVirtualMenuCreateDestroy
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    CVirtualMenuCreateDestroy.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CVirtualMenuCreateDestroy();
+        while (reader.pos < end) {
+            let tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.created = reader.bool();
+                    break;
+                }
+            case 2: {
+                    message.controllerIdx = reader.uint32();
+                    break;
+                }
+            case 3: {
+                    message.menuIdx = reader.uint32();
+                    break;
+                }
+            case 4: {
+                    message.source = reader.uint32();
+                    break;
+                }
+            case 5: {
+                    message.xPosition = reader.float();
+                    break;
+                }
+            case 6: {
+                    message.yPosition = reader.float();
+                    break;
+                }
+            case 7: {
+                    message.opacity = reader.float();
+                    break;
+                }
+            case 8: {
+                    message.scale = reader.float();
+                    break;
+                }
+            case 9: {
+                    message.showLabels = reader.bool();
+                    break;
+                }
+            case 10: {
+                    message.forceOn = reader.bool();
+                    break;
+                }
+            case 11: {
+                    message.appID = reader.uint32();
+                    break;
+                }
+            case 12: {
+                    message.menuStyle = reader.uint32();
+                    break;
+                }
+            case 13: {
+                    if (!(message.popupKeys && message.popupKeys.length))
+                        message.popupKeys = [];
+                    message.popupKeys.push($root.CVirtualMenuCreateDestroy_TouchMenuKey.decode(reader, reader.uint32()));
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Gets the default type url for CVirtualMenuCreateDestroy
+     * @function getTypeUrl
+     * @memberof CVirtualMenuCreateDestroy
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    CVirtualMenuCreateDestroy.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/CVirtualMenuCreateDestroy";
+    };
+
+    return CVirtualMenuCreateDestroy;
+})();
+
+export const CVirtualMenuCreateDestroy_TouchMenuKey = $root.CVirtualMenuCreateDestroy_TouchMenuKey = (() => {
+
+    /**
+     * Properties of a CVirtualMenuCreateDestroy_TouchMenuKey.
+     * @exports ICVirtualMenuCreateDestroy_TouchMenuKey
+     * @interface ICVirtualMenuCreateDestroy_TouchMenuKey
+     * @property {number|null} [keyIdx] CVirtualMenuCreateDestroy_TouchMenuKey keyIdx
+     * @property {boolean|null} [bound] CVirtualMenuCreateDestroy_TouchMenuKey bound
+     * @property {boolean|null} [placeholder] CVirtualMenuCreateDestroy_TouchMenuKey placeholder
+     * @property {number|null} [bindingType] CVirtualMenuCreateDestroy_TouchMenuKey bindingType
+     * @property {number|null} [x] CVirtualMenuCreateDestroy_TouchMenuKey x
+     * @property {number|null} [y] CVirtualMenuCreateDestroy_TouchMenuKey y
+     * @property {number|null} [width] CVirtualMenuCreateDestroy_TouchMenuKey width
+     * @property {number|null} [height] CVirtualMenuCreateDestroy_TouchMenuKey height
+     * @property {string|null} [description] CVirtualMenuCreateDestroy_TouchMenuKey description
+     * @property {string|null} [label] CVirtualMenuCreateDestroy_TouchMenuKey label
+     * @property {string|null} [glyphPath] CVirtualMenuCreateDestroy_TouchMenuKey glyphPath
+     * @property {string|null} [iconFilename] CVirtualMenuCreateDestroy_TouchMenuKey iconFilename
+     * @property {string|null} [colorForeground] CVirtualMenuCreateDestroy_TouchMenuKey colorForeground
+     * @property {string|null} [colorBackground] CVirtualMenuCreateDestroy_TouchMenuKey colorBackground
+     * @property {number|null} [quandrants] CVirtualMenuCreateDestroy_TouchMenuKey quandrants
+     */
+
+    /**
+     * Constructs a new CVirtualMenuCreateDestroy_TouchMenuKey.
+     * @exports CVirtualMenuCreateDestroy_TouchMenuKey
+     * @classdesc Represents a CVirtualMenuCreateDestroy_TouchMenuKey.
+     * @implements ICVirtualMenuCreateDestroy_TouchMenuKey
+     * @constructor
+     * @param {ICVirtualMenuCreateDestroy_TouchMenuKey=} [properties] Properties to set
+     */
+    function CVirtualMenuCreateDestroy_TouchMenuKey(properties) {
+        if (properties)
+            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * CVirtualMenuCreateDestroy_TouchMenuKey keyIdx.
+     * @member {number} keyIdx
+     * @memberof CVirtualMenuCreateDestroy_TouchMenuKey
+     * @instance
+     */
+    CVirtualMenuCreateDestroy_TouchMenuKey.prototype.keyIdx = 0;
+
+    /**
+     * CVirtualMenuCreateDestroy_TouchMenuKey bound.
+     * @member {boolean} bound
+     * @memberof CVirtualMenuCreateDestroy_TouchMenuKey
+     * @instance
+     */
+    CVirtualMenuCreateDestroy_TouchMenuKey.prototype.bound = false;
+
+    /**
+     * CVirtualMenuCreateDestroy_TouchMenuKey placeholder.
+     * @member {boolean} placeholder
+     * @memberof CVirtualMenuCreateDestroy_TouchMenuKey
+     * @instance
+     */
+    CVirtualMenuCreateDestroy_TouchMenuKey.prototype.placeholder = false;
+
+    /**
+     * CVirtualMenuCreateDestroy_TouchMenuKey bindingType.
+     * @member {number} bindingType
+     * @memberof CVirtualMenuCreateDestroy_TouchMenuKey
+     * @instance
+     */
+    CVirtualMenuCreateDestroy_TouchMenuKey.prototype.bindingType = 0;
+
+    /**
+     * CVirtualMenuCreateDestroy_TouchMenuKey x.
+     * @member {number} x
+     * @memberof CVirtualMenuCreateDestroy_TouchMenuKey
+     * @instance
+     */
+    CVirtualMenuCreateDestroy_TouchMenuKey.prototype.x = 0;
+
+    /**
+     * CVirtualMenuCreateDestroy_TouchMenuKey y.
+     * @member {number} y
+     * @memberof CVirtualMenuCreateDestroy_TouchMenuKey
+     * @instance
+     */
+    CVirtualMenuCreateDestroy_TouchMenuKey.prototype.y = 0;
+
+    /**
+     * CVirtualMenuCreateDestroy_TouchMenuKey width.
+     * @member {number} width
+     * @memberof CVirtualMenuCreateDestroy_TouchMenuKey
+     * @instance
+     */
+    CVirtualMenuCreateDestroy_TouchMenuKey.prototype.width = 0;
+
+    /**
+     * CVirtualMenuCreateDestroy_TouchMenuKey height.
+     * @member {number} height
+     * @memberof CVirtualMenuCreateDestroy_TouchMenuKey
+     * @instance
+     */
+    CVirtualMenuCreateDestroy_TouchMenuKey.prototype.height = 0;
+
+    /**
+     * CVirtualMenuCreateDestroy_TouchMenuKey description.
+     * @member {string} description
+     * @memberof CVirtualMenuCreateDestroy_TouchMenuKey
+     * @instance
+     */
+    CVirtualMenuCreateDestroy_TouchMenuKey.prototype.description = "";
+
+    /**
+     * CVirtualMenuCreateDestroy_TouchMenuKey label.
+     * @member {string} label
+     * @memberof CVirtualMenuCreateDestroy_TouchMenuKey
+     * @instance
+     */
+    CVirtualMenuCreateDestroy_TouchMenuKey.prototype.label = "";
+
+    /**
+     * CVirtualMenuCreateDestroy_TouchMenuKey glyphPath.
+     * @member {string} glyphPath
+     * @memberof CVirtualMenuCreateDestroy_TouchMenuKey
+     * @instance
+     */
+    CVirtualMenuCreateDestroy_TouchMenuKey.prototype.glyphPath = "";
+
+    /**
+     * CVirtualMenuCreateDestroy_TouchMenuKey iconFilename.
+     * @member {string} iconFilename
+     * @memberof CVirtualMenuCreateDestroy_TouchMenuKey
+     * @instance
+     */
+    CVirtualMenuCreateDestroy_TouchMenuKey.prototype.iconFilename = "";
+
+    /**
+     * CVirtualMenuCreateDestroy_TouchMenuKey colorForeground.
+     * @member {string} colorForeground
+     * @memberof CVirtualMenuCreateDestroy_TouchMenuKey
+     * @instance
+     */
+    CVirtualMenuCreateDestroy_TouchMenuKey.prototype.colorForeground = "";
+
+    /**
+     * CVirtualMenuCreateDestroy_TouchMenuKey colorBackground.
+     * @member {string} colorBackground
+     * @memberof CVirtualMenuCreateDestroy_TouchMenuKey
+     * @instance
+     */
+    CVirtualMenuCreateDestroy_TouchMenuKey.prototype.colorBackground = "";
+
+    /**
+     * CVirtualMenuCreateDestroy_TouchMenuKey quandrants.
+     * @member {number} quandrants
+     * @memberof CVirtualMenuCreateDestroy_TouchMenuKey
+     * @instance
+     */
+    CVirtualMenuCreateDestroy_TouchMenuKey.prototype.quandrants = 0;
+
+    /**
+     * Encodes the specified CVirtualMenuCreateDestroy_TouchMenuKey message. Does not implicitly {@link CVirtualMenuCreateDestroy_TouchMenuKey.verify|verify} messages.
+     * @function encode
+     * @memberof CVirtualMenuCreateDestroy_TouchMenuKey
+     * @static
+     * @param {ICVirtualMenuCreateDestroy_TouchMenuKey} message CVirtualMenuCreateDestroy_TouchMenuKey message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    CVirtualMenuCreateDestroy_TouchMenuKey.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.keyIdx != null && Object.hasOwnProperty.call(message, "keyIdx"))
+            writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.keyIdx);
+        if (message.bound != null && Object.hasOwnProperty.call(message, "bound"))
+            writer.uint32(/* id 2, wireType 0 =*/16).bool(message.bound);
+        if (message.placeholder != null && Object.hasOwnProperty.call(message, "placeholder"))
+            writer.uint32(/* id 3, wireType 0 =*/24).bool(message.placeholder);
+        if (message.bindingType != null && Object.hasOwnProperty.call(message, "bindingType"))
+            writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.bindingType);
+        if (message.x != null && Object.hasOwnProperty.call(message, "x"))
+            writer.uint32(/* id 5, wireType 5 =*/45).float(message.x);
+        if (message.y != null && Object.hasOwnProperty.call(message, "y"))
+            writer.uint32(/* id 6, wireType 5 =*/53).float(message.y);
+        if (message.width != null && Object.hasOwnProperty.call(message, "width"))
+            writer.uint32(/* id 7, wireType 5 =*/61).float(message.width);
+        if (message.height != null && Object.hasOwnProperty.call(message, "height"))
+            writer.uint32(/* id 8, wireType 5 =*/69).float(message.height);
+        if (message.description != null && Object.hasOwnProperty.call(message, "description"))
+            writer.uint32(/* id 9, wireType 2 =*/74).string(message.description);
+        if (message.label != null && Object.hasOwnProperty.call(message, "label"))
+            writer.uint32(/* id 10, wireType 2 =*/82).string(message.label);
+        if (message.glyphPath != null && Object.hasOwnProperty.call(message, "glyphPath"))
+            writer.uint32(/* id 11, wireType 2 =*/90).string(message.glyphPath);
+        if (message.iconFilename != null && Object.hasOwnProperty.call(message, "iconFilename"))
+            writer.uint32(/* id 12, wireType 2 =*/98).string(message.iconFilename);
+        if (message.colorForeground != null && Object.hasOwnProperty.call(message, "colorForeground"))
+            writer.uint32(/* id 13, wireType 2 =*/106).string(message.colorForeground);
+        if (message.colorBackground != null && Object.hasOwnProperty.call(message, "colorBackground"))
+            writer.uint32(/* id 14, wireType 2 =*/114).string(message.colorBackground);
+        if (message.quandrants != null && Object.hasOwnProperty.call(message, "quandrants"))
+            writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.quandrants);
+        return writer;
+    };
+
+    /**
+     * Decodes a CVirtualMenuCreateDestroy_TouchMenuKey message from the specified reader or buffer.
+     * @function decode
+     * @memberof CVirtualMenuCreateDestroy_TouchMenuKey
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {CVirtualMenuCreateDestroy_TouchMenuKey} CVirtualMenuCreateDestroy_TouchMenuKey
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    CVirtualMenuCreateDestroy_TouchMenuKey.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CVirtualMenuCreateDestroy_TouchMenuKey();
+        while (reader.pos < end) {
+            let tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.keyIdx = reader.uint32();
+                    break;
+                }
+            case 2: {
+                    message.bound = reader.bool();
+                    break;
+                }
+            case 3: {
+                    message.placeholder = reader.bool();
+                    break;
+                }
+            case 4: {
+                    message.bindingType = reader.uint32();
+                    break;
+                }
+            case 5: {
+                    message.x = reader.float();
+                    break;
+                }
+            case 6: {
+                    message.y = reader.float();
+                    break;
+                }
+            case 7: {
+                    message.width = reader.float();
+                    break;
+                }
+            case 8: {
+                    message.height = reader.float();
+                    break;
+                }
+            case 9: {
+                    message.description = reader.string();
+                    break;
+                }
+            case 10: {
+                    message.label = reader.string();
+                    break;
+                }
+            case 11: {
+                    message.glyphPath = reader.string();
+                    break;
+                }
+            case 12: {
+                    message.iconFilename = reader.string();
+                    break;
+                }
+            case 13: {
+                    message.colorForeground = reader.string();
+                    break;
+                }
+            case 14: {
+                    message.colorBackground = reader.string();
+                    break;
+                }
+            case 15: {
+                    message.quandrants = reader.uint32();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Gets the default type url for CVirtualMenuCreateDestroy_TouchMenuKey
+     * @function getTypeUrl
+     * @memberof CVirtualMenuCreateDestroy_TouchMenuKey
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    CVirtualMenuCreateDestroy_TouchMenuKey.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/CVirtualMenuCreateDestroy_TouchMenuKey";
+    };
+
+    return CVirtualMenuCreateDestroy_TouchMenuKey;
 })();
 
 export const CVirtualMenuKey = $root.CVirtualMenuKey = (() => {
@@ -107018,7 +106348,9 @@ export const CVRGamepadUIShared_DashboardAction = $root.CVRGamepadUIShared_Dashb
      * @property {number|null} [invocation] CVRGamepadUIShared_DashboardAction invocation
      * @property {boolean|null} [active] CVRGamepadUIShared_DashboardAction active
      * @property {number|null} [specialInvocation] CVRGamepadUIShared_DashboardAction specialInvocation
-     * @property {boolean|null} [visibleInDashboardMenu] CVRGamepadUIShared_DashboardAction visibleInDashboardMenu
+     * @property {boolean|null} [visibleInMenu] CVRGamepadUIShared_DashboardAction visibleInMenu
+     * @property {boolean|null} [isMenu] CVRGamepadUIShared_DashboardAction isMenu
+     * @property {number|null} [parentMenuActionId] CVRGamepadUIShared_DashboardAction parentMenuActionId
      */
 
     /**
@@ -107109,12 +106441,28 @@ export const CVRGamepadUIShared_DashboardAction = $root.CVRGamepadUIShared_Dashb
     CVRGamepadUIShared_DashboardAction.prototype.specialInvocation = 0;
 
     /**
-     * CVRGamepadUIShared_DashboardAction visibleInDashboardMenu.
-     * @member {boolean} visibleInDashboardMenu
+     * CVRGamepadUIShared_DashboardAction visibleInMenu.
+     * @member {boolean} visibleInMenu
      * @memberof CVRGamepadUIShared_DashboardAction
      * @instance
      */
-    CVRGamepadUIShared_DashboardAction.prototype.visibleInDashboardMenu = false;
+    CVRGamepadUIShared_DashboardAction.prototype.visibleInMenu = false;
+
+    /**
+     * CVRGamepadUIShared_DashboardAction isMenu.
+     * @member {boolean} isMenu
+     * @memberof CVRGamepadUIShared_DashboardAction
+     * @instance
+     */
+    CVRGamepadUIShared_DashboardAction.prototype.isMenu = false;
+
+    /**
+     * CVRGamepadUIShared_DashboardAction parentMenuActionId.
+     * @member {number} parentMenuActionId
+     * @memberof CVRGamepadUIShared_DashboardAction
+     * @instance
+     */
+    CVRGamepadUIShared_DashboardAction.prototype.parentMenuActionId = 0;
 
     /**
      * Encodes the specified CVRGamepadUIShared_DashboardAction message. Does not implicitly {@link CVRGamepadUIShared_DashboardAction.verify|verify} messages.
@@ -107146,8 +106494,12 @@ export const CVRGamepadUIShared_DashboardAction = $root.CVRGamepadUIShared_Dashb
             writer.uint32(/* id 8, wireType 0 =*/64).bool(message.active);
         if (message.specialInvocation != null && Object.hasOwnProperty.call(message, "specialInvocation"))
             writer.uint32(/* id 9, wireType 0 =*/72).int32(message.specialInvocation);
-        if (message.visibleInDashboardMenu != null && Object.hasOwnProperty.call(message, "visibleInDashboardMenu"))
-            writer.uint32(/* id 10, wireType 0 =*/80).bool(message.visibleInDashboardMenu);
+        if (message.visibleInMenu != null && Object.hasOwnProperty.call(message, "visibleInMenu"))
+            writer.uint32(/* id 10, wireType 0 =*/80).bool(message.visibleInMenu);
+        if (message.isMenu != null && Object.hasOwnProperty.call(message, "isMenu"))
+            writer.uint32(/* id 11, wireType 0 =*/88).bool(message.isMenu);
+        if (message.parentMenuActionId != null && Object.hasOwnProperty.call(message, "parentMenuActionId"))
+            writer.uint32(/* id 12, wireType 0 =*/96).uint32(message.parentMenuActionId);
         return writer;
     };
 
@@ -107206,7 +106558,15 @@ export const CVRGamepadUIShared_DashboardAction = $root.CVRGamepadUIShared_Dashb
                     break;
                 }
             case 10: {
-                    message.visibleInDashboardMenu = reader.bool();
+                    message.visibleInMenu = reader.bool();
+                    break;
+                }
+            case 11: {
+                    message.isMenu = reader.bool();
+                    break;
+                }
+            case 12: {
+                    message.parentMenuActionId = reader.uint32();
                     break;
                 }
             default:
@@ -108911,6 +108271,7 @@ export const LoyaltyRewardDefinition_CommunityItemData = $root.LoyaltyRewardDefi
      * @property {string|null} [itemMovieWebmSmall] LoyaltyRewardDefinition_CommunityItemData itemMovieWebmSmall
      * @property {string|null} [itemMovieMp4Small] LoyaltyRewardDefinition_CommunityItemData itemMovieMp4Small
      * @property {string|null} [profileThemeId] LoyaltyRewardDefinition_CommunityItemData profileThemeId
+     * @property {boolean|null} [tiled] LoyaltyRewardDefinition_CommunityItemData tiled
      */
 
     /**
@@ -109026,6 +108387,14 @@ export const LoyaltyRewardDefinition_CommunityItemData = $root.LoyaltyRewardDefi
     LoyaltyRewardDefinition_CommunityItemData.prototype.profileThemeId = "";
 
     /**
+     * LoyaltyRewardDefinition_CommunityItemData tiled.
+     * @member {boolean} tiled
+     * @memberof LoyaltyRewardDefinition_CommunityItemData
+     * @instance
+     */
+    LoyaltyRewardDefinition_CommunityItemData.prototype.tiled = false;
+
+    /**
      * Encodes the specified LoyaltyRewardDefinition_CommunityItemData message. Does not implicitly {@link LoyaltyRewardDefinition_CommunityItemData.verify|verify} messages.
      * @function encode
      * @memberof LoyaltyRewardDefinition_CommunityItemData
@@ -109062,6 +108431,8 @@ export const LoyaltyRewardDefinition_CommunityItemData = $root.LoyaltyRewardDefi
             writer.uint32(/* id 11, wireType 2 =*/90).string(message.itemMovieMp4Small);
         if (message.profileThemeId != null && Object.hasOwnProperty.call(message, "profileThemeId"))
             writer.uint32(/* id 12, wireType 2 =*/98).string(message.profileThemeId);
+        if (message.tiled != null && Object.hasOwnProperty.call(message, "tiled"))
+            writer.uint32(/* id 13, wireType 0 =*/104).bool(message.tiled);
         return writer;
     };
 
@@ -109131,6 +108502,10 @@ export const LoyaltyRewardDefinition_CommunityItemData = $root.LoyaltyRewardDefi
                 }
             case 12: {
                     message.profileThemeId = reader.string();
+                    break;
+                }
+            case 13: {
+                    message.tiled = reader.bool();
                     break;
                 }
             default:
@@ -110912,6 +110287,8 @@ export const StoreItem_Assets = $root.StoreItem_Assets = (() => {
      * @property {string|null} [libraryHero_2x] StoreItem_Assets libraryHero_2x
      * @property {string|null} [communityIcon] StoreItem_Assets communityIcon
      * @property {string|null} [clanAvatar] StoreItem_Assets clanAvatar
+     * @property {string|null} [pageBackgroundPath] StoreItem_Assets pageBackgroundPath
+     * @property {string|null} [rawPageBackground] StoreItem_Assets rawPageBackground
      */
 
     /**
@@ -111042,6 +110419,22 @@ export const StoreItem_Assets = $root.StoreItem_Assets = (() => {
     StoreItem_Assets.prototype.clanAvatar = "";
 
     /**
+     * StoreItem_Assets pageBackgroundPath.
+     * @member {string} pageBackgroundPath
+     * @memberof StoreItem_Assets
+     * @instance
+     */
+    StoreItem_Assets.prototype.pageBackgroundPath = "";
+
+    /**
+     * StoreItem_Assets rawPageBackground.
+     * @member {string} rawPageBackground
+     * @memberof StoreItem_Assets
+     * @instance
+     */
+    StoreItem_Assets.prototype.rawPageBackground = "";
+
+    /**
      * Encodes the specified StoreItem_Assets message. Does not implicitly {@link StoreItem_Assets.verify|verify} messages.
      * @function encode
      * @memberof StoreItem_Assets
@@ -111081,6 +110474,10 @@ export const StoreItem_Assets = $root.StoreItem_Assets = (() => {
             writer.uint32(/* id 13, wireType 2 =*/106).string(message.communityIcon);
         if (message.clanAvatar != null && Object.hasOwnProperty.call(message, "clanAvatar"))
             writer.uint32(/* id 14, wireType 2 =*/114).string(message.clanAvatar);
+        if (message.pageBackgroundPath != null && Object.hasOwnProperty.call(message, "pageBackgroundPath"))
+            writer.uint32(/* id 15, wireType 2 =*/122).string(message.pageBackgroundPath);
+        if (message.rawPageBackground != null && Object.hasOwnProperty.call(message, "rawPageBackground"))
+            writer.uint32(/* id 16, wireType 2 =*/130).string(message.rawPageBackground);
         return writer;
     };
 
@@ -111156,6 +110553,14 @@ export const StoreItem_Assets = $root.StoreItem_Assets = (() => {
                 }
             case 14: {
                     message.clanAvatar = reader.string();
+                    break;
+                }
+            case 15: {
+                    message.pageBackgroundPath = reader.string();
+                    break;
+                }
+            case 16: {
+                    message.rawPageBackground = reader.string();
                     break;
                 }
             default:
@@ -112004,6 +111409,7 @@ export const StoreItem_Platforms = $root.StoreItem_Platforms = (() => {
      * @property {boolean|null} [linux] StoreItem_Platforms linux
      * @property {IStoreItem_Platforms_VRSupport|null} [vrSupport] StoreItem_Platforms vrSupport
      * @property {number|null} [steamDeckCompatCategory] StoreItem_Platforms steamDeckCompatCategory
+     * @property {number|null} [steamOsCompatCategory] StoreItem_Platforms steamOsCompatCategory
      */
 
     /**
@@ -112062,6 +111468,14 @@ export const StoreItem_Platforms = $root.StoreItem_Platforms = (() => {
     StoreItem_Platforms.prototype.steamDeckCompatCategory = 0;
 
     /**
+     * StoreItem_Platforms steamOsCompatCategory.
+     * @member {number} steamOsCompatCategory
+     * @memberof StoreItem_Platforms
+     * @instance
+     */
+    StoreItem_Platforms.prototype.steamOsCompatCategory = 0;
+
+    /**
      * Encodes the specified StoreItem_Platforms message. Does not implicitly {@link StoreItem_Platforms.verify|verify} messages.
      * @function encode
      * @memberof StoreItem_Platforms
@@ -112083,6 +111497,8 @@ export const StoreItem_Platforms = $root.StoreItem_Platforms = (() => {
             $root.StoreItem_Platforms_VRSupport.encode(message.vrSupport, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
         if (message.steamDeckCompatCategory != null && Object.hasOwnProperty.call(message, "steamDeckCompatCategory"))
             writer.uint32(/* id 11, wireType 0 =*/88).int32(message.steamDeckCompatCategory);
+        if (message.steamOsCompatCategory != null && Object.hasOwnProperty.call(message, "steamOsCompatCategory"))
+            writer.uint32(/* id 12, wireType 0 =*/96).int32(message.steamOsCompatCategory);
         return writer;
     };
 
@@ -112122,6 +111538,10 @@ export const StoreItem_Platforms = $root.StoreItem_Platforms = (() => {
                 }
             case 11: {
                     message.steamDeckCompatCategory = reader.int32();
+                    break;
+                }
+            case 12: {
+                    message.steamOsCompatCategory = reader.int32();
                     break;
                 }
             default:
@@ -112354,6 +111774,7 @@ export const StoreItem_PurchaseOption = $root.StoreItem_PurchaseOption = (() => 
      * @property {number|Long|null} [lowestRecentPriceInCents] StoreItem_PurchaseOption lowestRecentPriceInCents
      * @property {boolean|null} [requiresShipping] StoreItem_PurchaseOption requiresShipping
      * @property {IStoreItem_PurchaseOption_RecurrenceInfo|null} [recurrenceInfo] StoreItem_PurchaseOption recurrenceInfo
+     * @property {number|null} [freeToKeepEnds] StoreItem_PurchaseOption freeToKeepEnds
      */
 
     /**
@@ -112583,6 +112004,14 @@ export const StoreItem_PurchaseOption = $root.StoreItem_PurchaseOption = (() => 
     StoreItem_PurchaseOption.prototype.recurrenceInfo = null;
 
     /**
+     * StoreItem_PurchaseOption freeToKeepEnds.
+     * @member {number} freeToKeepEnds
+     * @memberof StoreItem_PurchaseOption
+     * @instance
+     */
+    StoreItem_PurchaseOption.prototype.freeToKeepEnds = 0;
+
+    /**
      * Encodes the specified StoreItem_PurchaseOption message. Does not implicitly {@link StoreItem_PurchaseOption.verify|verify} messages.
      * @function encode
      * @memberof StoreItem_PurchaseOption
@@ -112649,6 +112078,8 @@ export const StoreItem_PurchaseOption = $root.StoreItem_PurchaseOption = (() => 
             writer.uint32(/* id 45, wireType 0 =*/360).bool(message.requiresShipping);
         if (message.recurrenceInfo != null && Object.hasOwnProperty.call(message, "recurrenceInfo"))
             $root.StoreItem_PurchaseOption_RecurrenceInfo.encode(message.recurrenceInfo, writer.uint32(/* id 46, wireType 2 =*/370).fork()).ldelim();
+        if (message.freeToKeepEnds != null && Object.hasOwnProperty.call(message, "freeToKeepEnds"))
+            writer.uint32(/* id 47, wireType 0 =*/376).uint32(message.freeToKeepEnds);
         return writer;
     };
 
@@ -112778,6 +112209,10 @@ export const StoreItem_PurchaseOption = $root.StoreItem_PurchaseOption = (() => 
                 }
             case 46: {
                     message.recurrenceInfo = $root.StoreItem_PurchaseOption_RecurrenceInfo.decode(reader, reader.uint32());
+                    break;
+                }
+            case 47: {
+                    message.freeToKeepEnds = reader.uint32();
                     break;
                 }
             default:
@@ -113267,6 +112702,7 @@ export const StoreItem_ReleaseInfo = $root.StoreItem_ReleaseInfo = (() => {
      * @property {boolean|null} [isEarlyAccess] StoreItem_ReleaseInfo isEarlyAccess
      * @property {number|null} [macReleaseDate] StoreItem_ReleaseInfo macReleaseDate
      * @property {number|null} [linuxReleaseDate] StoreItem_ReleaseInfo linuxReleaseDate
+     * @property {boolean|null} [limitedLaunchActive] StoreItem_ReleaseInfo limitedLaunchActive
      */
 
     /**
@@ -113373,6 +112809,14 @@ export const StoreItem_ReleaseInfo = $root.StoreItem_ReleaseInfo = (() => {
     StoreItem_ReleaseInfo.prototype.linuxReleaseDate = 0;
 
     /**
+     * StoreItem_ReleaseInfo limitedLaunchActive.
+     * @member {boolean} limitedLaunchActive
+     * @memberof StoreItem_ReleaseInfo
+     * @instance
+     */
+    StoreItem_ReleaseInfo.prototype.limitedLaunchActive = false;
+
+    /**
      * Encodes the specified StoreItem_ReleaseInfo message. Does not implicitly {@link StoreItem_ReleaseInfo.verify|verify} messages.
      * @function encode
      * @memberof StoreItem_ReleaseInfo
@@ -113406,6 +112850,8 @@ export const StoreItem_ReleaseInfo = $root.StoreItem_ReleaseInfo = (() => {
             writer.uint32(/* id 20, wireType 0 =*/160).uint32(message.macReleaseDate);
         if (message.linuxReleaseDate != null && Object.hasOwnProperty.call(message, "linuxReleaseDate"))
             writer.uint32(/* id 21, wireType 0 =*/168).uint32(message.linuxReleaseDate);
+        if (message.limitedLaunchActive != null && Object.hasOwnProperty.call(message, "limitedLaunchActive"))
+            writer.uint32(/* id 22, wireType 0 =*/176).bool(message.limitedLaunchActive);
         return writer;
     };
 
@@ -113469,6 +112915,10 @@ export const StoreItem_ReleaseInfo = $root.StoreItem_ReleaseInfo = (() => {
                 }
             case 21: {
                     message.linuxReleaseDate = reader.uint32();
+                    break;
+                }
+            case 22: {
+                    message.limitedLaunchActive = reader.bool();
                     break;
                 }
             default:
@@ -114386,6 +113836,8 @@ export const StoreItem_Trailers_Trailer = $root.StoreItem_Trailers_Trailer = (()
      * @property {string|null} [screenshotMedium] StoreItem_Trailers_Trailer screenshotMedium
      * @property {string|null} [screenshotFull] StoreItem_Trailers_Trailer screenshotFull
      * @property {number|null} [trailerBaseId] StoreItem_Trailers_Trailer trailerBaseId
+     * @property {number|null} [trailerCategory] StoreItem_Trailers_Trailer trailerCategory
+     * @property {boolean|null} [allAges] StoreItem_Trailers_Trailer allAges
      */
 
     /**
@@ -114471,6 +113923,22 @@ export const StoreItem_Trailers_Trailer = $root.StoreItem_Trailers_Trailer = (()
     StoreItem_Trailers_Trailer.prototype.trailerBaseId = 0;
 
     /**
+     * StoreItem_Trailers_Trailer trailerCategory.
+     * @member {number} trailerCategory
+     * @memberof StoreItem_Trailers_Trailer
+     * @instance
+     */
+    StoreItem_Trailers_Trailer.prototype.trailerCategory = 0;
+
+    /**
+     * StoreItem_Trailers_Trailer allAges.
+     * @member {boolean} allAges
+     * @memberof StoreItem_Trailers_Trailer
+     * @instance
+     */
+    StoreItem_Trailers_Trailer.prototype.allAges = false;
+
+    /**
      * Encodes the specified StoreItem_Trailers_Trailer message. Does not implicitly {@link StoreItem_Trailers_Trailer.verify|verify} messages.
      * @function encode
      * @memberof StoreItem_Trailers_Trailer
@@ -114501,6 +113969,10 @@ export const StoreItem_Trailers_Trailer = $root.StoreItem_Trailers_Trailer = (()
             writer.uint32(/* id 11, wireType 2 =*/90).string(message.screenshotFull);
         if (message.trailerBaseId != null && Object.hasOwnProperty.call(message, "trailerBaseId"))
             writer.uint32(/* id 12, wireType 0 =*/96).int32(message.trailerBaseId);
+        if (message.trailerCategory != null && Object.hasOwnProperty.call(message, "trailerCategory"))
+            writer.uint32(/* id 13, wireType 0 =*/104).int32(message.trailerCategory);
+        if (message.allAges != null && Object.hasOwnProperty.call(message, "allAges"))
+            writer.uint32(/* id 14, wireType 0 =*/112).bool(message.allAges);
         return writer;
     };
 
@@ -114558,6 +114030,14 @@ export const StoreItem_Trailers_Trailer = $root.StoreItem_Trailers_Trailer = (()
                 }
             case 12: {
                     message.trailerBaseId = reader.int32();
+                    break;
+                }
+            case 13: {
+                    message.trailerCategory = reader.int32();
+                    break;
+                }
+            case 14: {
+                    message.allAges = reader.bool();
                     break;
                 }
             default:
@@ -121032,6 +120512,7 @@ export const CWishlistFilters = $root.CWishlistFilters = (() => {
      * @property {number|null} [minDiscountPercent] CWishlistFilters minDiscountPercent
      * @property {ICWishlistFilters_ExcludeTypeFilters|null} [excludeTypes] CWishlistFilters excludeTypes
      * @property {ICWishlistFilters_SteamDeckFilters|null} [steamDeckFilters] CWishlistFilters steamDeckFilters
+     * @property {Array.<number>|null} [tagidsMustMatch] CWishlistFilters tagidsMustMatch
      */
 
     /**
@@ -121043,6 +120524,7 @@ export const CWishlistFilters = $root.CWishlistFilters = (() => {
      * @param {ICWishlistFilters=} [properties] Properties to set
      */
     function CWishlistFilters(properties) {
+        this.tagidsMustMatch = [];
         if (properties)
             for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -121130,6 +120612,14 @@ export const CWishlistFilters = $root.CWishlistFilters = (() => {
     CWishlistFilters.prototype.steamDeckFilters = null;
 
     /**
+     * CWishlistFilters tagidsMustMatch.
+     * @member {Array.<number>} tagidsMustMatch
+     * @memberof CWishlistFilters
+     * @instance
+     */
+    CWishlistFilters.prototype.tagidsMustMatch = $util.emptyArray;
+
+    /**
      * Encodes the specified CWishlistFilters message. Does not implicitly {@link CWishlistFilters.verify|verify} messages.
      * @function encode
      * @memberof CWishlistFilters
@@ -121161,6 +120651,9 @@ export const CWishlistFilters = $root.CWishlistFilters = (() => {
             $root.CWishlistFilters_ExcludeTypeFilters.encode(message.excludeTypes, writer.uint32(/* id 22, wireType 2 =*/178).fork()).ldelim();
         if (message.steamDeckFilters != null && Object.hasOwnProperty.call(message, "steamDeckFilters"))
             $root.CWishlistFilters_SteamDeckFilters.encode(message.steamDeckFilters, writer.uint32(/* id 23, wireType 2 =*/186).fork()).ldelim();
+        if (message.tagidsMustMatch != null && message.tagidsMustMatch.length)
+            for (let i = 0; i < message.tagidsMustMatch.length; ++i)
+                writer.uint32(/* id 24, wireType 0 =*/192).int32(message.tagidsMustMatch[i]);
         return writer;
     };
 
@@ -121220,6 +120713,17 @@ export const CWishlistFilters = $root.CWishlistFilters = (() => {
                 }
             case 23: {
                     message.steamDeckFilters = $root.CWishlistFilters_SteamDeckFilters.decode(reader, reader.uint32());
+                    break;
+                }
+            case 24: {
+                    if (!(message.tagidsMustMatch && message.tagidsMustMatch.length))
+                        message.tagidsMustMatch = [];
+                    if ((tag & 7) === 2) {
+                        let end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
+                            message.tagidsMustMatch.push(reader.int32());
+                    } else
+                        message.tagidsMustMatch.push(reader.int32());
                     break;
                 }
             default:
