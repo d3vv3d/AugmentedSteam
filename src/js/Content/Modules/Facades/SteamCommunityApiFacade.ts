@@ -15,6 +15,10 @@ export default class SteamCommunityApiFacade {
     static getReviews(steamId: string, pages: number): Promise<TFetchReviewsResponse> {
         return Background.send(EAction.Reviews, {steamId, pages});
     }
+    
+    static getReviewCount(steamId: string): Promise<number> {
+        return Background.send(EAction.ReviewCount, {steamId});
+    }
 
     static login(profilePath: string): Promise<TLogin> {
         return Background.send(EAction.Login, {profilePath});

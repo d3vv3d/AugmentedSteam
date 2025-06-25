@@ -1,9 +1,12 @@
 import self_ from "./FCommunityProfileLinks.svelte";
 import Feature from "@Content/Modules/Context/Feature";
 import type CProfileHome from "@Content/Features/Community/ProfileHome/CProfileHome";
+import SteamCommunityApiFacade from "@Content/Modules/Facades/SteamCommunityApiFacade";
 import HTML from "@Core/Html/Html";
 
 export default class FCommunityProfileLinks extends Feature<CProfileHome> {
+
+    private _reviewCount: number = 0;
 
     override checkPrerequisites(): boolean {
         return this.context.steamId !== null;
@@ -31,7 +34,11 @@ export default class FCommunityProfileLinks extends Feature<CProfileHome> {
 	
 	if (!hasReviews) {
 	    shouldAddReviews = true;
-	}
+	    this._getReviewCount();
+	    
+	    if ( this._reviewCount < 1) {
+	    	shouldAddReviews = false;
+	    }
 	
         (new self_({
             target: document.querySelector(".profile_item_links")!,
@@ -42,5 +49,10 @@ export default class FCommunityProfileLinks extends Feature<CProfileHome> {
                 addReviews: shouldAddReviews
             }
         }));
+    }
+}
+
+    private async _getReviewCount(): Promise<void> {
+        this._reviewCount = await SteamCommunityApiFacade.getReviewCount(window.location.pathname);
     }
 }

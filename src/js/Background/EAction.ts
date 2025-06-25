@@ -23,6 +23,7 @@ export enum EAction {
     BadgeInfo = "community.badgeinfo",
     WorkshopFileSize = "community.workshopFileSize",
     Reviews = "community.reviews",
+    ReviewCount = "community.reviewcount",
     StoreCountry_Set = "community.storecountry.set",
     StoreCountry_Get = "community.storecountry.get",
     Cards = "community.cards",

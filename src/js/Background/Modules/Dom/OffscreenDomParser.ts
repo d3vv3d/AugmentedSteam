@@ -52,6 +52,10 @@ export default class OffscreenDomParser implements DomParserInterface {
     parseReviews(html: string): TReview[] | Promise<TReview[]> {
         return this.send("reviews", html);
     }
+    
+    parseReviewCount(html: string): number | Promise<number> {
+    	return this.send("reviewCount", html);
+    }
 
     parsePurchaseDates(html: string): Promise<Array<[string, string]>> {
         return this.send("purchaseDates", html);

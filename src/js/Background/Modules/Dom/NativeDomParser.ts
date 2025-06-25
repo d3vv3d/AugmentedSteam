@@ -104,6 +104,11 @@ export default class NativeDomParser implements DomParserInterface {
 
         return reviews;
     }
+    
+    parseReviewCount(html: string): number {
+	    const reviewCount = Number(this.dom(html).querySelector("#rightContents .review_stat .giantNumber")?.textContent?.trim());
+        return Number.isNaN(reviewCount) ? 0 : reviewCount;
+    }
 
     parsePurchaseDates(html: string): Array<[string, string]> {
         const replaceRegex = [

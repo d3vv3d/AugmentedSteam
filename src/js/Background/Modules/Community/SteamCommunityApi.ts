@@ -95,9 +95,7 @@ export default class SteamCommunityApi extends Api implements MessageHandlerInte
         return reviews;
     }
 
-    private async getReviews(steamId: string, pages: number): Promise<TFetchReviewsResponse> {
-    	console.log(steamId);
-    
+    private async getReviews(steamId: string, pages: number): Promise<TFetchReviewsResponse> {    
         let entry = await IndexedDB.get("reviews", steamId)
 
         if (!entry || TimeUtils.isInPast(entry.expiry)) {
@@ -109,6 +107,33 @@ export default class SteamCommunityApi extends Api implements MessageHandlerInte
         }
 
         return entry.data;
+    }
+    
+    private async fetchReviewCount(steamId: string): Promise<Number> {
+    	const parser = DomParserFactory.getParser();
+
+        const url = this.getUrl(`${steamId}/recommended`);
+        const html = await this.fetchPage(url);
+        const reviewCount = await parser.parseReviewCount(html);
+        console.log("review cnt: ", reviewCount);
+        return reviewCount;
+    }
+    
+    private async getReviewCount(steamId: string): Promise<Number> {
+    	return this.fetchReviewCount(steamId);
+    	/*
+    	let entry = await IndexedDB.get("reviewCount", steamId);
+
+        if (!entry || TimeUtils.isInPast(entry.expiry)) {
+            entry = {
+                data: await this.fetchReviewCount(steamId),
+                expiry: TimeUtils.now() + 60*60
+            };
+            await IndexedDB.put("reviewCount", entry, steamId);
+        }
+
+        return entry.data;
+        */
     }
 
     /*
@@ -182,6 +207,9 @@ export default class SteamCommunityApi extends Api implements MessageHandlerInte
 
             case EAction.Reviews:
                 return this.getReviews(message.params.steamId, message.params.pages);
+
+	        case EAction.ReviewCount:
+	    	    return this.getReviewCount(message.params.steamId);
 
             case EAction.Login:
                 return this.login(message.params.profilePath);

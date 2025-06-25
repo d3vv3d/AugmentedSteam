@@ -72,13 +72,6 @@ export default class CProfileHome extends CCommunityBase {
         this.dependency(FCustomStyle,
             [FCustomBackground, true]
         )
-        
-        this.test(window.location.pathname);
-    }
-    
-    private async test(steamId: string): Promise<void> {
-    	let revs = await SteamCommunityApiFacade.getReviews(this.steamId, 1)
-        console.log("# Reviews:", revs.length);
     }
 
     private getSteamId(): string|null {
