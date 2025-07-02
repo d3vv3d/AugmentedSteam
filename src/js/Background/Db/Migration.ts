@@ -72,6 +72,9 @@ async function upgrade(
         db.createObjectStore("reviews")
             .createIndex("idx_expiry", "expiry");
 
+        db.createObjectStore("reviewCount")
+            .createIndex("idx_expiry", "expiry");
+
         db.createObjectStore("expiries")
             .createIndex("idx_expiry", "");
 

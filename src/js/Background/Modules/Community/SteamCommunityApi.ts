@@ -109,7 +109,7 @@ export default class SteamCommunityApi extends Api implements MessageHandlerInte
         return entry.data;
     }
     
-    private async fetchReviewCount(steamId: string): Promise<Number> {
+    private async fetchReviewCount(steamId: string): Promise<number> {
     	const parser = DomParserFactory.getParser();
 
         const url = this.getUrl(`${steamId}/recommended`);
@@ -119,9 +119,7 @@ export default class SteamCommunityApi extends Api implements MessageHandlerInte
         return reviewCount;
     }
     
-    private async getReviewCount(steamId: string): Promise<Number> {
-    	return this.fetchReviewCount(steamId);
-    	/*
+    private async getReviewCount(steamId: string): Promise<number> {
     	let entry = await IndexedDB.get("reviewCount", steamId);
 
         if (!entry || TimeUtils.isInPast(entry.expiry)) {
@@ -133,7 +131,6 @@ export default class SteamCommunityApi extends Api implements MessageHandlerInte
         }
 
         return entry.data;
-        */
     }
 
     /*

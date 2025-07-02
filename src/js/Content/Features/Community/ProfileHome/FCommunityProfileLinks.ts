@@ -46,7 +46,8 @@ export default class FCommunityProfileLinks extends Feature<CProfileHome> {
                 steamId: this.context.steamId!,
                 clear: false,
                 language: this.context.language?.name,
-                addReviews: shouldAddReviews
+                addReviews: shouldAddReviews,
+                total: this._reviewCount,
             }
         }));
     }
@@ -54,5 +55,6 @@ export default class FCommunityProfileLinks extends Feature<CProfileHome> {
 
     private async _getReviewCount(): Promise<void> {
         this._reviewCount = await SteamCommunityApiFacade.getReviewCount(window.location.pathname);
+        console.log("# reviews: ", this._reviewCount);
     }
 }

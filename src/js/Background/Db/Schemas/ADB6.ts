@@ -137,6 +137,16 @@ export default interface ADB6 extends DBSchema {
             idx_expiry: number
         }
     },
+    reviewCount: {
+        key: string,
+        value: {
+            data: number,
+            expiry: number
+        },
+        indexes: {
+            idx_expiry: number
+        }
+    },
     storeList: {
         key: number,
         value: {

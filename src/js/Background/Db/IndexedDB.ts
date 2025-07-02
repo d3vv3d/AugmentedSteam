@@ -69,6 +69,7 @@ export default class IndexedDB {
             this.deleteExpiredEntries("rates", "idx_expiry"),
             this.deleteExpiredEntries("workshopFileSizes", "idx_expiry"),
             this.deleteExpiredEntries("reviews", "idx_expiry"),
+            this.deleteExpiredEntries("reviewCount", "idx_expiry"),
         ]);
     }
 
