@@ -7,11 +7,13 @@
     export let href: string;
     export let iconUrl: string|undefined = undefined;
     export let hideIcon: string|undefined = undefined;
+    export let total: number|undefined = undefined;
 
     const iconType: "gray"|"color"|"none" = Settings.show_profile_link_images;
 </script>
 
 
+<svelte:options preserveWhitespace={true} />
 <div class="profile_count_link">
     <a class="link" {href} use:external>
         {#if iconType !== "none"}
@@ -20,7 +22,12 @@
             {/if}
         {/if}
         <span class="count_link_label"><slot></slot></span>
-        <span class="profile_count_link_total">&nbsp;</span> <!-- Steam spacing -->
+        {#if total != undefined && total > 0}
+            <span>&nbsp;&nbsp;</span> <!--Matches how ZSteam normally formats the link-->
+            <span class="profile_count_link_total">{total}</span>
+        {:else}
+            <span class="profile_count_link_total">&nbsp;</span> <!-- Steam spacing -->
+        {/if}
     </a>
 </div>
 
