@@ -6,7 +6,7 @@
     export let id: string;
     export let href: string;
     export let iconUrl: string|undefined = undefined;
-    export let hideIcon: string|undefined = undefined;
+    export let noIcon: boolean|undefined = undefined;
     export let total: number|undefined = undefined;
 
     const iconType: "gray"|"color"|"none" = Settings.show_profile_link_images;
@@ -16,7 +16,7 @@
 <svelte:options preserveWhitespace={true} />
 <div class="profile_count_link">
     <a class="link" {href} use:external>
-        {#if iconType !== "none" && hideIcon !== "true"}
+        {#if iconType !== "none" && noIcon !== true}
             <ProfileLinkIcon {id} {iconUrl} gray={iconType === "gray"} />
         {/if}
         <span class="count_link_label"><slot></slot></span>

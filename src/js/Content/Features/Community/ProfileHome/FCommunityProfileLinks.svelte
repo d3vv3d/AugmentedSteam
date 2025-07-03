@@ -13,7 +13,7 @@
 </script>
 
 {#if totalReviews > 0 && Settings.profile_steamreviews}
-    <ProfileLink id="steamreviews" hideIcon="true" total={totalReviews}
+    <ProfileLink id="steamreviews" noIcon={true} total={totalReviews}
         href="https://steamcommunity.com/profiles/{steamId}/recommended">
         {L(__reviews)}
     </ProfileLink>

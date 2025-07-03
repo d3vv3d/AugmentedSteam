@@ -7,19 +7,11 @@ import Settings from "@Options/Data/Settings";
 
 export default class FCommunityProfileLinks extends Feature<CProfileHome> {
 
-    private _reviewCount: number = 0;
-
     override checkPrerequisites(): boolean {
         return this.context.steamId !== null;
     }
 
-    override apply(): void {
-
-        this.asyncApply();
-    
-    }
-
-    private async asyncApply(): Promise<void> {
+    override async apply(): Promise<void> {
         let linksNode = document.querySelector(".profile_item_links");
         if (linksNode == null) {
             const rightColNode = document.querySelector(".profile_rightcol");
