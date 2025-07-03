@@ -3,6 +3,7 @@ import Feature from "@Content/Modules/Context/Feature";
 import type CProfileHome from "@Content/Features/Community/ProfileHome/CProfileHome";
 import SteamCommunityApiFacade from "@Content/Modules/Facades/SteamCommunityApiFacade";
 import HTML from "@Core/Html/Html";
+import Settings from "@Options/Data/Settings";
 
 export default class FCommunityProfileLinks extends Feature<CProfileHome> {
 
@@ -34,12 +35,13 @@ export default class FCommunityProfileLinks extends Feature<CProfileHome> {
             for (const value of linkLabelNodes) {
                 if (value.innerHTML === "Reviews") {
                     hasReviews = true;
+                    break;
                 }
             }
         }
 
         let reviewCount = 0;
-        if (!hasReviews) {
+        if (!hasReviews && Settings.profile_steamreviews !== false) {
             reviewCount = await SteamCommunityApiFacade.getReviewCount(window.location.pathname);
         }
 
@@ -49,8 +51,7 @@ export default class FCommunityProfileLinks extends Feature<CProfileHome> {
                 steamId: this.context.steamId!,
                 clear: false,
                 language: this.context.language?.name,
-                addReviews: reviewCount > 0,
-                total: reviewCount,
+                totalReviews: reviewCount,
             }
         }));
     }

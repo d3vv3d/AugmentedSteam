@@ -115,7 +115,7 @@ export default class SteamCommunityApi extends Api implements MessageHandlerInte
         const url = this.getUrl(`${steamId}/recommended`);
         const html = await this.fetchPage(url);
         const reviewCount = await parser.parseReviewCount(html);
-        console.log("review cnt: ", reviewCount);
+        
         return reviewCount;
     }
     

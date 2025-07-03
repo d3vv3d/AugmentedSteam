@@ -3,18 +3,19 @@
     import ProfileLink from "@Content/Modules/Community/ProfileLink.svelte";
     import HTML from "@Core/Html/Html";
     import UrlUtils from "@Core/Utils/UrlUtils";
+    import { L } from "@Core/Localization/Localization";
+    import { __reviews } from "@Strings/_strings";
 
     export let steamId: string;
     export let clear: boolean;
     export let language: string|undefined; // Add SteamRepCN link if language is Chinese
-    export let addReviews: boolean;
-    export let total: number|undefined;
+    export let totalReviews: number;
 </script>
 
-{#if addReviews && Settings.profile_steamreviews}
-    <ProfileLink id="steamreviews" hideIcon="true" total={total}
+{#if totalReviews > 0 && Settings.profile_steamreviews}
+    <ProfileLink id="steamreviews" hideIcon="true" total={totalReviews}
         href="https://steamcommunity.com/profiles/{steamId}/recommended">
-        Reviews
+        {L(__reviews)}
     </ProfileLink>
 {/if}
 

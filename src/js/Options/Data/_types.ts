@@ -164,6 +164,7 @@ export interface SettingsSchema {
     profile_backpacktf: boolean,
     profile_steamid: boolean,
     profile_custom_link: Array<TCustomLink>,
+    profile_steamreviews: boolean,
     group_steamgifts: boolean,
     steamcardexchange: boolean,
     purchase_dates: boolean,

@@ -16,10 +16,8 @@
 <svelte:options preserveWhitespace={true} />
 <div class="profile_count_link">
     <a class="link" {href} use:external>
-        {#if iconType !== "none"}
-            {#if hideIcon !== "true"}
-                <ProfileLinkIcon {id} {iconUrl} gray={iconType === "gray"} />
-            {/if}
+        {#if iconType !== "none" && hideIcon !== "true"}
+            <ProfileLinkIcon {id} {iconUrl} gray={iconType === "gray"} />
         {/if}
         <span class="count_link_label"><slot></slot></span>
         <span>&nbsp;&nbsp;</span> <!--Matches how Steam normally formats the links-->
