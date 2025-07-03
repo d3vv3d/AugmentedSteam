@@ -376,6 +376,7 @@ export const __options_showallstats = "options_showallstats";
 export const __options_lowestpriceOnwishlist = "options_lowestpriceOnwishlist";
 export const __options_steamrepapi = "options_steamrepapi";
 export const __options_profileSteamid = "options_profileSteamid";
+export const __options_profileSteamreviews = "options_profileSteamreviews";
 export const __options_profilePinnedBg = "options_profilePinnedBg";
 export const __options_lowestprice = "options_lowestprice";
 export const __options_owned = "options_owned";
