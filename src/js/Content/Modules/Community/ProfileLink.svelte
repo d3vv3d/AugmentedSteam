@@ -22,12 +22,8 @@
             {/if}
         {/if}
         <span class="count_link_label"><slot></slot></span>
-        {#if total != undefined && total > 0}
-            <span>&nbsp;&nbsp;</span> <!--Matches how ZSteam normally formats the link-->
-            <span class="profile_count_link_total">{total}</span>
-        {:else}
-            <span class="profile_count_link_total">&nbsp;</span> <!-- Steam spacing -->
-        {/if}
+        <span>&nbsp;&nbsp;</span> <!--Matches how Steam normally formats the links-->
+        <span class="profile_count_link_total">{@html total != undefined ? total : '&nbsp;&nbsp;'}</span> <!-- &nbsp; fallback matches Steam spacing -->
     </a>
 </div>
 
