@@ -106,7 +106,7 @@ export default class NativeDomParser implements DomParserInterface {
     }
     
     parseReviewCount(html: string): number {
-	    const reviewCount = Number(this.dom(html).querySelector("#rightContents .review_stat .giantNumber")?.textContent?.trim());
+        const reviewCount = Number(this.dom(html).querySelector("#rightContents .review_stat .giantNumber")?.textContent?.trim());
         return Number.isNaN(reviewCount) ? 0 : reviewCount;
     }
 

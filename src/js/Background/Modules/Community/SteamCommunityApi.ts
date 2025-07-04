@@ -204,9 +204,9 @@ export default class SteamCommunityApi extends Api implements MessageHandlerInte
 
             case EAction.Reviews:
                 return this.getReviews(message.params.steamId, message.params.pages);
-
-	        case EAction.ReviewCount:
-	    	    return this.getReviewCount(message.params.steamId);
+                
+            case EAction.ReviewCount:
+                return this.getReviewCount(message.params.steamId);
 
             case EAction.Login:
                 return this.login(message.params.profilePath);
