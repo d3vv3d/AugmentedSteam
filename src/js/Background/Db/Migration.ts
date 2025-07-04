@@ -72,9 +72,6 @@ async function upgrade(
         db.createObjectStore("reviews")
             .createIndex("idx_expiry", "expiry");
 
-        db.createObjectStore("reviewCount")
-            .createIndex("idx_expiry", "expiry");
-
         db.createObjectStore("expiries")
             .createIndex("idx_expiry", "");
 
@@ -90,6 +87,11 @@ async function upgrade(
         for (const key of collectionKeys) {
             collection.put([], key);
         }
+    }
+
+    if (oldVersion < 7) {
+        db.createObjectStore("reviewCount")
+            .createIndex("idx_expiry", "expiry");
     }
 
     console.log(`DB migrated, ${oldVersion} -> ${newVersion}`);
