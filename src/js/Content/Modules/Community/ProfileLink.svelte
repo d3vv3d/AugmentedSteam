@@ -21,7 +21,7 @@
         {/if}
         <span class="count_link_label"><slot></slot></span>
         <span>&nbsp;&nbsp;</span> <!--Matches how Steam normally formats the links-->
-        <span class="profile_count_link_total">{@html total != undefined ? total : '&nbsp;&nbsp;'}</span> <!-- &nbsp; fallback matches Steam spacing -->
+        <span class="profile_count_link_total">{@html total != undefined ? total : '&nbsp;'}</span> <!-- &nbsp; fallback matches Steam spacing -->
     </a>
 </div>
 
