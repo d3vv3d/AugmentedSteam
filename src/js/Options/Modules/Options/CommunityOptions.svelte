@@ -44,7 +44,6 @@
         __options_showWishlistCount,
         __options_showWishlistLink,
         __options_steamcardexchange,
-        __options_steamrepapi,
         __options_videos,
         __options_wlbuttoncommunityapp,
         __reviews,
@@ -133,7 +132,6 @@
                 <Toggle bind:value={$settings.show_wishlist_count}>{L(__options_showWishlistCount)}</Toggle>
             </SubOptions>
         {/if}
-        <Toggle bind:value={$settings.showsteamrepapi}>{L(__options_steamrepapi)}</Toggle>
         <Toggle bind:value={$settings.profile_steamid}>{L(__options_profileSteamid)}</Toggle>
     </OptionGroup>
 

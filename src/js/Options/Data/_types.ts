@@ -69,7 +69,6 @@ export interface SettingsSchema {
 
     show_es_homepagetabs: boolean,
     showmarkettotal: boolean,
-    showsteamrepapi: boolean,
     showmcus: boolean,
     showoc: boolean,
     showhltb: boolean,
@@ -159,7 +158,6 @@ export interface SettingsSchema {
     profile_steamgifts: boolean,
     profile_steamtrades: boolean,
     profile_bartervg: boolean,
-    profile_steamrep: boolean,
     profile_steamdbcalc: boolean,
     profile_backpacktf: boolean,
     profile_steamid: boolean,
