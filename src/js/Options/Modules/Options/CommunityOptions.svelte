@@ -158,9 +158,6 @@
                 <ProfileLink id="steamrepcn" type={$settings.show_profile_link_images}>SteamrepCN</ProfileLink>
             </Toggle>
         {/if}
-        <Toggle bind:value={$settings.profile_steamrep}>
-            <ProfileLink id="steamrep" type={$settings.show_profile_link_images}>SteamRep</ProfileLink>
-        </Toggle>
         <Toggle bind:value={$settings.profile_steamdbcalc}>
             <ProfileLink id="steamdbcalc" type={$settings.show_profile_link_images}>SteamDB</ProfileLink>
         </Toggle>
